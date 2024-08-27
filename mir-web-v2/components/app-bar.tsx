@@ -15,22 +15,21 @@ export default function ButtonAppBar() {
   const theme = useTheme();
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: theme.palette.background.default }}>
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+      <AppBar position="static" sx={{ height: 83, backgroundColor: theme.palette.background.default }}>
+        <Toolbar sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '100%' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2, color: "black" }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <img src="/mir_logo.svg" width={121.85} height={61.25} alt="MIR Logo" />
+          </Box>
           <BlueButton text="Learn More"></BlueButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </Box>
