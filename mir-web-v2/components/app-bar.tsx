@@ -26,7 +26,7 @@ export default function ButtonAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <BlueButton text="Learn more"></BlueButton>
+          <BlueButton text="Learn More"></BlueButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             News
           </Typography>
