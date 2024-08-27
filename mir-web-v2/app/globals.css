@@ -105,3 +105,11 @@ a {
     color-scheme: dark;
   }
 }
+
+@font-face {
+  font-family: 'Basenji';
+  src: url('/fonts/basenji_variable.otf') format('opentype');
+  font-weight: 300 700; /* Adjust this range based on the font's capabilities */
+  font-style: normal;
+  font-display: swap;
+}
