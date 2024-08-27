@@ -76,6 +76,19 @@ const theme = createTheme({
   palette: {
     background: {
       default: "#EDE6D4"
+    },
+    primary: {
+      main: "#000000"
+    },
+    success:{
+      main: "#3FBC43"
+    },
+    error:{
+      main: "#B42318"
+    },
+    text: {
+      primary: "#000000",
+      secondary: "#AAAAAA",
     }
   }
 });
