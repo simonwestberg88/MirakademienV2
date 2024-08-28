@@ -36,24 +36,46 @@ export default function Footer() {
                         <Typography sx={{ fontWeight: "bold" }}>Subscribe</Typography>
                         <Box sx={{ pt: "10px" }}></Box>
                         <Typography>Join our newsletter to stay up to date on features and releases.</Typography>
-                        <Box sx={{ display: "flex" }}><TextField></TextField><Button>Subscribe</Button>
+                        <Box sx={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
+                            <TextField
+                                placeholder="Enter your email"
+                                sx={{
+                                    backgroundColor: "white",
+                                    borderRadius: "40px",
+                                    "& .MuiOutlinedInput-root": {
+                                        borderRadius: "40px",
+                                    },
+                                    flexGrow: 1,
+                                    mr: 2,
+                                    "& .MuiInputBase-input": {
+                                        color: theme.palette.text.primary,
+                                    },
+                                }}
+                                variant="outlined"
+                            />
+                            <Button variant="outlined"
+                                sx={{ borderRadius: 40, borderColor: theme.palette.info.main, color: theme.palette.info.main, textTransform: "none", ...theme.typography.body1 }}
+                            >
+                                Subscribe
+                            </Button>
                         </Box>
                         <Typography variant="caption">By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</Typography>
                     </Box>
                 </Box>
             </Box>
-            <Box key="l2_2" sx={{ pl: "64px", pr: "64px", pt: 15}}>
-                <Divider sx={{width: "100%", mb: 5, background: "black"}}/>
-                <Box sx={{ display: "flex", gap: 4 }}>
-                    <Typography variant='caption'>© 2023 Mir Akademien. All rights reserved.</Typography>
-                    <Typography variant='caption' sx={{textDecoration: "underline"}}>Privacy Policy</Typography>
-                    <Typography variant="caption" sx={{textDecoration: "underline"}}>Terms of Service</Typography>
+            <Box key="l2_2" sx={{ pl: "64px", pr: "64px", pt: 15 }}>
+                <Divider sx={{ width: "100%", mb: 5, background: "black" }} />
+                <Box sx={{display:"flex"}}>
+                    <Box sx={{ display: "flex", gap: 4 }}>
+                        <Typography variant='caption'>© 2023 Mir Akademien. All rights reserved.</Typography>
+                        <Typography variant='caption' sx={{ textDecoration: "underline" }}>Privacy Policy</Typography>
+                        <Typography variant="caption" sx={{ textDecoration: "underline" }}>Terms of Service</Typography>
+                    </Box>
+                    <Box sx={{ ml: "auto", display: "flex", gap: 2 }}>
+                        <InstagramIcon />
+                        <LinkedInIcon />
+                    </Box>
                 </Box>
-                <Box sx={{ml: "auto", display:"flex", gap: 2}}>
-                    <InstagramIcon />
-                    <LinkedInIcon />
-                </Box>
-
             </Box>
         </Box>
     );

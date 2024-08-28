@@ -111,6 +111,9 @@ const theme = createTheme({
       primary: "#000000",
       secondary: "#AAAAAA",
     },
+    info: {
+      main: "#199DEA"
+    }
   },
 });
 
