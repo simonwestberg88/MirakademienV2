@@ -42,8 +42,8 @@ export default function Footer() {
                     </Box>
                 </Box>
             </Box>
-            <Box key="l2_2" sx={{ pl: "64px", pr: "64px", display: "flex" }}>
-                <Divider sx={{ borderColor: theme.palette.text.primary }} />
+            <Box key="l2_2" sx={{ pl: "64px", pr: "64px", pt: 15}}>
+                <Divider sx={{width: "100%", mb: 5, background: "black"}}/>
                 <Box sx={{ display: "flex", gap: 4 }}>
                     <Typography variant='caption'>© 2023 Mir Akademien. All rights reserved.</Typography>
                     <Typography variant='caption' sx={{textDecoration: "underline"}}>Privacy Policy</Typography>
@@ -53,6 +53,7 @@ export default function Footer() {
                     <InstagramIcon />
                     <LinkedInIcon />
                 </Box>
+
             </Box>
         </Box>
     );
