@@ -6,7 +6,7 @@ import HomeDei from "@/components/home/dei";
 
 export default function Home() {
   return (
-    <Box>
+    <Box sx={{ backgroundColor: "rgba(237, 230, 212, 0.5)" }}>
     <HomeDei />
     <Box>
       <Footer></Footer>

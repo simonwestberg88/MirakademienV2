@@ -22,7 +22,7 @@ const theme = createTheme({
     h1: {
       fontSize: '2.5rem',
       lineHeight: '120%',
-      fontWeight: 700,
+      fontWeight: 300,
       [baseTheme.breakpoints.up('sm')]: {
         fontSize: '3.5rem',
       },
@@ -30,7 +30,7 @@ const theme = createTheme({
     h2: {
       fontSize: '2.25rem',
       lineHeight: '120%',
-      fontWeight: 700,
+      fontWeight: 300,
       [baseTheme.breakpoints.up('sm')]: {
         fontSize: '3rem',
       },
@@ -38,7 +38,7 @@ const theme = createTheme({
     h3: {
       fontSize: '2rem',
       lineHeight: '120%',
-      fontWeight: 700,
+      fontWeight: 300,
       [baseTheme.breakpoints.up('sm')]: {
         fontSize: '2.5rem',
       },
@@ -46,7 +46,7 @@ const theme = createTheme({
     h4: {
       fontSize: '1.5rem',
       lineHeight: '140%',
-      fontWeight: 700,
+      fontWeight: 300,
       [baseTheme.breakpoints.up('sm')]: {
         fontSize: '2rem',
         lineHeight: '130%',
@@ -55,7 +55,7 @@ const theme = createTheme({
     h5: {
       fontSize: '1.25rem',
       lineHeight: '140%',
-      fontWeight: 700,
+      fontWeight: 300,
       [baseTheme.breakpoints.up('sm')]: {
         fontSize: '1.5rem',
       },
@@ -63,7 +63,7 @@ const theme = createTheme({
     h6: {
       fontSize: '1.125rem',
       lineHeight: '140%',
-      fontWeight: 700,
+      fontWeight: 300,
       [baseTheme.breakpoints.up('sm')]: {
         fontSize: '1.25rem',
       },
