@@ -5,6 +5,8 @@ import Footer from "@/components/footer";
 import HomeDei from "@/components/home/dei";
 import HomeWelcome from "@/components/home/welcome";
 import HomeTeam from "@/components/home/team";
+import HomeNews from "@/components/home/news";
+import HomeClientStories from "@/components/home/client_stories";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
     <HomeDei />
     <HomeWelcome />
     <HomeTeam />
+    <HomeClientStories />
+    <HomeNews />
     <Box>
       <Footer></Footer>
     </Box>
