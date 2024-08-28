@@ -55,10 +55,13 @@ export default function ButtonAppBar() {
             left: 0,
             width: '100%',
             height: '100%',
+            margin: 0, // Remove any margin
+            padding: 0, // Remove any padding
             backgroundColor: theme.palette.background.default,
             display: 'flex',
             flexDirection: 'column',
-            padding: theme.spacing(2),
+            justifyContent: 'flex-start', // Align items to the top
+            alignItems: 'flex-start', // Align items to the left
           },
         }}
         anchorOrigin={{
@@ -70,7 +73,7 @@ export default function ButtonAppBar() {
           horizontal: 'left',
         }}
       >
-        <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: theme.spacing(4) }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', width: '100%', padding: theme.spacing(2) }}>
           <IconButton
             size="large"
             edge="start"
@@ -83,13 +86,13 @@ export default function ButtonAppBar() {
           </IconButton>
           <img src="/mir_logo.svg" width={121.85} height={61.25} alt="MIR Logo" />
         </Box>
-        <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px' }}>Our Story</MenuItem>
-        <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px' }}>Services</MenuItem>
-        <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px' }}>Projects</MenuItem>
-        <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px' }}>News</MenuItem>
-        <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px' }}>Blog</MenuItem>
-        <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px' }}>Reports</MenuItem>
-        <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px' }}>Contacts</MenuItem>
+        <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px', width: '100%' }}>Our Story</MenuItem>
+        <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px', width: '100%' }}>Services</MenuItem>
+        <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px', width: '100%' }}>Projects</MenuItem>
+        <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px', width: '100%' }}>News</MenuItem>
+        <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px', width: '100%' }}>Blog</MenuItem>
+        <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px', width: '100%' }}>Reports</MenuItem>
+        <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px', width: '100%' }}>Contacts</MenuItem>
       </Menu>
     </Box>
   );
