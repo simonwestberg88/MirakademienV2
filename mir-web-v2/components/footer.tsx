@@ -2,7 +2,9 @@
 
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
-import { Box, Button, TextField, Typography } from '@mui/material';
+import { Box, Button, Divider, TextField, Typography } from '@mui/material';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export default function Footer() {
     const theme = useTheme();
@@ -34,13 +36,24 @@ export default function Footer() {
                         <Typography sx={{ fontWeight: "bold" }}>Subscribe</Typography>
                         <Box sx={{ pt: "10px" }}></Box>
                         <Typography>Join our newsletter to stay up to date on features and releases.</Typography>
-                        <Box sx={{display: "flex"}}><TextField></TextField><Button>Subscribe</Button>
+                        <Box sx={{ display: "flex" }}><TextField></TextField><Button>Subscribe</Button>
                         </Box>
                         <Typography variant="caption">By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</Typography>
                     </Box>
                 </Box>
             </Box>
-            <Box key="l2_2"></Box>
+            <Box key="l2_2" sx={{ pl: "64px", pr: "64px", display: "flex" }}>
+                <Divider sx={{ borderColor: theme.palette.text.primary }} />
+                <Box sx={{ display: "flex", gap: 4 }}>
+                    <Typography variant='caption'>© 2023 Mir Akademien. All rights reserved.</Typography>
+                    <Typography variant='caption' sx={{textDecoration: "underline"}}>Privacy Policy</Typography>
+                    <Typography variant="caption" sx={{textDecoration: "underline"}}>Terms of Service</Typography>
+                </Box>
+                <Box sx={{ml: "auto", display:"flex", gap: 2}}>
+                    <InstagramIcon />
+                    <LinkedInIcon />
+                </Box>
+            </Box>
         </Box>
     );
 }
