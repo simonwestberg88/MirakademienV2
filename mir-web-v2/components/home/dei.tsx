@@ -39,7 +39,7 @@ export default function HomeDei({ text = "Contained", ...props }) {
                         <img src="/home/dei/a2.png" alt="a2" />
                         <img src="/home/dei/a3.png" alt="a3" />
                     </Box>
-                    <Box key="img1"
+                    <Box key="img2"
                         sx={{
                             width: "319.25px",
                             display: "flex",
