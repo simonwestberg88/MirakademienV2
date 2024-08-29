@@ -4,7 +4,7 @@ import "./globals.css";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../theme';
-import ButtonAppBar from "@/components/app-bar";
+import ButtonAppBar from "@/app/components/app-bar";
 
 const inter = Inter({ subsets: ["latin"] });
 

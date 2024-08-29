@@ -1,28 +1,28 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { Box } from "@mui/material";
-import Footer from "@/components/footer";
-import HomeDei from "@/components/home/dei";
-import HomeWelcome from "@/components/home/welcome";
-import HomeNews from "@/components/home/news";
-import HomeClientStories from "@/components/home/client_stories";
-import HomeTeam from "./Components/HomeTeam";
-import { ContentfulClient } from "@/Contentful/client";
-import { TeamMember } from "@/Contentful/ITeamMember";
+import Footer from "@/app/components/footer";
+import HomeDei from "@/app/components/home/dei";
+import HomeWelcome from "@/app/components/home/welcome";
+import HomeNews from "@/app/components/home/news";
+import HomeClientStories from "@/app/components/home/client_stories";
+import HomeTeam from "./components/HomeTeam";
+import { ContentfulClient } from "@/app/lib/client";
+import { TeamMember } from "@/types/TeamMember";
 
 export default async function Home() {
 
   const contentfulClient = ContentfulClient.getClient();
   const entries = await contentfulClient.getEntries<TeamMember>({
-    content_type: 'teamMembers',
+    content_type: 'team',
   });
   const teamMembers = entries.items.map(item => ({
-    description: item.fields.description,
     name: item.fields.name,
     picture: item.fields.picture,
     position: item.fields.position,
-    facebook: item.fields.facebook,
-    linkedIn: item.fields.linkedIn
+    email: item.fields.email,
+    responsibility: item.fields.responsibility,
+    expertise: item.fields.expertise
   } as TeamMember))
 
   console.log(teamMembers);

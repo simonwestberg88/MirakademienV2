@@ -1,4 +1,4 @@
-import { TeamMember } from '@/Contentful/ITeamMember';
+import { TeamMember } from '@/types/TeamMember';
 import { Box, Typography } from '@mui/material';
 
 interface HomeTeamProps {
