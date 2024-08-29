@@ -34,6 +34,7 @@ export default function ButtonAppBar() {
           </Box>
           <Box
             sx={{
+              ml: 5,
               display: 'flex',
               flexGrow: 1, // Make this Box take up remaining space
               gap: 2,
