@@ -1,4 +1,4 @@
-import { Asset, Entry, EntrySkeletonType } from 'contentful';
+import { Asset, EntrySkeletonType } from 'contentful';
 
 export interface TeamMember extends EntrySkeletonType  {
     picture: Asset;
