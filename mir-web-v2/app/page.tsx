@@ -12,6 +12,7 @@ import { TeamMember } from "@/app/types/TeamMember";
 import { ClientStory } from "@/app/types/ClientStory";
 import { Blog } from "./types/Blog";
 import HomeBlog from "./components/home/blog";
+import HomeConnect from "./components/home/connect";
 
 export default async function Home() {
 
@@ -65,6 +66,7 @@ export default async function Home() {
       <HomeClientStories stories={stories}/>
       <HomeNews />
       <HomeBlog posts={blogPosts} />
+      <HomeConnect />
       <Box>
         <Footer></Footer>
       </Box>
