@@ -1,0 +1,13 @@
+import { Asset, EntrySkeletonType } from 'contentful';
+import { Document } from '@contentful/rich-text-types';
+
+export interface Blog extends EntrySkeletonType  {
+    title: string;
+    post: Document;
+    date: string;
+    autor: string;
+    slug: string;
+    description: string;
+    tags: string[];
+    coverImage: Asset;
+}

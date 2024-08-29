@@ -1,18 +1,24 @@
-"use client"
-import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
+import { TeamMember } from '@/app/types/TeamMember';
 import { Box, Typography } from '@mui/material';
+import TeamCard from './cards/team_card';
 
+interface HomeTeamProps {
+    teamMembers: TeamMember[];
+}
 
-export default function HomeTeam({ text = "Contained", ...props }) {
-    const theme = useTheme();
+export default function HomeTeam({ teamMembers }: HomeTeamProps) {
     return (
-        <Box sx={{ pt: "112px" }}>
-            <Box key="main1" sx={{ pl: "64px", pr: "64px", display: "flex", flexDirection: "column", height: "100%", alignItems: "center" }}>
-                <Box sx={{display: "flex", flexDirection:"column", alignItems: "center"}}>
-                    <Typography variant='h2'>Meet Our Team</Typography>
-                    <Typography>Get to know the talented individuals behind MIR Akademien.</Typography>
-                </Box>
+        <Box sx={{ pt: '112px', px: '64px', textAlign: 'center' }}>
+            <Typography variant="h2" gutterBottom>
+                Meet Our Team
+            </Typography>
+            <Typography variant="subtitle1" gutterBottom>
+                Get to know the talented individuals behind MIR Akademien.
+            </Typography>
+            <Box sx={{display: "flex", flexWrap: "wrap", rowGap: "96px", justifyContent: "center", pt: "96px"}}>
+                {teamMembers.map((member) => (
+                    <TeamCard key={member.name} member={member} />
+                ))}
             </Box>
         </Box>
     );

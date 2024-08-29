@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 import { Box, Typography } from '@mui/material';
-import { ClientStory } from '@/types/ClientStory';
+import { ClientStory } from '@/app/types/ClientStory';
 import ClientStoryCard from './cards/client_story_card';
 
 interface ClientStoriesProps {

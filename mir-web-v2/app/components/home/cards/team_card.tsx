@@ -1,4 +1,4 @@
-import { TeamMember } from '@/types/TeamMember';
+import { TeamMember } from '@/app/types/TeamMember';
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image'
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
