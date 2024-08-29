@@ -31,7 +31,7 @@ export default async function Home() {
     <Box sx={{ backgroundColor: "rgba(237, 230, 212, 0.5)" }}>
       <HomeDei />
       <HomeWelcome />
-      {/* <HomeTeam teamMembers={teamMembers} /> */}
+      <HomeTeam teamMembers={teamMembers} />
       <HomeClientStories />
       <HomeNews />
       <Box>
