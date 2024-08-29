@@ -27,7 +27,7 @@ export default function ButtonAppBar() {
 
   if (isDesktop) {
     return (
-      <AppBar position="static" sx={{ height: 83, backgroundColor: theme.palette.background.default }}>
+      <AppBar position="static" sx={{ height: 83, backgroundColor: theme.palette.background.default, boxShadow: "none" }}>
         <Toolbar sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '100%' }}>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <img src="/mir_logo.svg" width={121.85} height={61.25} alt="MIR Logo" />
