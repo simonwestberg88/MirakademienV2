@@ -20,7 +20,7 @@ export default function HomeBlog({ posts }: BlogProps) {
                     <Typography variant='h2'>Unlock Your Potential with MIR Akademien</Typography>
                     <Typography variant='body1'>Discover our range of services designed to foster diversity and inclusion. We provide comprehensive solutions to help organizations create an inclusive environment where everyone can thrive.</Typography>
                 </Box>
-                <Box sx={{ display: "flex", flexWrap: "wrap", rowGap: "96px", justifyContent: "flex-start", pt: "96px" }}>
+                <Box sx={{ display: "flex", flexWrap: "wrap", rowGap: "96px", justifyContent: "flex-start", pt: "96px", columnGap: "48px"  }}>
                     {posts.map((post) => (
                         <BlogCard post={post}></BlogCard>
                     ))}

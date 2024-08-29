@@ -18,7 +18,7 @@ export default function BlogCard({ post }: BlogCardProps) {
                 height={240}
             ></Image>
             <Box>
-                <Typography variant='h4' sx={{ fontWeight: 700 }}>{post.title}</Typography>
+                <Typography variant='h4' sx={{ fontWeight: 300 }}>{post.title}</Typography>
                 <Typography>{post.description}</Typography>
             </Box>
         </Box>
