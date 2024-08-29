@@ -40,18 +40,17 @@ export default function ButtonAppBar() {
               alignItems: 'center',
               '& > *': {
                 fontSize: theme.typography.body1.fontSize,
-                color: theme.palette.primary.main,
                 textAlign: 'left',
               },
             }}
           >
-            <MenuItem component="a" href="#our-story">Our Story</MenuItem>
-            <MenuItem component="a" href="#services">Services</MenuItem>
-            <MenuItem component="a" href="#projects">Projects</MenuItem>
-            <MenuItem component="a" href="#news">News</MenuItem>
-            <MenuItem component="a" href="#blog">Blog</MenuItem>
-            <MenuItem component="a" href="#reports">Reports</MenuItem>
-            <MenuItem component="a" href="#contacts">Contacts</MenuItem>
+            <MenuItem sx={{color: "black"}} component="a" href="#our-story">Our Story</MenuItem>
+            <MenuItem sx={{color: "black"}}component="a" href="#services">Services</MenuItem>
+            <MenuItem sx={{color: "black"}} component="a" href="#projects">Projects</MenuItem>
+            <MenuItem sx={{color: "black"}} component="a" href="#news">News</MenuItem>
+            <MenuItem sx={{color: "black"}} component="a" href="#blog">Blog</MenuItem>
+            <MenuItem sx={{color: "black"}} component="a" href="#reports">Reports</MenuItem>
+            <MenuItem sx={{color: "black"}} component="a" href="#contacts">Contacts</MenuItem>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <BlueButton text="Contact Us" />
