@@ -5,6 +5,7 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../theme';
 import ButtonAppBar from "@/app/components/app-bar";
+import { Box } from "@mui/material";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +25,7 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <ButtonAppBar></ButtonAppBar>
-            {children}
+              {children}
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

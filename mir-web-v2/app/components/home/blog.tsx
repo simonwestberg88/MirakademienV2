@@ -4,7 +4,6 @@ import { useTheme } from '@mui/material/styles';
 import { Box, Button, Typography } from '@mui/material';
 import { Blog } from '@/app/types/Blog';
 import BlogCard from './cards/blog_card';
-import BlueButtonOutlined from '../blue_button_outlined';
 
 interface BlogProps {
     posts: Blog[];

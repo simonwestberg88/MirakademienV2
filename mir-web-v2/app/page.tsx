@@ -1,6 +1,4 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import { Box, listItemSecondaryActionClasses } from "@mui/material";
+import { Box } from "@mui/material";
 import Footer from "@/app/components/footer";
 import HomeDei from "@/app/components/home/dei";
 import HomeWelcome from "@/app/components/home/welcome";
