@@ -10,9 +10,9 @@ export default function OurStoryEthos() {
             flexDirection: "column",
             gap: "24px",
             mr: "64px",
-            ml: "64px"
+            ml: "64px",
         }}>
-            <Box sx={{ gap: "16px" }}>
+            <Box sx={{ rowGapgap: "112px" }}>
                 <Typography sx={{ fontWeight: 500 }}>ETHOS</Typography>
                 <Typography variant="h2">UBUNTU circle</Typography>
             </Box>
@@ -44,55 +44,52 @@ export default function OurStoryEthos() {
                     Ubuntu is chosen as a ground to stand on, deeply influencing the vision of MIR Akademien culture and shaping its mission committed to the development of social innovation and training.
                 </Typography>
             </Box>
-            <Box >
+            <Box sx={{ mt: "112px", display: "flex", flexDirection: "column", gap: "112px" }}>
                 <Box key="vison"
                     sx={{
                         display: "flex",
-                        alignItems: 'center', // Center the content vertically
+                        alignItems: 'center',
                         justifyContent: 'center',
                         gap: "48px"
                     }}>
-                    <Box
-                        sx={{
-                            position: 'relative',
-                            width: 370,
-                            height: 400,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center'
-                        }}
-                    >
-                        {/* Image */}
-                        <Image
-                            src="/our-story/vision_cloud.png"
-                            alt="vision"
-                            width={370}
-                            height={400}
-                        />
-
-                        {/* Overlay Text */}
-                        <Typography
-                            variant="h5"
-                            sx={{
-                                position: 'absolute',
-                                textAlign: 'center'
-                            }}
-                        >
-                            Vision
-                        </Typography>
-                    </Box>
-
+                    <Image
+                        src="/our-story/vision.png"
+                        alt="vision"
+                        width={370}
+                        height={400}
+                    />
                     <Typography key="vision-para">
                         Ubuntu promotes ethical leadership that values collective success and fosters a trusting, open communication environment. By integrating Ubuntu, MIR Akademien enhances team collaboration and ensures all employees feel valued, seen and heard, contributing significantly to the organization’s goals.
                     </Typography>
                 </Box>
-                <Box key="mission">
-                    <Box>
-                        <Typography>MIR Akademien applies Ubuntu in its external mission through training and development of social innovation, aiming to build communities where each person’s worth is upheld.
+                <Box key="mission"
+                    sx=
+                    {{
+                        display: "flex",
+                        gap: "48px",
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}>
+                    <Box sx={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                        <Typography>
+                            MIR Akademien applies Ubuntu in its external mission through training and development of social innovation, aiming to build communities where each person’s worth is upheld.
+                        </Typography>
+                        <Typography>
                             Our projects and initiatives are designed with the individual in the community at heart. We strive to create solutions that are not only effective in addressing immediate challenges but also empowering people to thrive.
+                        </Typography>
+                        <Typography>
                             This approach to social innovation is crucial as it ensures that the solutions we develop are both inclusive and beneficial to all community members.
-                            Our training programs are an extension of this belief, aimed at empowering individuals not just to improve their own lives but also to become catalysts for widespread community growth and well-being.</Typography>
+                        </Typography>
+                        <Typography>
+                            Our training programs are an extension of this belief, aimed at empowering individuals not just to improve their own lives but also to become catalysts for widespread community growth and well-being.
+                        </Typography>
                     </Box>
+                    <Image
+                        src="/our-story/mission.png"
+                        alt="vision"
+                        width={371}
+                        height={398}
+                    />
                 </Box>
             </Box>
         </Box>);
