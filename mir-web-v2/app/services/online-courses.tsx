@@ -6,7 +6,7 @@ export default function ServiceOnlineCourses() {
     const theme = useTheme();
     return (
         <Box sx={{ ml: "64px", mr: "64px", pt: "128px", display: "flex", gap: "80px", alignItems: "center" }}>
-            <Image width={345} height={372} src="/yellow_cloud.png" alt="service_orange">
+            <Image width={345} height={372} src="/yellow_cloud.png" alt="service_yellow">
 
             </Image>
             <Box sx={{

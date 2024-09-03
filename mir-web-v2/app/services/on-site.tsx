@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function ServiceOnsite() {
     const theme = useTheme();
     return (
-        <Box sx={{ ml: "64px", mr: "64px", pt: "128px", display:"flex", gap: "80px", alignItems:"center" }}>
+        <Box sx={{ ml: "64px", mr: "64px", pt: "128px", display: "flex", gap: "80px", alignItems: "center" }}>
             <Box sx={{
                 gap: "32px", display: "flex", flexDirection: "column"
             }}>

@@ -4,6 +4,7 @@ import CoverComponent from "../components/cover";
 import Services123 from "./one-two-three";
 import ServiceOnsite from "./on-site";
 import ServiceOnlineCourses from "./online-courses";
+import ServiceCoaching from "./coaching";
 
 export default function Services() {
     return (
@@ -12,6 +13,7 @@ export default function Services() {
             <Services123 />
             <ServiceOnsite />
             <ServiceOnlineCourses />
+            <ServiceCoaching />
             <Footer />
         </Box>
     );
