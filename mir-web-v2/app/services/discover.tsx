@@ -8,6 +8,7 @@ export default function ServicesDiscover() {
             sx={{
                 height: "421px",
                 pt: "128px",
+                mb: "-128px"
             }}
         >
             <Box
