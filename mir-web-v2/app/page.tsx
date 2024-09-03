@@ -3,7 +3,7 @@ import Footer from "@/app/components/footer";
 import HomeDei from "@/app/components/home/dei";
 import HomeWelcome from "@/app/components/home/welcome";
 import HomeNews from "@/app/components/home/news";
-import HomeClientStories from "@/app/components/home/client_stories";
+import ClientStories from "@/app/components/client_stories";
 import HomeTeam from "./components/home/team";
 import { ContentfulClient } from "@/app/lib/client";
 import { TeamMember } from "@/app/types/TeamMember";
@@ -61,7 +61,7 @@ export default async function Home() {
       <HomeDei />
       <HomeWelcome />
       <HomeTeam teamMembers={teamMembers} />
-      <HomeClientStories stories={stories}/>
+      <ClientStories stories={stories}/>
       <HomeNews />
       <HomeBlog posts={blogPosts} />
       <HomeConnect />
