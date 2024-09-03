@@ -54,8 +54,6 @@ export default async function Home() {
     title: item.fields.title
   } as Blog))
 
-  console.log(blogPosts[0].description)
-
   return (
     <Box sx={{ backgroundColor: "rgba(237, 230, 212, 0.5)" }}>
       <HomeDei />
