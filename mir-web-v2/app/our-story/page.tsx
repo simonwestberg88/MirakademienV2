@@ -6,7 +6,6 @@ import OurStoryStart from "./componenets/first";
 import OurStoryTimeline from "./componenets/timeline";
 import OurStoryEthos from "./componenets/ethos";
 import Footer from "../components/footer";
-import Image from "next/image";
 import BlueButton from "../components/blue_button";
 
 export default function OurStoryPage() {
@@ -14,7 +13,7 @@ export default function OurStoryPage() {
   return (
     <Box>
       <Box sx={{ ml: "64px", display: "flex", gap: "32px", mt: "24px", mb: "24px" }}>
-        <Link sx={{ fontWeight: 500 }}>Home</Link>
+        <Link href="/" underline="none" sx={{ fontWeight: 500 }}>Home</Link>
         <Typography>Our Story</Typography>
       </Box>
       <Box
