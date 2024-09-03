@@ -7,6 +7,7 @@ import ServiceCoaching from "./coaching";
 import ClientStories from "../components/client_stories";
 import { ClientStory } from "../types/ClientStory";
 import { ContentfulClient } from "../lib/client";
+import ServicesDiscover from "./discover";
 
 export default async function Services() {
     const contentfulClient = ContentfulClient.getClient();
@@ -29,6 +30,7 @@ export default async function Services() {
             <ServiceOnlineCourses />
             <ServiceCoaching />
             <ClientStories stories={stories}/>
+            <ServicesDiscover />
             <Footer />
         </Box>
     );
