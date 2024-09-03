@@ -1,7 +1,4 @@
-import { TeamMember } from '@/app/types/TeamMember';
 import { Box, Rating, Typography } from '@mui/material';
-import Image from 'next/image'
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import { ClientStory } from '@/app/types/ClientStory';
 
 interface ClientStoryCardProps {

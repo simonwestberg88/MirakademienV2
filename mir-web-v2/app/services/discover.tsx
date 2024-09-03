@@ -1,5 +1,5 @@
 "use client"
-import { Box, Typography, Link, Button, useTheme } from "@mui/material";
+import { Box, Typography, Button, useTheme } from "@mui/material";
 
 export default function ServicesDiscover() {
     const theme = useTheme();
@@ -29,7 +29,7 @@ export default function ServicesDiscover() {
                     mr: "64px"
                 }}>
                     <Typography variant="h2" color="white">Discover Our Services Today</Typography>
-                    <Typography color="white" sx={{ fontWeight: 600 }}>Contact us to learn more about our services or to schedule a consultation.</Typography>
+                    <Typography color="white">Contact us to learn more about our services or to schedule a consultation.</Typography>
                     <Button color="info" variant="contained"
                         sx={{
                             borderRadius: 40, textTransform: "none",

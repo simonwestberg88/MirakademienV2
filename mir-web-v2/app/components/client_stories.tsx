@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 import { Box, Typography } from '@mui/material';
 import { ClientStory } from '@/app/types/ClientStory';
-import ClientStoryCard from './home/cards/client_story_card';
+import ClientStoryCard from './client_story_card';
 
 interface ClientStoriesProps {
     stories: ClientStory[];
