@@ -13,10 +13,13 @@ export default function ServiceOnlineCourses() {
                 gap: "32px", display: "flex", flexDirection: "column"
             }}>
                 <Typography variant="h3">
-                    Diversity and Inclusion on-site trainings
+                    Diversity and Inclusion online courses
                 </Typography>
                 <Typography>
-                    We utilize cutting-edge support and advisory to assist companies and municipalities in transforming their concepts of social inclusion and innovation into profitable ventures.
+                    Our online courses are designed to empower individuals to champion Diversity and Inclusion initiatives while driving positive social change. We offer practical insights, strategies, and tools to navigate the complex landscape of Diversity and Inclusion and social innovation.
+                </Typography>
+                <Typography sx={{ fontWeight: 700 }}>
+                    Coming  soon!  Stay  tuned!
                 </Typography>
                 <Button color="info" variant="outlined"
                     sx={{
