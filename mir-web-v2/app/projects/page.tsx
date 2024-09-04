@@ -1,6 +1,7 @@
 import { Box, Link, Typography } from "@mui/material";
 import { ContentfulClient } from "../lib/client";
 import { Project } from "../types/project";
+import ProjectCard from "../components/cards/projectCard";
 
 export default async function Projects(){
     const contentfulClient = ContentfulClient.getClient();
@@ -19,7 +20,9 @@ export default async function Projects(){
     tags: item.fields.tags,
     facebook: item.fields.facebook,
     linkedIn: item.fields.linkedIn,
-    website: item.fields.website
+    website: item.fields.website,
+    coverHeight: item.fields.coverHeight,
+    shortTitle: item.fields.shortTitle
   } as Project));
 
     return (
@@ -36,7 +39,11 @@ export default async function Projects(){
                 <Typography variant="h2">Ongoing Projects</Typography>
                 <Typography>Explore our ongoing projects and their objectives.</Typography>
             </Box>
-            
+            <Box sx={{ display: "flex", flexWrap: "wrap", rowGap: "96px", justifyContent: "center", pt: "96px" }}>
+                    {projects.map((project) => (
+                        <ProjectCard key={project.slug} project={project} />
+                    ))}
+                </Box>
         </Box>
     );
 }

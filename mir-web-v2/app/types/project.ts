@@ -14,4 +14,6 @@ export interface Project extends EntrySkeletonType  {
     projectDescription: Document;
     research: string;
     descriptionPicture: Asset;
+    coverHeight: number;
+    shortTitle: string;
 }
