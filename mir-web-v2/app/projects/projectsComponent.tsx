@@ -1,4 +1,5 @@
 "use client"
+import { useState } from "react";
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import ProjectCard from "../components/cards/projectCard";
 import { Project } from "../types/project";
@@ -9,11 +10,19 @@ interface ProjectsProps {
     description: string;
     buttonText: string;
 }
+
 export default function ProjectsComponent(props: ProjectsProps) {
     const theme = useTheme();
-    const midpoint = Math.ceil(props.projects.length / 2);
-    const firstHalf = props.projects.slice(0, midpoint);
-    const secondHalf = props.projects.slice(midpoint);
+    const [showAllProjects, setShowAllProjects] = useState(false); // state to control visibility
+    const visibleProjects = showAllProjects ? props.projects : props.projects.slice(0, 4); // show 4 or all
+
+    const handleShowMore = () => {
+        setShowAllProjects(true); // show all projects when button is clicked
+    };
+
+    const midpoint = Math.ceil(visibleProjects.length / 2);
+    const firstHalf = visibleProjects.slice(0, midpoint);
+    const secondHalf = visibleProjects.slice(midpoint);
 
     return (
         <Box>
@@ -32,33 +41,37 @@ export default function ProjectsComponent(props: ProjectsProps) {
             >
                 <Box>
                     {firstHalf.map((project) => (
-                        <Box sx={{ display: "flex", pt: "64px", maxWidth: "632px" }}>
-                            <ProjectCard key={project.slug} project={project} />
+                        <Box sx={{ display: "flex", pt: "64px", maxWidth: "632px" }} key={project.slug}>
+                            <ProjectCard project={project} />
                         </Box>
                     ))}
                 </Box>
                 <Box>
                     {secondHalf.map((project) => (
-                        <Box sx={{ display: "flex", pt: "64px", maxWidth: "632px" }}>
-                            <ProjectCard key={project.slug} project={project} />
+                        <Box sx={{ display: "flex", pt: "64px", maxWidth: "632px" }} key={project.slug}>
+                            <ProjectCard project={project} />
                         </Box>
                     ))}
                 </Box>
             </Box>
-            <Box sx={{ display: "flex", justifyContent: "center", pt: "64px" }}>
-                <Button
-                    variant='outlined'
-                    color="info"
-                    sx={{
-                        borderRadius: 40,
-                        fontSize: theme.typography.body1.fontSize,
-                        lineHeight: theme.typography.body1.lineHeight,
-                        fontFamily: theme.typography.body1.fontFamily,
-                        textTransform: "none"
-                    }}
-                >{props.buttonText}
-                </Button>
-            </Box>
+            {!showAllProjects && (
+                <Box sx={{ display: "flex", justifyContent: "center", pt: "32px" }}>
+                    <Button
+                        onClick={handleShowMore} // Call the handler when the button is clicked
+                        variant='outlined'
+                        color="info"
+                        sx={{
+                            borderRadius: 40,
+                            fontSize: theme.typography.body1.fontSize,
+                            lineHeight: theme.typography.body1.lineHeight,
+                            fontFamily: theme.typography.body1.fontFamily,
+                            textTransform: "none"
+                        }}
+                    >
+                        {props.buttonText}
+                    </Button>
+                </Box>
+            )}
         </Box>
     );
 }
