@@ -7,6 +7,7 @@ export default async function Projects() {
   const contentfulClient = ContentfulClient.getClient();
   const teamResponse = await contentfulClient.getEntries<Project>({
     content_type: 'project',
+    order: ['fields.date']
   });
   const projects = teamResponse.items.map(item => ({
     title: item.fields.title,
@@ -24,6 +25,11 @@ export default async function Projects() {
     coverHeight: item.fields.coverHeight,
     shortTitle: item.fields.shortTitle
   } as Project));
+
+  const midpoint = Math.ceil(projects.length / 2);
+
+  const firstHalf = projects.slice(0, midpoint);
+  const secondHalf = projects.slice(midpoint);
 
   return (
     <Box sx={{ ml: "64px", mr: "64px" }}>
@@ -43,16 +49,25 @@ export default async function Projects() {
         sx={{
           display: "flex",
           flexWrap: "wrap",
-          alignItems: "flex-start", // Ensures the items start at the top of the row
-          gap: "32px", // Adds space between the rows and columns
+          alignItems: "flex-start",
+          gap: "32px",
           width: "100%",
         }}
       >
-        {projects.map((project) => (
-          <Box sx={{ display: "flex", pt: "64px", maxWidth: "632px" }}>
-            <ProjectCard key={project.slug} project={project} />
-          </Box>
-        ))}
+        <Box>
+          {firstHalf.map((project) => (
+            <Box sx={{ display: "flex", pt: "64px", maxWidth: "632px" }}>
+              <ProjectCard key={project.slug} project={project} />
+            </Box>
+          ))}
+        </Box>
+        <Box>
+          {secondHalf.map((project) => (
+            <Box sx={{ display: "flex", pt: "64px", maxWidth: "632px" }}>
+              <ProjectCard key={project.slug} project={project} />
+            </Box>
+          ))}
+        </Box>
       </Box>
     </Box>
   );
