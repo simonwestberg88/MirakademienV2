@@ -21,7 +21,7 @@ export default function HomeBlog({ posts }: BlogProps) {
                 </Box>
                 <Box sx={{ display: "flex", flexWrap: "wrap", rowGap: "96px", justifyContent: "flex-start", pt: "96px", columnGap: "48px"  }}>
                     {posts.map((post) => (
-                        <BlogCard post={post}></BlogCard>
+                        <BlogCard post={post} key={post.slug}></BlogCard>
                     ))}
                 </Box>
                 <Button variant='outlined' color="info"

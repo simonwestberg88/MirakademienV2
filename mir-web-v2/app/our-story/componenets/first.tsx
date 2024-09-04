@@ -18,9 +18,9 @@ export default function OurStoryStart() {
                     }}
                 >
                     <Typography>I never actually planned to start my own thing. But, funny enough, it just happened overnight.</Typography>
-                    <Typography>Back in 2018 I was running the study circle “Human Rights for newly arrived migrants” for a group of women. I always thought of myself as a human rights advocate, totally open-minded. I've been doing research and communication work as well as methodology development for social inclusion for years.</Typography>
+                    <Typography>Back in 2018 I was running the study circle “Human Rights for newly arrived migrants” for a group of women. I always thought of myself as a human rights advocate, totally open-minded. I&apos;ve been doing research and communication work as well as methodology development for social inclusion for years.</Typography>
                     <Typography>One day I was running the circle and together with participants we were talking about rights in Sweden and I was pouring my heart out, trying to “share my wisdom.” However, the connection between them and me never happened. It turned out I was subjective to my audience and did a little research on it, so I was underestimating their knowledge on human rights.</Typography>
-                    <Typography>During the break, my friend, who was running the NGO and invited me to host a circle, took me aside and gave me a reality check. She was super diplomatic about it but basically said, “Jenny, get off your high horse and start talking to them, not at them. They’ve got plenty to share too.”</Typography>
+                    <Typography>During the break, my friend, who was running the NGO and invited me to host a circle, took me aside and gave me a reality check. She was super diplomatic about it but basically said, “Jenny, get off your high horse and start talking to them, not at them. They&apos;ve got plenty to share too.”</Typography>
                 </Box>
             </Box>
         </Box>

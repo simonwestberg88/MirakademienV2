@@ -1,9 +1,9 @@
 "use client"
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
-import { Box, Button, Typography } from '@mui/material';
-import BlueButton from '../blue_button';
+import { Box, Typography } from '@mui/material';
 import BlueButtonOutlined from '../blue_button_outlined';
+import Image from 'next/image';
 
 
 export default function HomeWelcome({ text = "Contained", ...props }) {
@@ -30,7 +30,7 @@ export default function HomeWelcome({ text = "Contained", ...props }) {
                 </Box>
                 <Box key="v2"
                     sx={{ display: "flex", width: "100%", gap: "16px" }}>
-                    <img src="/home/welcome/a1.png" alt="a1" style={{ marginLeft: "auto", width: 616, height: 640 }}/>
+                    <Image src="/home/welcome/a1.png" alt="a1" style={{ marginLeft: "auto", width: 616, height: 640 }}/>
                 </Box>
             </Box>
         </Box>

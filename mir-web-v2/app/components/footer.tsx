@@ -5,6 +5,7 @@ import { useTheme } from '@mui/material/styles';
 import { Box, Button, Divider, TextField, Typography } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Image from 'next/image';
 
 export default function Footer() {
     const theme = useTheme();
@@ -12,7 +13,7 @@ export default function Footer() {
         <Box key="l1" sx={{ height: 545, width: "100%", backgroundColor: theme.palette.background.default, mt: "112px" }}>
             <Box key="l2_1" sx={{ paddingTop: "80px", pl: "64px", pr: "64px", display: "flex", justifyContent: "space-between", alignItems: "top" }}>
                 <Box key="l3_1" sx={{ width: "684px", display: "flex", justifyContent: 'space-between' }}>
-                    <img src="/mir_logo.svg" width={121.85} height={61.25} alt="MIR Logo" />
+                    <Image src="/mir_logo.png" width={121.85} height={61.25} alt="MIR Logo" />
                     <Box key="l4_1">
                         <Typography sx={{ fontWeight: "bold" }}>About Us</Typography>
                         <Box sx={{ pt: "10px" }}>

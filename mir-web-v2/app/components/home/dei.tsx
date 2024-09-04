@@ -3,6 +3,7 @@ import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 import { Box, Typography } from '@mui/material';
 import BlueButton from '../blue_button';
+import Image from 'next/image';
 
 
 export default function HomeDei({ text = "Contained", ...props }) {
@@ -35,9 +36,9 @@ export default function HomeDei({ text = "Contained", ...props }) {
                             flexDirection: "column",
                             gap: "16px"
                         }}>
-                        <img src="/home/dei/a1.png" alt="a1" />
-                        <img src="/home/dei/a2.png" alt="a2" />
-                        <img src="/home/dei/a3.png" alt="a3" />
+                        <Image src="/home/dei/a1.png" alt="a1" />
+                        <Image src="/home/dei/a2.png" alt="a2" />
+                        <Image src="/home/dei/a3.png" alt="a3" />
                     </Box>
                     <Box key="img2"
                         sx={{
@@ -46,9 +47,9 @@ export default function HomeDei({ text = "Contained", ...props }) {
                             flexDirection: "column",
                             gap: "16px"
                         }}>
-                        <img src="/home/dei/b1.png" alt="b1" />
-                        <img src="/home/dei/b2.png" alt="b2" />
-                        <img src="/home/dei/b3.png" alt="b3" />
+                        <Image src="/home/dei/b1.png" alt="b1" />
+                        <Image src="/home/dei/b2.png" alt="b2" />
+                        <Image src="/home/dei/b3.png" alt="b3" />
                     </Box>
                 </Box>
             </Box>

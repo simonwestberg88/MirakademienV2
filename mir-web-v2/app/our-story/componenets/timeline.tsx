@@ -22,7 +22,7 @@ export default function OurStoryTimeline() {
                     textAlign: "center"     // Center text inside the Typography components
                 }}>
                     <Typography>Inclusion</Typography>
-                    <Typography variant="h2">MIR's Timeline</Typography>
+                    <Typography variant="h2">MIR&apos;s Timeline</Typography>
                 </Box>
                 <Box key="b">
                     <Timeline position="alternate">
@@ -83,7 +83,7 @@ export default function OurStoryTimeline() {
                             </TimelineSeparator>
                             <TimelineContent sx={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                                 <Typography variant="h3">2023 - Current</Typography>
-                                <Typography variant="body2">Running European projects, consultancy and training  while scaling up by building online platforms development, expanding services variety and providing training credentials
+                                <Typography variant="body2">Running European projects, consultancy and training while scaling up by building online platforms development, expanding services variety and providing training credentials
                                 </Typography>
                                 <Typography variant="body2">
                                     I believe that by embracing differences, we forge stronger teams, make better decisions and create spaces where individuals feel seen, heard, and valued.</Typography>

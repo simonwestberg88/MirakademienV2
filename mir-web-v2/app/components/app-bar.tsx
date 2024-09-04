@@ -11,13 +11,14 @@ import MenuItem from '@mui/material/MenuItem';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import BlueButton from './blue_button';
+import Image from 'next/image';
 
 export default function ButtonAppBar() {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up('sm'));
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleMenuClick = (event) => {
+  const handleMenuClick = (event: any) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -30,7 +31,7 @@ export default function ButtonAppBar() {
       <AppBar position="static" sx={{ height: 83, backgroundColor: theme.palette.background.default, boxShadow: "none" }}>
         <Toolbar sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '100%' }}>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <img src="/mir_logo.png" width={121.85} height={61.25} alt="MIR Logo" />
+            <Image src="/mir_logo.png" width={121.85} height={61.25} alt="MIR Logo" />
           </Box>
           <Box
             sx={{
@@ -103,7 +104,7 @@ export default function ButtonAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <img src="/mir_logo.svg" width={121.85} height={61.25} alt="MIR Logo" />
+          <Image src="/mir_logo.png" width={121.85} height={61.25} alt="MIR Logo" />
         </Box>
         <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px', width: '100%' }}>Our Story</MenuItem>
         <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px', width: '100%' }}>Services</MenuItem>
