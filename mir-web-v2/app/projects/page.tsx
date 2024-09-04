@@ -56,11 +56,13 @@ export default async function Projects() {
         description="Explore our ongoing projects and their objectives."
         title="Ongoing Projects"
         projects={ongoingProjects}
+        buttonText="View all ongoing Projects"
       />
       <ProjectsComponent
         description="Explore our closed projects and their objectives."
         title="Closed Projects"
         projects={closedProjects}
+        buttonText="View all closed Projects"
       />
     </Box>
   );

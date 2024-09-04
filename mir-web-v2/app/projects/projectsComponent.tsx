@@ -1,4 +1,5 @@
-import { Box, Typography } from "@mui/material";
+"use client"
+import { Box, Button, Typography, useTheme } from "@mui/material";
 import ProjectCard from "../components/cards/projectCard";
 import { Project } from "../types/project";
 
@@ -6,8 +7,10 @@ interface ProjectsProps {
     projects: Project[];
     title: string;
     description: string;
+    buttonText: string;
 }
 export default function ProjectsComponent(props: ProjectsProps) {
+    const theme = useTheme();
     const midpoint = Math.ceil(props.projects.length / 2);
     const firstHalf = props.projects.slice(0, midpoint);
     const secondHalf = props.projects.slice(midpoint);
@@ -41,6 +44,20 @@ export default function ProjectsComponent(props: ProjectsProps) {
                         </Box>
                     ))}
                 </Box>
+            </Box>
+            <Box sx={{ display: "flex", justifyContent: "center", pt: "64px" }}>
+                <Button
+                    variant='outlined'
+                    color="info"
+                    sx={{
+                        borderRadius: 40,
+                        fontSize: theme.typography.body1.fontSize,
+                        lineHeight: theme.typography.body1.lineHeight,
+                        fontFamily: theme.typography.body1.fontFamily,
+                        textTransform: "none"
+                    }}
+                >{props.buttonText}
+                </Button>
             </Box>
         </Box>
     );
