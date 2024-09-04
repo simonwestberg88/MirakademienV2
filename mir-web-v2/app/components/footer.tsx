@@ -33,9 +33,8 @@ export default function Footer() {
                     </Box>
                 </Box>
                 <Box key="l3_2" sx={{ width: 500, marginBottom: 2 }}>
-                    <Box>
+                    <Box sx={{display:"flex", flexDirection: "column", gap: "16px"}}>
                         <Typography sx={{ fontWeight: "bold" }}>Subscribe</Typography>
-                        <Box sx={{ pt: "10px" }}></Box>
                         <Typography>Join our newsletter to stay up to date on features and releases.</Typography>
                         <Box sx={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
                             <TextField
