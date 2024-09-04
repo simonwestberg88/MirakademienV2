@@ -14,10 +14,11 @@ interface ProjectsProps {
 export default function ProjectsComponent(props: ProjectsProps) {
     const theme = useTheme();
     const [showAllProjects, setShowAllProjects] = useState(false); // state to control visibility
+
     const visibleProjects = showAllProjects ? props.projects : props.projects.slice(0, 4); // show 4 or all
 
-    const handleShowMore = () => {
-        setShowAllProjects(true); // show all projects when button is clicked
+    const toggleProjectsView = () => {
+        setShowAllProjects(!showAllProjects); // toggle between showing all and showing 4
     };
 
     const midpoint = Math.ceil(visibleProjects.length / 2);
@@ -54,24 +55,22 @@ export default function ProjectsComponent(props: ProjectsProps) {
                     ))}
                 </Box>
             </Box>
-            {!showAllProjects && (
-                <Box sx={{ display: "flex", justifyContent: "center", pt: "32px" }}>
-                    <Button
-                        onClick={handleShowMore} // Call the handler when the button is clicked
-                        variant='outlined'
-                        color="info"
-                        sx={{
-                            borderRadius: 40,
-                            fontSize: theme.typography.body1.fontSize,
-                            lineHeight: theme.typography.body1.lineHeight,
-                            fontFamily: theme.typography.body1.fontFamily,
-                            textTransform: "none"
-                        }}
-                    >
-                        {props.buttonText}
-                    </Button>
-                </Box>
-            )}
+            <Box sx={{ display: "flex", justifyContent: "center", pt: "32px" }}>
+                <Button
+                    onClick={toggleProjectsView} // Call the toggle function when the button is clicked
+                    variant='outlined'
+                    color="info"
+                    sx={{
+                        borderRadius: 40,
+                        fontSize: theme.typography.body1.fontSize,
+                        lineHeight: theme.typography.body1.lineHeight,
+                        fontFamily: theme.typography.body1.fontFamily,
+                        textTransform: "none"
+                    }}
+                >
+                    {showAllProjects ? "Show fewer" : props.buttonText} {/* Toggle button text */}
+                </Button>
+            </Box>
         </Box>
     );
 }
