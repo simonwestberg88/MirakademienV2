@@ -2,6 +2,7 @@ import { Box, Link, Typography } from "@mui/material";
 import { ContentfulClient } from "../lib/client";
 import { Project } from "../types/project";
 import ProjectsComponent from "./projectsComponent";
+import ProjectsSupport from "./support";
 
 export default async function Projects() {
   const contentfulClient = ContentfulClient.getClient();
@@ -64,6 +65,7 @@ export default async function Projects() {
         projects={closedProjects}
         buttonText="View all closed Projects"
       />
+      <ProjectsSupport />
     </Box>
   );
 }
