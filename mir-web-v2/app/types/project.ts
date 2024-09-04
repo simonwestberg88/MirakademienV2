@@ -16,4 +16,6 @@ export interface Project extends EntrySkeletonType  {
     descriptionPicture: Asset;
     coverHeight: number;
     shortTitle: string;
+    date: string;
+    isOngoing: boolean;
 }

@@ -26,6 +26,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <Box sx={{ display: "flex", gap: "8px" }}>
                 {project.tags.map((tag) => (
                     <Button
+                        key={tag}
                         sx={{
                             background: "#FF7612",
                             color: "white",

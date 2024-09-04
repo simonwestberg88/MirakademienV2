@@ -1,35 +1,46 @@
 import { Box, Link, Typography } from "@mui/material";
 import { ContentfulClient } from "../lib/client";
 import { Project } from "../types/project";
-import ProjectCard from "../components/cards/projectCard";
+import ProjectsComponent from "./projectsComponent";
 
 export default async function Projects() {
   const contentfulClient = ContentfulClient.getClient();
-  const teamResponse = await contentfulClient.getEntries<Project>({
+  const projectsResponse = await contentfulClient.getEntries<Project>({
     content_type: 'project',
-    order: ['fields.date']
+    order: ['fields.date'],
+    select: [
+      'fields.shortTitle', 
+      'fields.description', 
+      'fields.slug', 
+      'fields.cover', 
+      'fields.date', 
+      'fields.isOngoing', 
+      'fields.tags',
+      'fields.coverHeight'
+    ], // Specify the fields to fetch
   });
-  const projects = teamResponse.items.map(item => ({
-    title: item.fields.title,
+
+  const projects = projectsResponse.items.map(item => ({
+    // title: item.fields.title,
     cover: item.fields.cover,
     description: item.fields.description,
-    descriptionPicture: item.fields.descriptionPicture,
-    pictures: item.fields.pictures,
-    projectDescription: item.fields.projectDescription,
-    research: item.fields.research,
+    // descriptionPicture: item.fields.descriptionPicture,
+    // pictures: item.fields.pictures,
+    // projectDescription: item.fields.projectDescription,
+    // research: item.fields.research,
     slug: item.fields.slug,
     tags: item.fields.tags,
-    facebook: item.fields.facebook,
-    linkedIn: item.fields.linkedIn,
-    website: item.fields.website,
+    // facebook: item.fields.facebook,
+    // linkedIn: item.fields.linkedIn,
+    // website: item.fields.website,
     coverHeight: item.fields.coverHeight,
-    shortTitle: item.fields.shortTitle
+    shortTitle: item.fields.shortTitle,
+    isOngoing: item.fields.isOngoing,
+    date: item.fields.date,
   } as Project));
 
-  const midpoint = Math.ceil(projects.length / 2);
-
-  const firstHalf = projects.slice(0, midpoint);
-  const secondHalf = projects.slice(midpoint);
+  const ongoingProjects = projects.filter(project => project.isOngoing === true);
+  const closedProjects = projects.filter(project => project.isOngoing === false);
 
   return (
     <Box sx={{ ml: "64px", mr: "64px" }}>
@@ -41,34 +52,16 @@ export default async function Projects() {
         <Typography variant="h1">Projects</Typography>
         <Typography>As dedicated contributors to Diversity and Inclusion practices and social innovation at EU scale, we actively develop and participate in projects aimed at promoting diversity, inclusion and belonging in education and labor market sectors.</Typography>
       </Box>
-      <Box sx={{ pt: "112px", display: "flex", flexDirection: "column", gap: "24px", alignItems: "center" }}>
-        <Typography variant="h2">Ongoing Projects</Typography>
-        <Typography>Explore our ongoing projects and their objectives.</Typography>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          alignItems: "flex-start",
-          gap: "32px",
-          width: "100%",
-        }}
-      >
-        <Box>
-          {firstHalf.map((project) => (
-            <Box sx={{ display: "flex", pt: "64px", maxWidth: "632px" }}>
-              <ProjectCard key={project.slug} project={project} />
-            </Box>
-          ))}
-        </Box>
-        <Box>
-          {secondHalf.map((project) => (
-            <Box sx={{ display: "flex", pt: "64px", maxWidth: "632px" }}>
-              <ProjectCard key={project.slug} project={project} />
-            </Box>
-          ))}
-        </Box>
-      </Box>
+      <ProjectsComponent
+        description="Explore our ongoing projects and their objectives."
+        title="Ongoing Projects"
+        projects={ongoingProjects}
+      />
+      <ProjectsComponent
+        description="Explore our closed projects and their objectives."
+        title="Closed Projects"
+        projects={closedProjects}
+      />
     </Box>
   );
 }
