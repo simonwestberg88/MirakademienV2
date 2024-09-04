@@ -3,8 +3,8 @@ import { ContentfulClient } from "../lib/client";
 import { Project } from "../types/project";
 import ProjectCard from "../components/cards/projectCard";
 
-export default async function Projects(){
-    const contentfulClient = ContentfulClient.getClient();
+export default async function Projects() {
+  const contentfulClient = ContentfulClient.getClient();
   const teamResponse = await contentfulClient.getEntries<Project>({
     content_type: 'project',
   });
@@ -25,25 +25,35 @@ export default async function Projects(){
     shortTitle: item.fields.shortTitle
   } as Project));
 
-    return (
-        <Box sx={{ml:"64px", mr:"64px"}}>
-            <Box sx={{ display: "flex", gap: "32px", mt: "24px", mb: "24px" }}>
-                <Link href="/" underline="none" sx={{ fontWeight: 500 }}>Home</Link>
-                <Typography>Projects</Typography>
-            </Box>
-            <Box sx={{tp: "112px", maxWidth: "768px"}}>
-                    <Typography variant="h1">Projects</Typography>
-                    <Typography>As dedicated contributors to Diversity and Inclusion practices and social innovation at EU scale, we actively develop and participate in projects aimed at promoting diversity, inclusion and belonging in education and labor market sectors.</Typography>
-            </Box>
-            <Box sx={{pt: "112px", display: "flex", flexDirection: "column", gap: "24px", alignItems:"center"}}>
-                <Typography variant="h2">Ongoing Projects</Typography>
-                <Typography>Explore our ongoing projects and their objectives.</Typography>
-            </Box>
-            <Box sx={{ display: "flex", flexWrap: "wrap", rowGap: "96px", justifyContent: "center", pt: "96px" }}>
-                    {projects.map((project) => (
-                        <ProjectCard key={project.slug} project={project} />
-                    ))}
-                </Box>
-        </Box>
-    );
+  return (
+    <Box sx={{ ml: "64px", mr: "64px" }}>
+      <Box sx={{ display: "flex", gap: "32px", mt: "24px", mb: "24px" }}>
+        <Link href="/" underline="none" sx={{ fontWeight: 500 }}>Home</Link>
+        <Typography>Projects</Typography>
+      </Box>
+      <Box sx={{ tp: "112px", maxWidth: "768px" }}>
+        <Typography variant="h1">Projects</Typography>
+        <Typography>As dedicated contributors to Diversity and Inclusion practices and social innovation at EU scale, we actively develop and participate in projects aimed at promoting diversity, inclusion and belonging in education and labor market sectors.</Typography>
+      </Box>
+      <Box sx={{ pt: "112px", display: "flex", flexDirection: "column", gap: "24px", alignItems: "center" }}>
+        <Typography variant="h2">Ongoing Projects</Typography>
+        <Typography>Explore our ongoing projects and their objectives.</Typography>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          alignItems: "flex-start", // Ensures the items start at the top of the row
+          gap: "32px", // Adds space between the rows and columns
+          width: "100%",
+        }}
+      >
+        {projects.map((project) => (
+          <Box sx={{ display: "flex", pt: "64px", maxWidth: "632px" }}>
+            <ProjectCard key={project.slug} project={project} />
+          </Box>
+        ))}
+      </Box>
+    </Box>
+  );
 }
