@@ -55,22 +55,24 @@ export default function ProjectsComponent(props: ProjectsProps) {
                     ))}
                 </Box>
             </Box>
-            <Box sx={{ display: "flex", justifyContent: "center", pt: "32px" }}>
-                <Button
-                    onClick={toggleProjectsView} // Call the toggle function when the button is clicked
-                    variant='outlined'
-                    color="info"
-                    sx={{
-                        borderRadius: 40,
-                        fontSize: theme.typography.body1.fontSize,
-                        lineHeight: theme.typography.body1.lineHeight,
-                        fontFamily: theme.typography.body1.fontFamily,
-                        textTransform: "none"
-                    }}
-                >
-                    {showAllProjects ? "Show fewer" : props.buttonText} {/* Toggle button text */}
-                </Button>
-            </Box>
+            {props.projects.length > 4 && ( 
+                <Box sx={{ display: "flex", justifyContent: "center", pt: "32px" }}>
+                    <Button
+                        onClick={toggleProjectsView} 
+                        variant='outlined'
+                        color="info"
+                        sx={{
+                            borderRadius: 40,
+                            fontSize: theme.typography.body1.fontSize,
+                            lineHeight: theme.typography.body1.lineHeight,
+                            fontFamily: theme.typography.body1.fontFamily,
+                            textTransform: "none"
+                        }}
+                    >
+                        {showAllProjects ? "Show fewer" : props.buttonText} {}
+                    </Button>
+                </Box>
+            )}
         </Box>
     );
 }
