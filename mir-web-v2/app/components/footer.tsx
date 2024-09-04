@@ -16,7 +16,7 @@ export default function Footer() {
                     <Image src="/mir_logo.png" width={121.85} height={61.25} alt="MIR Logo" />
                     <Box key="l4_1">
                         <Typography sx={{ fontWeight: "bold" }}>About Us</Typography>
-                        <Box sx={{ pt: "10px" }}>
+                        <Box sx={{ pt: "20px", display: "flex", flexDirection: "column", gap: "16px"  }}>
                             <Typography>Our Story</Typography>
                             <Typography>Services</Typography>
                             <Typography>Projects</Typography>
@@ -25,7 +25,7 @@ export default function Footer() {
                     </Box>
                     <Box key="l4_2">
                         <Typography sx={{ fontWeight: "bold" }}>Resources</Typography>
-                        <Box sx={{ pt: "10px" }}>
+                        <Box sx={{ pt: "20px", display: "flex", flexDirection: "column", gap: "16px" }}>
                             <Typography>News</Typography>
                             <Typography>Blog</Typography>
                             <Typography>Reports</Typography>
