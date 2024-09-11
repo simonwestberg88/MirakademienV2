@@ -10,7 +10,6 @@ export default function NewsCover() {
 
             <Box
                 sx={{
-                    borderRadius: "30px",
                     width: '100%',
                     height: "382px",
                     backgroundImage: 'url(/news/cover.png)',
