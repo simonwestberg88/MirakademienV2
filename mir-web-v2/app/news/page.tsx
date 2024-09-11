@@ -8,7 +8,8 @@ export default async function NewsPage() {
     const contentfulClient = ContentfulClient.getClient();
 
     const newsResponse = await contentfulClient.getEntries<News>({
-        content_type: "news"
+        content_type: "news",
+        order: ["-fields.date"],
     })
 
     const news = newsResponse.items.map(item => ({

@@ -14,9 +14,9 @@ export default function NewsStories(props: NewsStoriesProps) {
                 <Typography variant="h2">Stay Informed with MIR</Typography>
                 <Typography>Discover the latest updates and achievements from MIR Akademien.</Typography>
             </Box>
-            <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+            <Box sx={{ display: "flex", flexWrap: "wrap", gap: "48px", justifyContent: "space-between" }}>
                 {props.newsStories.map((news) => (
-                    <Box sx={{ display: "flex", pt: "64px", maxWidth: "632px" }} key={news.slug}>
+                    <Box sx={{ display: "flex", pt: "64px", maxWidth: "632px",  }} key={news.slug}>
                         <NewsCard news={news} />
                     </Box>
                 ))}
