@@ -3,6 +3,7 @@ import { ContentfulClient } from "../lib/client";
 import { News } from "../types/news";
 import NewsCover from "./cover";
 import NewsStories from "./newsStories";
+import NewsStayInformed from "./newsStayInformed";
 
 export default async function NewsPage() {
     const contentfulClient = ContentfulClient.getClient();
@@ -29,6 +30,7 @@ export default async function NewsPage() {
         <Box>
             <NewsCover />
             <NewsStories newsStories={news}/>
+            <NewsStayInformed />
             <Footer />
         </Box >
     );
