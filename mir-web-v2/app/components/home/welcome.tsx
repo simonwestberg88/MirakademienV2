@@ -30,7 +30,7 @@ export default function HomeWelcome({ text = "Contained", ...props }) {
                 </Box>
                 <Box key="v2"
                     sx={{ display: "flex", width: "100%", gap: "16px" }}>
-                    <Image src="/home/welcome/a1.png" alt="a1" style={{ marginLeft: "auto", width: 616, height: 640 }}/>
+                    <Image src="/home/welcome/a1.png" width={616} height={640} alt="a1" style={{ marginLeft: "auto", width: 616, height: 640 }}/>
                 </Box>
             </Box>
         </Box>

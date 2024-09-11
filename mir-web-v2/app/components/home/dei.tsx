@@ -28,7 +28,7 @@ export default function HomeDei({ text = "Contained", ...props }) {
                     <BlueButton text="Contact Us"></BlueButton>
                 </Box>
                 <Box key="v2"
-                    sx={{ display: "flex", width: "50%", gap:"16px" }}>
+                    sx={{ display: "flex", width: "50%", gap: "16px" }}>
                     <Box key="img1"
                         sx={{
                             width: "319.25px",
@@ -36,9 +36,9 @@ export default function HomeDei({ text = "Contained", ...props }) {
                             flexDirection: "column",
                             gap: "16px"
                         }}>
-                        <Image src="/home/dei/a1.png" alt="a1" />
-                        <Image src="/home/dei/a2.png" alt="a2" />
-                        <Image src="/home/dei/a3.png" alt="a3" />
+                        <Image src="/home/dei/a1.png" width={320} height={170} alt="a1" />
+                        <Image src="/home/dei/a2.png" width={320} height={340} alt="a2" />
+                        <Image src="/home/dei/a3.png" width={320} height={340} alt="a3" />
                     </Box>
                     <Box key="img2"
                         sx={{
@@ -47,9 +47,9 @@ export default function HomeDei({ text = "Contained", ...props }) {
                             flexDirection: "column",
                             gap: "16px"
                         }}>
-                        <Image src="/home/dei/b1.png" alt="b1" />
-                        <Image src="/home/dei/b2.png" alt="b2" />
-                        <Image src="/home/dei/b3.png" alt="b3" />
+                        <Image src="/home/dei/b1.png"width={320} height={340}  alt="b1" />
+                        <Image src="/home/dei/b2.png"width={320} height={340} alt="b2" />
+                        <Image src="/home/dei/b3.png"width={320} height={170} alt="b3" />
                     </Box>
                 </Box>
             </Box>
