@@ -1,14 +1,14 @@
-import { Box, Link, Typography } from "@mui/material"; import Footer from "../components/footer";
-import CoverComponent from "../components/cover";
+import { Box } from "@mui/material"; import Footer from "../components/footer";
 import { ContentfulClient } from "../lib/client";
 import { News } from "../types/news";
 import NewsCover from "./cover";
+import NewsStories from "./newsStories";
 
 export default async function NewsPage() {
     const contentfulClient = ContentfulClient.getClient();
 
     const newsResponse = await contentfulClient.getEntries<News>({
-        content_type: "clientStories"
+        content_type: "news"
     })
 
     const news = newsResponse.items.map(item => ({
@@ -20,13 +20,14 @@ export default async function NewsPage() {
         author: item.fields.author,
         date: item.fields.date,
         post: item.fields.post,
+        authorImage: item.fields.authorImage,
+        timeToRead: item.fields.timeToRead,
     } as News));
 
     return (
         <Box>
-            <Box>
-                <NewsCover />
-            </Box>
+            <NewsCover />
+            <NewsStories newsStories={news}/>
             <Footer />
         </Box >
     );

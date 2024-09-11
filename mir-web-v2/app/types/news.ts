@@ -10,4 +10,6 @@ export interface News extends EntrySkeletonType  {
     author: string;
     date: string;
     post: Document;
+    timeToRead: string;
+    authorImage: Asset;
 }

@@ -1,12 +1,11 @@
 "use client"
 
 import { useTheme } from "@emotion/react";
-import { Box, Link, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import OurStoryStart from "./componenets/first";
 import OurStoryTimeline from "./componenets/timeline";
 import OurStoryEthos from "./componenets/ethos";
 import Footer from "../components/footer";
-import BlueButton from "../components/blue_button";
 import CoverComponent from "../components/cover";
 
 export default function OurStoryPage() {
