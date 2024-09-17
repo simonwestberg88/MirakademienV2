@@ -1,11 +1,9 @@
 import { Box, Checkbox, FormControlLabel, TextField, Typography } from "@mui/material";
-import ContactInfo from "./contactInfo";
 import BlueButton from "../components/blue_button";
 
 export default function ContactForm(){
     return(
         <Box>
-                <ContactInfo />
                 
                 <Box key="contact form"
                     sx={{ display: "flex", flexDirection: "column", gap: "24px" }}
@@ -16,9 +14,9 @@ export default function ContactForm(){
                             placeholder="Your name"
                             sx={{
                                 backgroundColor: "#EDE6D4",
-                                borderRadius: "40px",
+                                borderRadius: "10px",
                                 "& .MuiOutlinedInput-root": {
-                                    borderRadius: "40px",
+                                    borderRadius: "10px",
                                 },
                             }}
                             variant="outlined"
@@ -30,9 +28,9 @@ export default function ContactForm(){
                             placeholder="Your email"
                             sx={{
                                 backgroundColor: "#EDE6D4",
-                                borderRadius: "40px",
+                                borderRadius: "10px",
                                 "& .MuiOutlinedInput-root": {
-                                    borderRadius: "40px",
+                                    borderRadius: "10px",
                                 },
                             }}
                             variant="outlined"
@@ -46,9 +44,9 @@ export default function ContactForm(){
                             minRows={4}
                             sx={{
                                 backgroundColor: "#EDE6D4",
-                                borderRadius: "40px",
+                                borderRadius: "10px",
                                 "& .MuiOutlinedInput-root": {
-                                    borderRadius: "40px",
+                                    borderRadius: "10px",
                                     resize: "vertical",
                                     overflow: "auto",
                                     padding: "12px",

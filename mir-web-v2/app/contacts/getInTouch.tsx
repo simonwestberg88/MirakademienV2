@@ -6,9 +6,13 @@ import ContactForm from "./contactForm";
 
 export default function ContactsGetInTouch() {
     return (
-        <Box sx={{ mr: "64px", ml: "64px", pt: "122px" }}>
-            <ContactInfo />
-            <ContactForm />
+        <Box sx={{ mr: "64px", ml: "64px", pt: "122px", display: "flex", flexDirection: "row", gap: "80px" }}>
+            <Box sx={{flex: 1}}>
+                <ContactInfo />
+            </Box>
+            <Box sx={{flex: 1}}>
+                <ContactForm />
+            </Box>
         </Box>
     )
 }
