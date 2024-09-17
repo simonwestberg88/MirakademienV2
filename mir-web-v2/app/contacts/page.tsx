@@ -3,6 +3,7 @@ import ContactsCover from "./cover";
 import ContactsContact from "./contact";
 import ContactsGetInTouch from "./getInTouch";
 import Footer from "../components/footer";
+import ContactsNewsletter from "./newsletter";
 
 export default function Contacts(){
     return(
@@ -10,6 +11,7 @@ export default function Contacts(){
             <ContactsCover />
             <ContactsContact />
             <ContactsGetInTouch />
+            <ContactsNewsletter />
             <Footer />
         </Box>
     )
