@@ -5,7 +5,7 @@ export default function Reports() {
         <Box sx={{ ml: "64px", mr: "64px" }}>
             <Box sx={{ display: "flex", gap: "32px", mt: "24px", mb: "24px" }}>
                 <Link href="/" underline="none" sx={{ fontWeight: 500 }}>Home</Link>
-                <Typography>Contacts</Typography>
+                <Typography>Reports</Typography>
             </Box>
             <Box
                 sx={{
