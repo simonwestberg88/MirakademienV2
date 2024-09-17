@@ -7,7 +7,7 @@ import ContactsNewsletter from "./newsletter";
 
 export default function Contacts(){
     return(
-        <Box>
+        <Box sx={{ backgroundColor: "rgba(237, 230, 212, 0.5)" }}>
             <ContactsCover />
             <ContactsContact />
             <ContactsGetInTouch />
