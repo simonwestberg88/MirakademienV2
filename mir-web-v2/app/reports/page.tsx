@@ -2,6 +2,7 @@ import { Box, Link, Typography } from "@mui/material";
 import ReportCard from "../components/cards/reportCard";
 import { ContentfulClient } from "../lib/client";
 import { Report } from "../types/report";
+import Grid from '@mui/material/Grid2';
 
 export default async function Reports() {
     const contentfulClient = ContentfulClient.getClient();
@@ -48,12 +49,14 @@ export default async function Reports() {
                     <Typography variant="h1" color="white">Here you can access MIR Akademien free reports</Typography>
                 </Box>
             </Box>
-            <Box sx={{pt: "112px"}}>
-            {reports.map((report) => (
-                    <Box sx={{ display: "flex", pt: "64px", maxWidth: "632px",  }} key={report.title}>
-                        <ReportCard report={report}/>
-                    </Box>
-                ))}
+            <Box sx={{ pt: "112px", flexGrow: 1 }}>
+                <Grid container spacing={4}>
+                    {reports.map((report) => (
+                        <Grid size={6} key={report.title}>
+                            <ReportCard report={report} />
+                        </Grid>
+                    ))}
+                </Grid>
             </Box>
         </Box>
     )
