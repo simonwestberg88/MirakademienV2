@@ -5,9 +5,11 @@ export interface Blog extends EntrySkeletonType  {
     title: string;
     post: Document;
     date: string;
-    autor: string;
+    author: string;
+    authorImage: Asset;
     slug: string;
     description: string;
     tags: string[];
     coverImage: Asset;
+    timeToRead: string;
 }
