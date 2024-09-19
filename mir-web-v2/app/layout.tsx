@@ -23,10 +23,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <AppRouterCacheProvider>
-          <ThemeProvider theme={theme}>
+          <Box sx={{ bgcolor: "rgba(237, 230, 212, 0.5)" }}>
+
+            <ThemeProvider theme={theme}>
               <ButtonAppBar></ButtonAppBar>
               {children}
-          </ThemeProvider>
+            </ThemeProvider>
+          </Box>
         </AppRouterCacheProvider>
       </body>
     </html>
