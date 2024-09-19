@@ -66,7 +66,7 @@ export default function CrimePreventing() {
                 <Typography variant="h5">
                     Price
                 </Typography>
-                <List>
+                <List sx={{ listStyleType: "disc", pl: 4}}>
                     <ListItem sx={{ display: "list-item", padding: "4px 0" }}>
                         Per group between 4 and 12 individuals - 45,500 SEK excluding VAT per day
                     </ListItem>
