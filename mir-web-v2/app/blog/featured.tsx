@@ -7,19 +7,27 @@ interface BlogCardProps {
     post: Blog
 };
 
-export default function NewsCard(props: BlogCardProps) {
-    const theme = useTheme();
-    const coverimageUrl = props.post.coverImage.fields.file?.url as string;
-    const authorImageUrl = props.post.authorImage.fields.file?.url as string;
+export default function BlogFeatured(props: BlogCardProps) {
+    const coverimageUrl = props.post.coverImage.fields.file?.url;
+    const authorImageUrl = props.post.authorImage.fields.file?.url;
+
     return (
         <Box key="main" sx={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-            <Box display={"flex"} flexDirection={"row"} alignItems={"center"}>
-                <Box sx={{ borderRadius: "40px", overflow: "hidden", flex: 1 }}>
+            <Box display={"flex"} flexDirection={"row"} alignItems={"center"} gap={"80px"}  >
+                <Box
+                    sx={{
+                        position: "relative",
+                        width: "656px",
+                        borderRadius: "40px",
+                        overflow: "hidden",
+                        height: "500px"
+                    }}
+                >
                     <Image
                         src={`https:${coverimageUrl}`}
                         alt={props.post.contentTypeId}
-                        width={632}
-                        height={300}
+                        layout="fill"
+                        objectFit="cover"
                     />
                 </Box>
                 <Box display={"flex"} flexDirection={"column"} flex={1} gap={"24px"}>
