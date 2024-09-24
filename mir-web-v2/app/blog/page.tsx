@@ -1,9 +1,12 @@
 import { Box, Typography } from "@mui/material";
+import Grid from '@mui/material/Grid2';
 import NavMenu from "../components/nav-menu";
 import BlogFeatured from "./featured";
 import { ContentfulClient } from "../lib/client";
 import { Blog } from "../types/Blog";
 import { AssetFile, EntrySkeletonType } from 'contentful';
+import BlogCard from "../components/cards/blogCard";
+import ReportCard from "../components/cards/reportCard";
 
 export default async function BlogPage() {
     const contentfulClient = ContentfulClient.getClient();
@@ -23,6 +26,7 @@ export default async function BlogPage() {
         tags: item.fields.tags,
         coverImage: item.fields.coverImage,
         timeToRead: item.fields.timeToRead,
+        category: item.fields.category,
     } as Blog));
 
     const featuredBlog = blogPosts[0];
@@ -34,8 +38,15 @@ export default async function BlogPage() {
                     <Typography variant="h1">Blog</Typography>
                     <Typography>Discover insights and stories on diversity, equity, and inclusion.</Typography>
                 </Box>
-                <Box>
+                <Box display={"flex"} flexDirection={"column"} gap={"80px"}>
                     <BlogFeatured post={featuredBlog} />
+                    <Grid container spacing={4}>
+                        {blogPosts.map((post) => (
+                            <Grid size={4} key={post.title}>
+                                <BlogCard post={post} />
+                            </Grid>
+                        ))}
+                    </Grid>
                 </Box>
             </Box>
         </Box>

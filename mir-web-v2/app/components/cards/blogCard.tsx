@@ -1,27 +1,34 @@
 "use client"
 import { Box, Typography, useTheme } from "@mui/material";
 import Image from "next/image";
-import { News } from "@/app/types/news";
+import { Blog } from "@/app/types/Blog";
 
 interface BlogCardProps {
-    post: News
+    post: Blog
 };
 
-export default function NewsCard(props: BlogCardProps) {
-    const theme = useTheme();
-    const coverimageUrl = props.post.cover.fields.file?.url as string;
+export default function BlogCard(props: BlogCardProps) {
+    const coverimageUrl = props.post.coverImage.fields.file?.url as string;
     const authorImageUrl = props.post.authorImage.fields.file?.url as string;
     return (
         <Box sx={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-
-            <Box sx={{ borderRadius: "40px", overflow: "hidden" }}>
+            <Box
+                sx={{
+                    position: "relative",
+                    width: "416px",
+                    borderRadius: "40px",
+                    overflow: "hidden",
+                    height: "300px"
+                }}
+            >
                 <Image
                     src={`https:${coverimageUrl}`}
                     alt={props.post.contentTypeId}
-                    width={632}
-                    height={300}
+                    layout="fill"
+                    objectFit="cover"
                 />
             </Box>
+            <Typography sx={{fontWeight: 600}}>{props.post.category}</Typography>
             <Typography variant="h5">{props.post.title}</Typography>
             <Typography>{props.post.description}</Typography>
             <Box sx={{ display: "flex", gap: "16px" }}>
