@@ -15,7 +15,11 @@ export default function BlogPosts(props: BlogPostsProps) {
     const [showAllBlogPosts, setShowAllBlogPosts] = useState(false);
     const [filterCategory, setFilterCategory] = useState<string>("all");
 
-    const visibleBlogPosts = showAllBlogPosts ? props.posts : props.posts.slice(0, 6);
+    const filteredBlogPosts = filterCategory === "all"
+        ? props.posts
+        : props.posts.filter(post => post.category === filterCategory);
+
+    const visibleBlogPosts = showAllBlogPosts ? filteredBlogPosts : filteredBlogPosts.slice(0, 6);
 
     const togglePosts = () => {
         setShowAllBlogPosts(!showAllBlogPosts);
