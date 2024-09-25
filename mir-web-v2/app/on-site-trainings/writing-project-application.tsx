@@ -7,7 +7,7 @@ export default function WritingProjectApplication() {
         <Box sx={{ pt: "112px" }}>
             <Box display="flex">
                 <Typography flex={1.5} variant="h3">Writing a Successful Transnational Project Application</Typography>
-                <Typography flex={2}>Welcome to the course "Writing a Successful Application," designed for those who want to craft effective proposals for international projects such as Erasmus, JUST, CERV, and other programs. Our course leaders have written over 300 applications with a success rate of 70%. This course is tailored to equip you with the skills needed to formulate a concrete idea, set goals and priorities that support the idea, and describe methodology and plans with quantitative and qualitative indicators. Additionally, you will learn the best ways to outline project management methods and quality assurance.</Typography>
+                <Typography flex={2}>Welcome to the course &quot;Writing a Successful Application,&quot; designed for those who want to craft effective proposals for international projects such as Erasmus, JUST, CERV, and other programs. Our course leaders have written over 300 applications with a success rate of 70%. This course is tailored to equip you with the skills needed to formulate a concrete idea, set goals and priorities that support the idea, and describe methodology and plans with quantitative and qualitative indicators. Additionally, you will learn the best ways to outline project management methods and quality assurance.</Typography>
             </Box>
             <Box sx={{ pt: "112px", display: "flex", flexDirection: "column", gap: "24px" }}>
                 <Typography variant="h5">
@@ -65,7 +65,7 @@ export default function WritingProjectApplication() {
                 <Typography variant="h5">
                     What you get
                 </Typography>
-                <Typography >One-day training with complete course materials, including PowerPoints with theory, exercises, and discussion questions that you can use directly. This course will provide you with the opportunity to work with actual application forms from last year's calls, deepening your understanding of how to craft successful applications.</Typography>
+                <Typography >One-day training with complete course materials, including PowerPoints with theory, exercises, and discussion questions that you can use directly. This course will provide you with the opportunity to work with actual application forms from last year&apos;s calls, deepening your understanding of how to craft successful applications.</Typography>
 
                 <Box display="flex" gap="4px">
                     <Typography fontWeight="600">Language of instruction: </Typography>

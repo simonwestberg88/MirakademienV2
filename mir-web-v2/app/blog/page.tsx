@@ -34,9 +34,6 @@ export default async function BlogPage() {
 
 
     const categories = Array.from(new Set(blogPosts.map(post => post.category)));
-    console.log(categories);
-
-
 
     return (
         <Box>

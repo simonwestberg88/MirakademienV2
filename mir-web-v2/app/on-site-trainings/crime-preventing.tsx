@@ -11,7 +11,7 @@ export default function CrimePreventing() {
                 </Box>
 
                 <Box sx={{ flex: 2 }}>
-                    <Typography>Welcome to the course "Crime Prevention Parenting Support," an education program for communicators within municipal community orientation and volunteers working with newcomer parents. This course is designed to provide you with the knowledge and tools needed to support parents in matters of youth crime, its causes, and consequences.</Typography>
+                    <Typography>Welcome to the course &quot;Crime Prevention Parenting Support,&quot; an education program for communicators within municipal community orientation and volunteers working with newcomer parents. This course is designed to provide you with the knowledge and tools needed to support parents in matters of youth crime, its causes, and consequences.</Typography>
                 </Box>
             </Box>
             <Box sx={{ pt: "112px", display: "flex", flexDirection: "column", gap: "24px" }}>

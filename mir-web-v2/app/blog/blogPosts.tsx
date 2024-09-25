@@ -45,6 +45,7 @@ export default function BlogPosts(props: BlogPostsProps) {
                 </MirButton>
                 {props.categories.map(category => (
                     <MirButton
+                        key={category}
                         sx={filterCategory === category ? sxSelected : sxNotSelected}
                         onClick={() => filterCategories(category)}
                         variant={filterCategory === category ? "outlined" : "text"}
@@ -64,7 +65,7 @@ export default function BlogPosts(props: BlogPostsProps) {
                         onClick={togglePosts}
                         variant='outlined'
                         color="info"
-                        sx={{width: "160px"}}
+                        sx={{ width: "160px" }}
                     >
                         {showAllBlogPosts ? "Show fewer" : "Show more"}
                     </MirButton>

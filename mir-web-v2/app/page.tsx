@@ -11,6 +11,7 @@ import { ClientStory } from "@/app/types/ClientStory";
 import { Blog } from "./types/Blog";
 import HomeBlog from "./components/home/blog";
 import HomeConnect from "./components/home/connect";
+import { AssetFileWithDetails } from "./types/AssetFileWithDetails";
 
 export default async function Home() {
 
@@ -45,13 +46,13 @@ export default async function Home() {
   })
 
   const blogPosts = blogResponse.items.map(item => ({
-    autor: item.fields.author,
+    author: item.fields.author,
     coverImage: item.fields.coverImage,
     date: item.fields.date,
     description: item.fields.description,
     post: item.fields.post,
     slug: item.fields.slug,
-    title: item.fields.title
+    title: item.fields.title,
   } as Blog))
 
   return (
