@@ -7,6 +7,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Image from 'next/image';
 import XIcon from '@mui/icons-material/X';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
     const contentfulClient = ContentfulClient.getClient();
@@ -67,12 +68,12 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                         <Box display="flex" flexDirection="row" gap={4}>
                             <Box display="flex" flexDirection="column">
                                 <Typography>Written by</Typography>
-                                <Typography>{post.author}</Typography>
+                                <Typography fontWeight={500}>{post.author}</Typography>
                             </Box>
 
                             <Box display="flex" flexDirection="column">
                                 <Typography>Published on</Typography>
-                                <Typography>{post.date}</Typography>
+                                <Typography fontWeight={500}>{post.date}</Typography>
                             </Box>
                         </Box>
                         <Box display="flex" gap={1}>
@@ -83,6 +84,9 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                         </Box>
                     </Box>
                 </Box>
+            </Box>
+            <Box maxWidth={"768px"} pt={"112px"} mx="auto">
+                {documentToReactComponents(post.post)}
             </Box>
         </Box>
     );
