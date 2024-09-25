@@ -13,29 +13,37 @@ interface BlogPostsProps {
 }
 export default function BlogPosts(props: BlogPostsProps) {
     const [showAllBlogPosts, setShowAllBlogPosts] = useState(false);
-    const [showAllCategories, setShowAllCategories] = useState(false);
+    const [filterCategory, setFilterCategory] = useState<string>("all");
 
     const visibleBlogPosts = showAllBlogPosts ? props.posts : props.posts.slice(0, 6);
-    const visibleCategories = showAllCategories ? props.categories : props.categories.slice(0, 4);
+
     const togglePosts = () => {
         setShowAllBlogPosts(!showAllBlogPosts);
     };
-    const toggleCategories = () => {
-        setShowAllCategories(!showAllCategories);
-    }
+
+    const filterCategories = (category: string) => {
+        setFilterCategory(category);
+    };
+
+    const sxSelected = { color: "orange.main", borderColor: "orange.main" };
+    const sxNotSelected = { color: "black", borderColor: "orange.main" };
 
     return (
         <Box display={"flex"} flexDirection={"column"} gap={"64px"}>
             <Box display={"flex"} flexDirection={"row"}>
                 <MirButton
-                    onClick={toggleCategories}
-                    variant='outlined'
-                    sx={{ color: "orange.main", borderColor: "orange.main", width: "100px" }}
+                    onClick={() => filterCategories("all")}
+                    variant={filterCategory === "all" ? "outlined" : "text"}
+                    sx={filterCategory === "all" ? sxSelected : sxNotSelected}
                 >
-                    {showAllCategories ? "Hide" : "View all"}
+                    View all
                 </MirButton>
-                {visibleCategories.map(category => (
-                    <MirButton>{category}</MirButton>
+                {props.categories.map(category => (
+                    <MirButton
+                        sx={filterCategory === category ? sxSelected : sxNotSelected}
+                        onClick={() => filterCategories(category)}
+                        variant={filterCategory === category ? "outlined" : "text"}
+                    >{category}</MirButton>
                 ))}
             </Box>
             <Grid container spacing={4}>
