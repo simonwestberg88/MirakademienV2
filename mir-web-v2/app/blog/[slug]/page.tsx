@@ -8,6 +8,7 @@ import Image from 'next/image';
 import XIcon from '@mui/icons-material/X';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS } from '@contentful/rich-text-types';
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
     const contentfulClient = ContentfulClient.getClient();
@@ -38,6 +39,27 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     }
 
     const post = blogPosts[0];
+
+    const renderOptions = {
+        renderNode: {
+            [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
+                const { file, title, description } = node.data.target.fields;
+                const imageUrl = file.url;
+                const imageWidth = file.details.image.width;
+                const imageHeight = file.details.image.height;
+
+                return (
+                    <Image
+                        src={`https:${imageUrl}`}
+                        alt={title || 'Image'}
+                        width={imageWidth}
+                        height={imageHeight}
+                        style={{ borderRadius: '10px', objectFit: 'cover' }}
+                    />
+                );
+            },
+        },
+    };
 
     return (
         <Box sx={{ ml: "64px", mr: "64px" }}>
@@ -86,7 +108,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                 </Box>
             </Box>
             <Box maxWidth={"768px"} pt={"112px"} mx="auto">
-                {documentToReactComponents(post.post)}
+                {documentToReactComponents(post.post, renderOptions)}
             </Box>
         </Box>
     );
