@@ -1,21 +1,19 @@
 import { Box, Typography } from "@mui/material";
-import Grid from '@mui/material/Grid2';
 import NavMenu from "../components/nav-menu";
 import BlogFeatured from "./featured";
 import { ContentfulClient } from "../lib/client";
 import { Blog } from "../types/Blog";
-import { AssetFile, EntrySkeletonType } from 'contentful';
-import BlogCard from "../components/cards/blogCard";
-import ReportCard from "../components/cards/reportCard";
+import BlogPosts from "./blogPosts";
 
 export default async function BlogPage() {
     const contentfulClient = ContentfulClient.getClient();
+    
     const blogResponse = await contentfulClient.getEntries<Blog>({
         content_type: "blog",
         order: ['-fields.date']
     })
-
-    const blogPosts = blogResponse.items.map(item => ({
+    
+    let blogPosts = blogResponse.items.map(item => ({
         title: item.fields.title,
         post: item.fields.post,
         date: item.fields.date,
@@ -28,8 +26,16 @@ export default async function BlogPage() {
         timeToRead: item.fields.timeToRead,
         category: item.fields.category,
     } as Blog));
-
+    
     const featuredBlog = blogPosts[0];
+    blogPosts = blogPosts.slice(1, blogPosts.length);
+    
+
+    const categories = Array.from(new Set(blogPosts.map(post => post.category)));
+    console.log(categories);
+
+
+
     return (
         <Box sx={{ ml: "64px", mr: "64px" }}>
             <NavMenu link1="Blog" />
@@ -40,13 +46,7 @@ export default async function BlogPage() {
                 </Box>
                 <Box display={"flex"} flexDirection={"column"} gap={"80px"}>
                     <BlogFeatured post={featuredBlog} />
-                    <Grid container spacing={4}>
-                        {blogPosts.map((post) => (
-                            <Grid size={4} key={post.title}>
-                                <BlogCard post={post} />
-                            </Grid>
-                        ))}
-                    </Grid>
+                    <BlogPosts posts={blogPosts} />
                 </Box>
             </Box>
         </Box>

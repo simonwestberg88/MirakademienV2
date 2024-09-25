@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Button, ButtonProps, useTheme } from "@mui/material";
 
 export default function MirButton(props: ButtonProps) {
@@ -6,17 +6,16 @@ export default function MirButton(props: ButtonProps) {
 
     return (
         <Button
-            variant="contained"
             {...props}
             sx={{
                 borderRadius: '30px',
-                background: "#199DEA",
+                background: props.variant === 'contained' ? "#199DEA" : undefined, // Only apply background for 'contained' variant
                 fontSize: theme.typography.body1.fontSize,
                 lineHeight: theme.typography.body1.lineHeight,
                 fontFamily: theme.typography.body1.fontFamily,
                 textTransform: "none",
                 height: "48px",
-                ...props.sx,
+                ...props.sx,  // Allow overriding styles via props.sx
             }}
         >
             {props.children}
