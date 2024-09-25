@@ -1,10 +1,16 @@
 import { Box, Typography } from '@mui/material';
 import { Blog } from '../../types/Blog';
 import { ContentfulClient } from '../../lib/client';
+import NavMenu from '@/app/components/nav-menu';
+import LinkIcon from '@mui/icons-material/Link';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Image from 'next/image';
+import XIcon from '@mui/icons-material/X';
+import FacebookIcon from '@mui/icons-material/Facebook';
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
     const contentfulClient = ContentfulClient.getClient();
-    
+
     const blogResponse = await contentfulClient.getEntries<Blog>({
         content_type: "blog",
         'fields.slug': params.slug,
@@ -34,7 +40,50 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
     return (
         <Box sx={{ ml: "64px", mr: "64px" }}>
-            <Typography variant="h1" sx={{ mb: 4 }}>{post.title}</Typography>
+            <NavMenu link1='Blog' link2={post.title} href1='/blog'></NavMenu>
+            <Box display={"flex"} flexDirection={"column"} gap={"80px"}>
+                <Box display={"flex"} flexDirection={"column"} gap={"16px"}>
+                    <Box display={"fleX"} flexDirection={"row"} gap={"16px"} alignItems="center">
+                        <Typography borderRadius={"20px"} padding={"4px"} pl={"10px"} pr={"10px"} bgcolor={"orange.main"} color={"white"} variant='caption'>{post.category}</Typography>
+                        <Typography variant='caption'>{post.timeToRead} read</Typography>
+                    </Box>
+                    <Typography variant="h1" sx={{ mb: 4 }}>{post.title}</Typography>
+                </Box>
+                <Box display={"flex"} flexDirection={"column"} gap={"32px"}>
+                    <Box
+                        overflow={"hidden"}
+                        position={"relative"}
+                        borderRadius={"40px"}
+                        height="600px"
+                    >
+                        <Image
+                            src={`https:${post.coverImage.fields.file.url}`}
+                            alt="cover image"
+                            layout="fill"
+                            objectFit="cover"
+                        />
+                    </Box>
+                    <Box display="flex" flexDirection="row" justifyContent="space-between" width="100%">
+                        <Box display="flex" flexDirection="row" gap={4}>
+                            <Box display="flex" flexDirection="column">
+                                <Typography>Written by</Typography>
+                                <Typography>{post.author}</Typography>
+                            </Box>
+
+                            <Box display="flex" flexDirection="column">
+                                <Typography>Published on</Typography>
+                                <Typography>{post.date}</Typography>
+                            </Box>
+                        </Box>
+                        <Box display="flex" gap={1}>
+                            <LinkIcon />
+                            <LinkedInIcon />
+                            <XIcon />
+                            <FacebookIcon />
+                        </Box>
+                    </Box>
+                </Box>
+            </Box>
         </Box>
     );
 }
