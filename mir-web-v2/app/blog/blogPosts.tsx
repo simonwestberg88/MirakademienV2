@@ -27,6 +27,7 @@ export default function BlogPosts(props: BlogPostsProps) {
 
     const filterCategories = (category: string) => {
         setFilterCategory(category);
+        setShowAllBlogPosts(false);
     };
 
     const sxSelected = { color: "orange.main", borderColor: "orange.main" };
@@ -57,13 +58,18 @@ export default function BlogPosts(props: BlogPostsProps) {
                     </Grid>
                 ))}
             </Grid>
-            <MirButton
-                onClick={togglePosts}
-                variant='outlined'
-                color="info"
-            >
-                {showAllBlogPosts ? "show fewer" : "show more"}
-            </MirButton>
+            {filteredBlogPosts.length > 6 && (
+                <Box display="flex" justifyContent="center">
+                    <MirButton
+                        onClick={togglePosts}
+                        variant='outlined'
+                        color="info"
+                        sx={{width: "160px"}}
+                    >
+                        {showAllBlogPosts ? "Show fewer" : "Show more"}
+                    </MirButton>
+                </Box>
+            )}
         </Box>
     );
 }
