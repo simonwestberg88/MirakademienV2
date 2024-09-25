@@ -4,15 +4,17 @@ import BlogFeatured from "./featured";
 import { ContentfulClient } from "../lib/client";
 import { Blog } from "../types/Blog";
 import BlogPosts from "./blogPosts";
+import Footer from "../components/footer";
+import BlogStayInformed from "./stayInformed";
 
 export default async function BlogPage() {
     const contentfulClient = ContentfulClient.getClient();
-    
+
     const blogResponse = await contentfulClient.getEntries<Blog>({
         content_type: "blog",
         order: ['-fields.date']
     })
-    
+
     let blogPosts = blogResponse.items.map(item => ({
         title: item.fields.title,
         post: item.fields.post,
@@ -26,10 +28,10 @@ export default async function BlogPage() {
         timeToRead: item.fields.timeToRead,
         category: item.fields.category,
     } as Blog));
-    
+
     const featuredBlog = blogPosts[0];
     blogPosts = blogPosts.slice(1, blogPosts.length);
-    
+
 
     const categories = Array.from(new Set(blogPosts.map(post => post.category)));
     console.log(categories);
@@ -37,18 +39,22 @@ export default async function BlogPage() {
 
 
     return (
-        <Box sx={{ ml: "64px", mr: "64px" }}>
-            <NavMenu link1="Blog" />
-            <Box sx={{ display: "flex", flexDirection: "column", gap: "80px" }}>
-                <Box sx={{ display: "flex", flexDirection: "column", gap: "24px", maxWidth: "768", pt: "24px" }}>
-                    <Typography variant="h1">Blog</Typography>
-                    <Typography>Discover insights and stories on diversity, equity, and inclusion.</Typography>
+        <Box>
+            <Box sx={{ ml: "64px", mr: "64px" }}>
+                <NavMenu link1="Blog" />
+                <Box sx={{ display: "flex", flexDirection: "column", gap: "80px" }}>
+                    <Box sx={{ display: "flex", flexDirection: "column", gap: "24px", maxWidth: "768", pt: "24px" }}>
+                        <Typography variant="h1">Blog</Typography>
+                        <Typography>Discover insights and stories on diversity, equity, and inclusion.</Typography>
+                    </Box>
+                    <Box display={"flex"} flexDirection={"column"} gap={"80px"}>
+                        <BlogFeatured post={featuredBlog} />
+                        <BlogPosts categories={categories} posts={blogPosts} />
+                    </Box>
                 </Box>
-                <Box display={"flex"} flexDirection={"column"} gap={"80px"}>
-                    <BlogFeatured post={featuredBlog} />
-                    <BlogPosts categories={categories} posts={blogPosts} />
-                </Box>
+                <BlogStayInformed />
             </Box>
+            <Footer />
         </Box>
     )
 }
