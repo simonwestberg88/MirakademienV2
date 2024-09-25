@@ -23,7 +23,7 @@ export default function BlogCard(props: BlogCardProps) {
             >
                 <Image
                     src={`https:${coverimageUrl}`}
-                    alt={props.post.contentTypeId}
+                    alt="cover image"
                     layout="fill"
                     objectFit="cover"
                 />
@@ -36,7 +36,7 @@ export default function BlogCard(props: BlogCardProps) {
                     width={48}
                     height={48}
                     src={`https:${authorImageUrl}`}
-                    alt="auth"
+                    alt="authImage"
                 />
                 <Box sx={{ display: "flex", flexDirection: "column" }}>
                     <Typography variant="caption" sx={{ fontWeight: 600 }}>{props.post.author}</Typography>

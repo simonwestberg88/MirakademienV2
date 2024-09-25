@@ -16,7 +16,7 @@ const montserrat = Montserrat({
 
 const baseTheme = createTheme();
 
-const theme = createTheme({
+let theme = createTheme({
   typography: {
     fontFamily: ['Basenji', roboto.style.fontFamily].join(','),
     h1: {
@@ -113,8 +113,19 @@ const theme = createTheme({
     },
     info: {
       main: "#199DEA"
-    }
+    },
   },
 });
+
+theme = createTheme(theme, {
+  palette: {
+    orange: theme.palette.augmentColor({
+      color: {
+        main: "#FF7612"
+      },
+      name: "orange"
+    })
+  }
+})
 
 export default theme;

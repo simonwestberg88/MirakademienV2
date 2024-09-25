@@ -25,7 +25,7 @@ export default function BlogFeatured(props: BlogCardProps) {
                 >
                     <Image
                         src={`https:${coverimageUrl}`}
-                        alt={props.post.contentTypeId}
+                        alt="cover image"
                         layout="fill"
                         objectFit="cover"
                     />

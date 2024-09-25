@@ -46,7 +46,7 @@ export default async function BlogPage() {
                 </Box>
                 <Box display={"flex"} flexDirection={"column"} gap={"80px"}>
                     <BlogFeatured post={featuredBlog} />
-                    <BlogPosts posts={blogPosts} />
+                    <BlogPosts categories={categories} posts={blogPosts} />
                 </Box>
             </Box>
         </Box>
