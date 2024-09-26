@@ -14,4 +14,5 @@ export interface Blog extends EntrySkeletonType  {
     coverImage: AssetFileWithDetails;
     timeToRead: string;
     category: string;
+    authorDescription: string;
 }

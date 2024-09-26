@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Divider, Typography } from '@mui/material';
 import { Blog } from '../../types/Blog';
 import { ContentfulClient } from '../../lib/client';
 import NavMenu from '@/app/components/nav-menu';
@@ -9,7 +9,6 @@ import XIcon from '@mui/icons-material/X';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
-import MirButton from '@/app/components/mir-button';
 import Footer from '@/app/components/footer';
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
@@ -32,6 +31,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         coverImage: item.fields.coverImage,
         timeToRead: item.fields.timeToRead,
         category: item.fields.category,
+        authorDescription: item.fields.authorDescription
     } as Blog));
 
     if (!blogResponse.items.length) {
@@ -121,14 +121,31 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                                 <LinkedInIcon />
                                 <FacebookIcon />
                             </Box>
-                            <Box alignItems="center">
+                            <Box
+                                display={"flex"}
+                                gap={"8px"}
+                                alignItems="center">
                                 {post.tags.map(tag => (
-                                    <MirButton>{tag}</MirButton>
+                                    <Typography key={tag} borderRadius={"20px"} padding={"4px"} pl={"10px"} pr={"10px"} bgcolor={"orange.main"} color={"white"} variant='caption'>{tag}</Typography>
                                 ))}
+                            </Box>
+                        </Box>
+                        <Divider sx={{ width: "100%", mb: 5, background: "black" }} />
+                        <Box display={"flex"} flexDirection={"column"} gap={"16px"} alignItems="center">
+                            <Image
+                                width={48}
+                                height={48}
+                                src={`https:${post.authorImage.fields.file.url}`}
+                                alt="authImage"
+                            />
+                            <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
+                                <Typography variant='caption' fontWeight={600}>{post.author}</Typography>
+                                <Typography variant='caption'>{post.authorDescription}</Typography>
                             </Box>
                         </Box>
                     </Box>
                 </Box>
+
             </Box>
             <Footer />
         </Box>
