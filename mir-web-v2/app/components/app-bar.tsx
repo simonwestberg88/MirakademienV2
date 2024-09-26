@@ -12,6 +12,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import BlueButton from './blue_button';
 import Image from 'next/image';
+import { Link } from '@mui/material';
 
 export default function ButtonAppBar() {
   const theme = useTheme();
@@ -31,7 +32,7 @@ export default function ButtonAppBar() {
       <AppBar position="static" sx={{ height: 83, backgroundColor: theme.palette.background.default, boxShadow: "none" }}>
         <Toolbar sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '100%' }}>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Image src="/mir_logo.png" width={121.85} height={61.25} alt="MIR Logo" />
+            <Link href={"/"}> <Image src="/mir_logo.png" width={121.85} height={61.25} alt="MIR Logo" /></Link>
           </Box>
           <Box
             sx={{
