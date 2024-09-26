@@ -21,7 +21,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     height={project.coverHeight}
                 />
             </Box>
-            <Typography variant="h5">{project.shortTitle}</Typography>
+            <Link underline="none" href={`/projects/${project.slug}`}> <Typography variant="h5">{project.shortTitle}</Typography></Link>
             <Typography>{project.description}</Typography>
             <Box sx={{ display: "flex", gap: "8px" }}>
                 {project.tags.map((tag) => (
