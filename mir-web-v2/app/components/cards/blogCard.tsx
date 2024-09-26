@@ -1,5 +1,5 @@
 "use client"
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Link, Typography, useTheme } from "@mui/material";
 import Image from "next/image";
 import { Blog } from "@/app/types/Blog";
 
@@ -29,15 +29,10 @@ export default function BlogCard(props: BlogCardProps) {
                 />
             </Box>
             <Typography sx={{fontWeight: 600}}>{props.post.category}</Typography>
-            <Typography variant="h5">{props.post.title}</Typography>
+            <Link underline="none" href={`/blog/${props.post.slug}`}> <Typography variant="h5">{props.post.title}</Typography></Link>
             <Typography>{props.post.description}</Typography>
             <Box sx={{ display: "flex", gap: "16px" }}>
-                <Image
-                    width={48}
-                    height={48}
-                    src={`https:${authorImageUrl}`}
-                    alt="authImage"
-                />
+                e
                 <Box sx={{ display: "flex", flexDirection: "column" }}>
                     <Typography variant="caption" sx={{ fontWeight: 600 }}>{props.post.author}</Typography>
                     <Typography variant="caption">{props.post.author} - {props.post.timeToRead}</Typography>
