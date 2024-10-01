@@ -5,6 +5,8 @@ import { Project } from "@/app/types/project";
 import { Box, Typography } from "@mui/material";
 import HeaderBox from "./headerBox";
 import DescriptionBlock from "./descriptionBlock";
+import ResultsBlock from "./resultsBlock";
+import DisseminationBlock from "./disseminationBlock";
 
 export default async function ProjectPage({ params }: { params: { slug: string } }) {
     const contentfulClient = ContentfulClient.getClient();
@@ -23,7 +25,8 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         description: item.fields.description,
         descriptionPicture: item.fields.descriptionPicture,
         projectDescription: item.fields.projectDescription,
-        research: item.fields.research,
+        researchResults: item.fields.researchResults,
+        researchDescription: item.fields.researchDescription,
         slug: item.fields.slug,
         tags: item.fields.tags,
         facebook: item.fields.facebook,
@@ -39,7 +42,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         headerText2: item.fields.headerText2,
         headerTitle1: item.fields.headerTitle1,
         headerTitle2: item.fields.headerTitle2,
-        courseLink: item.fields.courseLink
+        courseLink: item.fields.courseLink,
     } as unknown as Project));
     const project = projects[0];
 
@@ -80,6 +83,8 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                         </Box>
                     </Box>
                     <DescriptionBlock imageUrl={project.descriptionPicture.fields.file.url} description={project.projectDescription} />
+                    <ResultsBlock reserachResults={project.researchResults} description={project.researchDescription} />
+                    <DisseminationBlock website={project.website} facebook={project.facebook} linkedIn={project.linkedIn}/>
                 </Box>
             </Box>
             <Footer />

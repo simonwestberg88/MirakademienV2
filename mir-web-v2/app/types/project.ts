@@ -12,7 +12,8 @@ export interface Project extends EntrySkeletonType  {
     linkedIn?:string;
     facebook?:string;
     projectDescription: Document;
-    research: string;
+    researchResults: string;
+    researchDescription: string;
     descriptionPicture: AssetFileWithDetails;
     coverHeight: number;
     shortTitle: string;
