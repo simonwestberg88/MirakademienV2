@@ -7,6 +7,7 @@ import HeaderBox from "./headerBox";
 import DescriptionBlock from "./descriptionBlock";
 import ResultsBlock from "./resultsBlock";
 import DisseminationBlock from "./disseminationBlock";
+import OtherProjectsBlock from "./otherProjectsBlock";
 
 export default async function ProjectPage({ params }: { params: { slug: string } }) {
     const contentfulClient = ContentfulClient.getClient();
@@ -85,6 +86,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                     <DescriptionBlock imageUrl={project.descriptionPicture.fields.file.url} description={project.projectDescription} />
                     <ResultsBlock reserachResults={project.researchResults} description={project.researchDescription} />
                     <DisseminationBlock website={project.website} facebook={project.facebook} linkedIn={project.linkedIn}/>
+                    <OtherProjectsBlock  isOngoing={project.isOngoing} />
                 </Box>
             </Box>
             <Footer />
