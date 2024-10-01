@@ -1,4 +1,4 @@
-import { Asset, EntrySkeletonType } from 'contentful';
+import { EntrySkeletonType } from 'contentful';
 import { Document } from '@contentful/rich-text-types';
 import { AssetFileWithDetails } from './AssetFileWithDetails';
 
@@ -13,7 +13,7 @@ export interface Project extends EntrySkeletonType  {
     facebook?:string;
     projectDescription: Document;
     research: string;
-    descriptionPicture: Asset;
+    descriptionPicture: AssetFileWithDetails;
     coverHeight: number;
     shortTitle: string;
     date: string;

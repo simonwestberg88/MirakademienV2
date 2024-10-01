@@ -2,10 +2,9 @@ import Footer from "@/app/components/footer";
 import NavMenu from "@/app/components/nav-menu";
 import { ContentfulClient } from "@/app/lib/client";
 import { Project } from "@/app/types/project";
-import { BLOCKS } from "@contentful/rich-text-types";
 import { Box, Typography } from "@mui/material";
-import Image from "next/image";
 import HeaderBox from "./headerBox";
+import DescriptionBlock from "./descriptionBlock";
 
 export default async function ProjectPage({ params }: { params: { slug: string } }) {
     const contentfulClient = ContentfulClient.getClient();
@@ -15,12 +14,14 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         'fields.slug': params.slug,
         limit: 1,
     });
+
+    
+
     const projects = projectResponse.items.map(item => ({
         title: item.fields.title,
         cover: item.fields.cover,
         description: item.fields.description,
         descriptionPicture: item.fields.descriptionPicture,
-        pictures: item.fields.pictures,
         projectDescription: item.fields.projectDescription,
         research: item.fields.research,
         slug: item.fields.slug,
@@ -42,27 +43,6 @@ export default async function ProjectPage({ params }: { params: { slug: string }
     } as unknown as Project));
     const project = projects[0];
 
-    const renderOptions = {
-        renderNode: {
-            [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
-                const { file, title, description } = node.data.target.fields;
-                const imageUrl = file.url;
-                const imageWidth = file.details.image.width;
-                const imageHeight = file.details.image.height;
-
-                return (
-                    <Image
-                        src={`https:${imageUrl}`}
-                        alt={title || 'Image'}
-                        width={imageWidth}
-                        height={imageHeight}
-                        style={{ borderRadius: '10px', objectFit: 'cover' }}
-                    />
-                );
-            },
-        },
-    };
-
     return (
         <Box>
             <Box
@@ -77,9 +57,11 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                     link2={project.shortTitle}
                 />
                 <Box display={"flex"} flexDirection={"column"} gap={"80px"}>
-                    <Box display={"flex"} flexDirection={"column"} gap={"24px"} maxWidth={"1000px"} alignItems={"center"} pt={"24px"} >
-                        <Typography variant="h1">{project.shortTitle}</Typography>
-                        <Typography>{project.description}</Typography>
+                    <Box display={"flex"} flexDirection={"column"} gap={"80px"} alignItems="center">
+                        <Box display={"flex"} flexDirection={"column"} gap={"24px"} maxWidth={"1000px"} alignItems={"center"} pt={"24px"} >
+                            <Typography variant="h1">{project.shortTitle}</Typography>
+                            <Typography>{project.description}</Typography>
+                        </Box>
                     </Box>
                     <Box key={"picureBox"} display="flex" flexDirection="column" gap="16px">
                         <Box display="flex" flexDirection={"row"} gap={"16px"} ml={"-400px"} overflow="visible" width={2732}>
@@ -90,14 +72,14 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                             <HeaderBox color="red" />
                         </Box>
                         <Box display="flex" flexDirection={"row"} gap={"16px"} ml={"-100px"} overflow="visible" width={2732}>
-                            <HeaderBox color="gray" alt="pic1" picture={project.headerPicsRow2?.[0]}/>
-                            <HeaderBox color="gray" alt="pic2" picture={project.headerPicsRow2?.[1]}/>
+                            <HeaderBox color="gray" alt="pic1" picture={project.headerPicsRow2?.[0]} />
+                            <HeaderBox color="gray" alt="pic2" picture={project.headerPicsRow2?.[1]} />
                             <HeaderBox color='#f3b27c' title={project.headerTitle2} text={project.headerText2} />
-                            <HeaderBox color="gray" alt="pic3" picture={project.headerPicsRow2?.[2]}/>
+                            <HeaderBox color="gray" alt="pic3" picture={project.headerPicsRow2?.[2]} />
                             <HeaderBox color="red" />
                         </Box>
                     </Box>
-
+                    <DescriptionBlock imageUrl={project.descriptionPicture.fields.file.url} description={project.projectDescription} />
                 </Box>
             </Box>
             <Footer />
