@@ -18,12 +18,8 @@ export interface Project extends EntrySkeletonType  {
     shortTitle: string;
     date: string;
     isOngoing: boolean;
-    pic1?: AssetFileWithDetails;
-    pic2?: AssetFileWithDetails;
-    pic3?: AssetFileWithDetails;
-    pic4?: AssetFileWithDetails;
-    pic5?: AssetFileWithDetails;
-    pic6?: AssetFileWithDetails;
+    headerPicsRow1: AssetFileWithDetails[];
+    headerPicsRow2: AssetFileWithDetails[];
     headerText1: string;
     headerText2: string;
     headerTitle1: string;

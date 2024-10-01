@@ -5,6 +5,7 @@ import { Project } from "@/app/types/project";
 import { BLOCKS } from "@contentful/rich-text-types";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
+import HeaderBox from "./headerBox";
 
 export default async function ProjectPage({ params }: { params: { slug: string } }) {
     const contentfulClient = ContentfulClient.getClient();
@@ -31,18 +32,14 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         shortTitle: item.fields.shortTitle,
         isOngoing: item.fields.isOngoing,
         date: item.fields.date,
-        pic1: item.fields.pic1,
-        pic2: item.fields.pic2,
-        pic3: item.fields.pic3,
-        pic4: item.fields.pic4,
-        pic5: item.fields.pic5,
-        pic6: item.fields.pic6,
+        headerPicsRow1: item.fields.headerPicsRow1,
+        headerPicsRow2: item.fields.headerPicsRow2,
         headerText1: item.fields.headerText1,
         headerText2: item.fields.headerText2,
         headerTitle1: item.fields.headerTitle1,
         headerTitle2: item.fields.headerTitle2,
         courseLink: item.fields.courseLink
-    } as Project));
+    } as unknown as Project));
     const project = projects[0];
 
     const renderOptions = {
@@ -84,119 +81,21 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                         <Typography variant="h1">{project.shortTitle}</Typography>
                         <Typography>{project.description}</Typography>
                     </Box>
-                    <Box key={"picureBox"}>
-                        <Box display={"flex"} flexDirection={"row"} gap={"16px"} ml={"-400px"} >
-                            <Box
-                                overflow={"hidden"}
-                                position={"relative"}
-                                borderRadius={"40px"}
-                                height="340px"
-                                width="416px"
-                            >
-                                {project.pic1 ? (
-                                    <Image
-                                        src={`https:${project.pic1.fields.file.url}`}
-                                        alt="pic1"
-                                        layout="fill"
-                                        objectFit="cover"
-                                    />
-                                ) : (
-                                    <Box
-                                        sx={{
-                                            width: '100%',
-                                            height: '100%',
-                                            backgroundColor: 'gray'
-                                        }}
-                                    />
-                                )}
-                            </Box>
-                            <Box
-                                overflow={"hidden"}
-                                position={"relative"}
-                                borderRadius={"40px"}
-                                height="340px"
-                                width="416px"
-                            >
-
-                                <Box
-                                    width={"100%"}
-                                    height={'100%'}
-                                    display={"flex"}
-                                    flexDirection={"column"}
-                                    justifyContent={"center"}
-                                    sx={{
-                                        backgroundColor: '#e9f6f7'
-                                    }}
-                                >
-                                    <Typography px={"20px"} variant="h5">{project.headerTitle1}</Typography>
-                                    <Typography px={"20px"}>{project.headerText1}</Typography>
-                                </Box>
-                            </Box>
-                            <Box
-                                overflow={"hidden"}
-                                position={"relative"}
-                                borderRadius={"40px"}
-                                height="340px"
-                                width="416px"
-                            >
-                                {project.pic2 ? (
-                                    <Image
-                                        src={`https:${project.pic2.fields.file.url}`}
-                                        alt="pic1"
-                                        layout="fill"
-                                        objectFit="cover"
-                                    />
-                                ) : (
-                                    <Box
-                                        sx={{
-                                            width: '100%',
-                                            height: '100%',
-                                            backgroundColor: 'gray'
-                                        }}
-                                    />
-                                )}
-                            </Box>
-                            <Box
-                                overflow={"hidden"}
-                                position={"relative"}
-                                borderRadius={"40px"}
-                                height="340px"
-                                width="416px"
-                            >
-                                {project.pic3 ? (
-                                    <Image
-                                        src={`https:${project.pic3.fields.file.url}`}
-                                        alt="pic1"
-                                        layout="fill"
-                                        objectFit="cover"
-                                    />
-                                ) : (
-                                    <Box
-                                        sx={{
-                                            width: '100%',
-                                            height: '100%',
-                                            backgroundColor: 'gray'
-                                        }}
-                                    />
-                                )}
-                            </Box>
-                            <Box
-                                overflow={"hidden"}
-                                position={"relative"}
-                                borderRadius={"40px"}
-                                height="340px"
-                                width="416px"
-                            >
-                                <Box
-                                    sx={{
-                                        width: '100%',
-                                        height: '100%',
-                                        backgroundColor: 'red'
-                                    }}
-                                />
-                            </Box>
+                    <Box key={"picureBox"} display="flex" flexDirection="column" gap="16px">
+                        <Box display="flex" flexDirection={"row"} gap={"16px"} ml={"-400px"} overflow="visible" width={2732}>
+                            <HeaderBox color="gray" alt="pic1" picture={project.headerPicsRow1?.[0]} />
+                            <HeaderBox color='#e9f6f7' title={project.headerTitle1} text={project.headerText1} />
+                            <HeaderBox color="gray" alt="pic2" picture={project.headerPicsRow1?.[1]} />
+                            <HeaderBox color="gray" alt="pic3" picture={project.headerPicsRow1?.[2]} />
+                            <HeaderBox color="red" />
                         </Box>
-                        <Box></Box>
+                        <Box display="flex" flexDirection={"row"} gap={"16px"} ml={"-100px"} overflow="visible" width={2732}>
+                            <HeaderBox color="gray" alt="pic1" picture={project.headerPicsRow2?.[0]}/>
+                            <HeaderBox color="gray" alt="pic2" picture={project.headerPicsRow2?.[1]}/>
+                            <HeaderBox color='#f3b27c' title={project.headerTitle2} text={project.headerText2} />
+                            <HeaderBox color="gray" alt="pic3" picture={project.headerPicsRow2?.[2]}/>
+                            <HeaderBox color="red" />
+                        </Box>
                     </Box>
 
                 </Box>
