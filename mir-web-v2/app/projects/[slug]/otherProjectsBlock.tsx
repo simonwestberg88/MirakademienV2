@@ -6,13 +6,14 @@ import OtherProjectsCard from "./otherProjectsCard";
 
 interface OtherProjectsBlockProps {
     isOngoing: boolean;
+    currentProjectTitle: string;
 }
 
 export default async function OtherProjectsBlock(props: OtherProjectsBlockProps) {
     const contentfulClient = ContentfulClient.getClient();
     const projectsResponse = await contentfulClient.getEntries<Project>({
         content_type: 'project',
-        limit: 3,
+        limit: 4,
         order: ['fields.date'],
         select: [
             'fields.shortTitle',
@@ -27,7 +28,7 @@ export default async function OtherProjectsBlock(props: OtherProjectsBlockProps)
         'fields.isOngoing': props.isOngoing
     });
 
-    const projects = projectsResponse.items.map(item => ({
+    let projects = projectsResponse.items.map(item => ({
         cover: item.fields.cover,
         description: item.fields.description,
         slug: item.fields.slug,
@@ -37,6 +38,10 @@ export default async function OtherProjectsBlock(props: OtherProjectsBlockProps)
         isOngoing: item.fields.isOngoing,
         date: item.fields.date,
     } as Project));
+
+    console.log(props.currentProjectTitle);
+
+    projects = projects.filter(project => project.shortTitle !== props.currentProjectTitle);
     return (
         <Box display="flex" flexDirection="column" alignItems="center" gap="80px">
             <Typography variant="h3">

@@ -86,7 +86,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                     <DescriptionBlock imageUrl={project.descriptionPicture.fields.file.url} description={project.projectDescription} />
                     <ResultsBlock reserachResults={project.researchResults} description={project.researchDescription} />
                     <DisseminationBlock website={project.website} facebook={project.facebook} linkedIn={project.linkedIn}/>
-                    <OtherProjectsBlock  isOngoing={project.isOngoing} />
+                    <OtherProjectsBlock  isOngoing={project.isOngoing} currentProjectTitle={project.title}/>
                 </Box>
             </Box>
             <Footer />
