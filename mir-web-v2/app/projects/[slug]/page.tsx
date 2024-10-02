@@ -8,6 +8,7 @@ import DescriptionBlock from "./descriptionBlock";
 import ResultsBlock from "./resultsBlock";
 import DisseminationBlock from "./disseminationBlock";
 import OtherProjectsBlock from "./otherProjectsBlock";
+import SupportBlock from "./supportBlock";
 
 export default async function ProjectPage({ params }: { params: { slug: string } }) {
     const contentfulClient = ContentfulClient.getClient();
@@ -87,6 +88,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                     <ResultsBlock reserachResults={project.researchResults} description={project.researchDescription} />
                     <DisseminationBlock website={project.website} facebook={project.facebook} linkedIn={project.linkedIn}/>
                     <OtherProjectsBlock  isOngoing={project.isOngoing} currentProjectTitle={project.title}/>
+                    <SupportBlock />
                 </Box>
             </Box>
             <Footer />
