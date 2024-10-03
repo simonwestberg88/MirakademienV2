@@ -13,6 +13,9 @@ import { useTheme } from '@mui/material/styles';
 import BlueButton from './blue_button';
 import Image from 'next/image';
 import { Link } from '@mui/material';
+import { useState } from 'react';
+import MirButton from './mir-button';
+import ContactForm from './contact-form';
 
 export default function ButtonAppBar() {
   const theme = useTheme();
@@ -25,6 +28,16 @@ export default function ButtonAppBar() {
 
   const handleMenuClose = () => {
     setAnchorEl(null);
+  };
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
   };
 
   if (isDesktop) {
@@ -56,9 +69,10 @@ export default function ButtonAppBar() {
             <MenuItem sx={{color: "black"}} component="a" href="/contacts">Contacts</MenuItem>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <BlueButton text="Contact Us" />
+            <MirButton variant='contained' onClick={handleClickOpen}>Contact us</MirButton>
           </Box>
         </Toolbar>
+        <ContactForm open={open} handleClose={handleClose} />
       </AppBar>
     )
   }

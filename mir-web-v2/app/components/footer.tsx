@@ -71,8 +71,8 @@ export default function Footer() {
                         <Link href="/privacy-policy">
                             <Typography variant='caption' sx={{ textDecoration: "underline" }}>Privacy Policy</Typography>
                         </Link>
-                        <Link href="/terms-of-service">
-                            <Typography variant="caption" sx={{ textDecoration: "underline" }}>Terms of Service</Typography>
+                        <Link href="/terms-and-conditions">
+                            <Typography variant="caption" sx={{ textDecoration: "underline" }}>Terms and Conditions</Typography>
                         </Link>
                     </Box>
                     <Box sx={{ ml: "auto", display: "flex", gap: 2 }}>
