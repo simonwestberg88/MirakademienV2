@@ -32,7 +32,6 @@ export default function BlogCard(props: BlogCardProps) {
             <Link underline="none" href={`/blog/${props.post.slug}`}> <Typography variant="h5">{props.post.title}</Typography></Link>
             <Typography>{props.post.description}</Typography>
             <Box sx={{ display: "flex", gap: "16px" }}>
-                e
                 <Box sx={{ display: "flex", flexDirection: "column" }}>
                     <Typography variant="caption" sx={{ fontWeight: 600 }}>{props.post.author}</Typography>
                     <Typography variant="caption">{props.post.author} - {props.post.timeToRead}</Typography>

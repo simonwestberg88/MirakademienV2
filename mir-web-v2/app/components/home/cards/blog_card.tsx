@@ -1,7 +1,5 @@
-import { TeamMember } from '@/app/types/TeamMember';
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image'
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import { Blog } from '@/app/types/Blog';
 
 interface BlogCardProps {
@@ -11,12 +9,14 @@ interface BlogCardProps {
 export default function BlogCard({ post }: BlogCardProps) {
     const imageUrl = post.coverImage.fields.file?.url as string;
     return (
-        <Box sx={{ width: "405px", display: "flex", flexDirection: "column", gap: "24px", alignItems: "flex-start" }}>
-            <Image
-                src={`https:${imageUrl}`} alt={post.contentTypeId}
-                width={405}
-                height={240}
-            ></Image>
+        <Box display="flex" flexDirection="column" width="405px" gap="24px">
+            <Box width= "405px" height="205px" borderRadius="40px" overflow="hidden">
+                <Image
+                    src={`https:${imageUrl}`} alt={post.contentTypeId}
+                    width={405}
+                    height={240}
+                ></Image>
+            </Box>
             <Box>
                 <Typography variant='h4' sx={{ fontWeight: 300 }}>{post.title}</Typography>
                 <Typography>{post.description}</Typography>
