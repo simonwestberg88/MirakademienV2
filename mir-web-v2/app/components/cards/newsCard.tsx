@@ -1,5 +1,5 @@
 "use client"
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import Image from "next/image";
 import { News } from "@/app/types/news";
 
@@ -8,7 +8,6 @@ interface NewsCardProps {
 };
 
 export default function NewsCard(props: NewsCardProps) {
-    const theme = useTheme();
     const coverimageUrl = props.news.cover.fields.file?.url as string;
     const authorImageUrl = props.news.authorImage.fields.file?.url as string;
     return (
@@ -22,7 +21,9 @@ export default function NewsCard(props: NewsCardProps) {
                     height={300}
                 />
             </Box>
-            <Typography variant="h5">{props.news.title}</Typography>
+            <Link href={`/news/${props.news.slug}`} underline="none">
+                <Typography variant="h5">{props.news.title}</Typography>
+            </Link>
             <Typography>{props.news.description}</Typography>
             <Box sx={{ display: "flex", gap: "16px" }}>
                 <Image

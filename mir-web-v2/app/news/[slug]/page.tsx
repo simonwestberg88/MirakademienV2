@@ -1,46 +1,39 @@
-import { Box, Divider, Typography } from '@mui/material';
-import { Blog } from '../../types/Blog';
-import { ContentfulClient } from '../../lib/client';
-import NavMenu from '@/app/components/nav-menu';
+import Footer from "@/app/components/footer";
+import NavMenu from "@/app/components/nav-menu";
+import { ContentfulClient } from "@/app/lib/client";
+import { News } from "@/app/types/news";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { Box, Divider, Typography } from "@mui/material";
+import Image from "next/image";
 import LinkIcon from '@mui/icons-material/Link';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import Image from 'next/image';
-import XIcon from '@mui/icons-material/X';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS } from '@contentful/rich-text-types';
-import Footer from '@/app/components/footer';
+import XIcon from '@mui/icons-material/X';
+import { BLOCKS } from "@contentful/rich-text-types";
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function NewsSlugPage({ params }: { params: { slug: string } }) {
     const contentfulClient = ContentfulClient.getClient();
 
-    const blogResponse = await contentfulClient.getEntries<Blog>({
-        content_type: "blog",
+    const newsResponse = await contentfulClient.getEntries<News>({
+        content_type: "news",
         'fields.slug': params.slug,
         limit: 1,
     });
-    let blogPosts = blogResponse.items.map(item => ({
+
+    const item = newsResponse.items[0];
+
+    const news = {
         title: item.fields.title,
-        post: item.fields.post,
-        date: item.fields.date,
-        author: item.fields.author,
-        authorImage: item.fields.authorImage,
-        slug: item.fields.slug,
+        cover: item.fields.cover,
         description: item.fields.description,
         tags: item.fields.tags,
-        coverImage: item.fields.coverImage,
+        slug: item.fields.slug,
+        author: item.fields.author,
+        date: item.fields.date,
+        post: item.fields.post,
+        authorImage: item.fields.authorImage,
         timeToRead: item.fields.timeToRead,
-        category: item.fields.category,
-        authorDescription: item.fields.authorDescription
-    } as Blog));
-
-    if (!blogResponse.items.length) {
-        return {
-            notFound: true,
-        };
-    }
-
-    const post = blogPosts[0];
+    } as News;
 
     const renderOptions = {
         renderNode: {
@@ -79,14 +72,13 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         <Box>
 
             <Box sx={{ ml: "64px", mr: "64px" }}>
-                <NavMenu link1='Blog' link2={post.title} href1='/blog'></NavMenu>
+                <NavMenu link1='Blog' link2={news.title} href1='/blog'></NavMenu>
                 <Box display={"flex"} flexDirection={"column"} gap={"80px"}>
                     <Box display={"flex"} flexDirection={"column"} gap={"16px"}>
                         <Box display={"fleX"} flexDirection={"row"} gap={"16px"} alignItems="center">
-                            <Typography borderRadius={"20px"} padding={"4px"} pl={"10px"} pr={"10px"} bgcolor={"orange.main"} color={"white"} variant='caption'>{post.category}</Typography>
-                            <Typography variant='caption'>{post.timeToRead} read</Typography>
+                            <Typography variant='caption'>{news.timeToRead} read</Typography>
                         </Box>
-                        <Typography variant="h1" sx={{ mb: 4 }}>{post.title}</Typography>
+                        <Typography variant="h1" sx={{ mb: 4 }}>{news.title}</Typography>
                     </Box>
                     <Box display={"flex"} flexDirection={"column"} gap={"32px"}>
                         <Box
@@ -96,7 +88,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                             height="600px"
                         >
                             <Image
-                                src={`https:${post.coverImage.fields.file.url}`}
+                                src={`https:${news.cover.fields.file.url}`}
                                 alt="cover image"
                                 layout="fill"
                                 objectFit="cover"
@@ -106,12 +98,12 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                             <Box display="flex" flexDirection="row" gap={4}>
                                 <Box display="flex" flexDirection="column">
                                     <Typography>Written by</Typography>
-                                    <Typography fontWeight={500}>{post.author}</Typography>
+                                    <Typography fontWeight={500}>{news.author}</Typography>
                                 </Box>
 
                                 <Box display="flex" flexDirection="column">
                                     <Typography>Published on</Typography>
-                                    <Typography fontWeight={500}>{post.date}</Typography>
+                                    <Typography fontWeight={500}>{news.date}</Typography>
                                 </Box>
                             </Box>
                             <Box display="flex" gap={1}>
@@ -124,10 +116,10 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                     </Box>
                 </Box>
                 <Box maxWidth={"768px"} pt={"112px"} mx="auto">
-                    {documentToReactComponents(post.post, renderOptions)}
+                    {documentToReactComponents(news.post, renderOptions)}
                     <Box key="btmBox" display={"flex"} flexDirection={"column"} gap={"48px"} alignItems="center">
                         <Box display={"flex"} flexDirection={"column"} gap={"16px"} alignItems="center">
-                            <Typography fontWeight={500}>Share this post</Typography>
+                            <Typography fontWeight={600}>Share this news</Typography>
                             <Box alignItems="center">
                                 <LinkIcon />
                                 <LinkedInIcon />
@@ -137,22 +129,22 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                                 display={"flex"}
                                 gap={"8px"}
                                 alignItems="center">
-                                {post.tags.map(tag => (
+                                {news.tags.map(tag => (
                                     <Typography key={tag} borderRadius={"20px"} padding={"4px"} pl={"10px"} pr={"10px"} bgcolor={"orange.main"} color={"white"} variant='caption'>{tag}</Typography>
                                 ))}
                             </Box>
                         </Box>
-                        <Divider>CENTER</Divider> 
+                        <Divider sx={{ width: "100%", mb: 5, background: "black" }} />
                         <Box display={"flex"} flexDirection={"column"} gap={"16px"} alignItems="center">
                             <Image
                                 width={48}
                                 height={48}
-                                src={`https:${post.authorImage.fields.file.url}`}
+                                src={`https:${news.authorImage.fields.file.url}`}
                                 alt="authImage"
                             />
                             <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
-                                <Typography variant='caption' fontWeight={600}>{post.author}</Typography>
-                                <Typography variant='caption'>{post.authorDescription}</Typography>
+                                <Typography variant='caption' fontWeight={600}>{news.author}</Typography>
+                                <Typography variant='caption'>{news.authorDescription}</Typography>
                             </Box>
                         </Box>
                     </Box>
