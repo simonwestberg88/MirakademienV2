@@ -16,7 +16,6 @@ export interface Project extends EntrySkeletonType  {
     researchDescription: string;
     descriptionPicture: AssetFileWithDetails;
     coverHeight: number;
-    shortTitle: string;
     date: string;
     isOngoing: boolean;
     headerPicsRow1: AssetFileWithDetails[];

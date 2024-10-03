@@ -21,7 +21,7 @@ export default function OtherProjectsCard({ project }: ProjectCardProps) {
                     layout="fill"
                 />
             </Box>
-            <Link underline="none" href={`/projects/${project.slug}`}> <Typography variant="h5">{project.shortTitle}</Typography></Link>
+            <Link underline="none" href={`/projects/${project.slug}`}> <Typography variant="h5">{project.title}</Typography></Link>
             <Typography>{project.description}</Typography>
             <Link underline="none" href={`/projects/${project.slug}`}>
                 <Box sx={{ display: "flex", alignItems: "center" }}>

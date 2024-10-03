@@ -15,17 +15,22 @@ export default function ProjectCard({ project, showTags = true }: ProjectCardPro
     if (showTags === undefined) {
         showTags = true;
     }
+
+    const imageRatio = project.cover.fields.file.details.image.width / 623;
+    const boxHeight = project.cover.fields.file.details.image.height / imageRatio;
+
     return (
         <Box sx={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-            <Box sx={{ borderRadius: "30px", overflow: "hidden", width: 623, height: project.coverHeight }}>
+            <Box borderRadius= "30px" overflow= "hidden" width= "623px" height= {`${boxHeight}px`} position="relative">
                 <Image
                     src={`https:${imageUrl}`}
                     alt={project.contentTypeId}
-                    width={623}
-                    height={project.coverHeight}
+                    width={project.cover.fields.file.details.image.width}
+                    height={project.cover.fields.file.details.image.height}
+                    layout="responsive"
                 />
             </Box>
-            <Link underline="none" href={`/projects/${project.slug}`}> <Typography variant="h5">{project.shortTitle}</Typography></Link>
+            <Link underline="none" href={`/projects/${project.slug}`}> <Typography variant="h5">{project.title}</Typography></Link>
             <Typography>{project.description}</Typography>
             {showTags ? (
 

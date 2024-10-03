@@ -16,7 +16,7 @@ export default async function OtherProjectsBlock(props: OtherProjectsBlockProps)
         limit: 4,
         order: ['fields.date'],
         select: [
-            'fields.shortTitle',
+            'fields.title',
             'fields.description',
             'fields.slug',
             'fields.cover',
@@ -34,14 +34,14 @@ export default async function OtherProjectsBlock(props: OtherProjectsBlockProps)
         slug: item.fields.slug,
         tags: item.fields.tags,
         coverHeight: item.fields.coverHeight,
-        shortTitle: item.fields.shortTitle,
-        isOngoing: item.fields.isOngoing,
+        title: item.fields.title,
+        title: item.fields.isOngoing,
         date: item.fields.date,
-    } as Project));
+    } as unknown as Project));
 
     console.log(props.currentProjectTitle);
 
-    projects = projects.filter(project => project.shortTitle !== props.currentProjectTitle);
+    projects = projects.filter(project => project.title !== props.currentProjectTitle);
     return (
         <Box display="flex" flexDirection="column" alignItems="center" gap="80px">
             <Typography variant="h3">

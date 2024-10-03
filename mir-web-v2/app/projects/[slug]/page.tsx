@@ -35,7 +35,6 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         linkedIn: item.fields.linkedIn,
         website: item.fields.website,
         coverHeight: item.fields.coverHeight,
-        shortTitle: item.fields.shortTitle,
         isOngoing: item.fields.isOngoing,
         date: item.fields.date,
         headerPicsRow1: item.fields.headerPicsRow1,
@@ -59,12 +58,12 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                 <NavMenu
                     link1="Projects"
                     href1="/projects"
-                    link2={project.shortTitle}
+                    link2={project.title}
                 />
                 <Box display={"flex"} flexDirection={"column"} gap={"80px"}>
                     <Box display={"flex"} flexDirection={"column"} gap={"80px"} alignItems="center">
                         <Box display={"flex"} flexDirection={"column"} gap={"24px"} maxWidth={"1000px"} alignItems={"center"} pt={"24px"} >
-                            <Typography variant="h1">{project.shortTitle}</Typography>
+                            <Typography variant="h1">{project.title}</Typography>
                             <Typography>{project.description}</Typography>
                         </Box>
                     </Box>

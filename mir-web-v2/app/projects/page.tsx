@@ -11,7 +11,7 @@ export default async function Projects() {
     content_type: 'project',
     order: ['fields.date'],
     select: [
-      'fields.shortTitle', 
+      'fields.title', 
       'fields.description', 
       'fields.slug', 
       'fields.cover', 
@@ -19,27 +19,19 @@ export default async function Projects() {
       'fields.isOngoing', 
       'fields.tags',
       'fields.coverHeight'
-    ], // Specify the fields to fetch
+    ],
   });
 
   const projects = projectsResponse.items.map(item => ({
-    // title: item.fields.title,
     cover: item.fields.cover,
     description: item.fields.description,
-    // descriptionPicture: item.fields.descriptionPicture,
-    // pictures: item.fields.pictures,
-    // projectDescription: item.fields.projectDescription,
-    // research: item.fields.research,
     slug: item.fields.slug,
     tags: item.fields.tags,
-    // facebook: item.fields.facebook,
-    // linkedIn: item.fields.linkedIn,
-    // website: item.fields.website,
     coverHeight: item.fields.coverHeight,
-    shortTitle: item.fields.shortTitle,
+    title: item.fields.title,
     isOngoing: item.fields.isOngoing,
     date: item.fields.date,
-  } as Project));
+  } as unknown as Project));
 
   const ongoingProjects = projects.filter(project => project.isOngoing === true);
   const closedProjects = projects.filter(project => project.isOngoing === false);

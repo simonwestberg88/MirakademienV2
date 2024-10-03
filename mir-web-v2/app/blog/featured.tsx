@@ -1,5 +1,5 @@
 "use client"
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Link, Typography, useTheme } from "@mui/material";
 import Image from "next/image";
 import { Blog } from "../types/Blog";
 
@@ -27,12 +27,13 @@ export default function BlogFeatured(props: BlogCardProps) {
                         src={`https:${coverimageUrl}`}
                         alt="cover image"
                         layout="fill"
-                        objectFit="cover"
                     />
                 </Box>
                 <Box display={"flex"} flexDirection={"column"} flex={1} gap={"24px"}>
                     <Typography fontWeight={600}>Featured</Typography>
-                    <Typography variant="h5">{props.post.title}</Typography>
+                    <Link underline="none" href={`/blog/${props.post.slug}`}>
+                        <Typography variant="h5">{props.post.title}</Typography>
+                    </Link>
                     <Typography>{props.post.description}</Typography>
                     <Box sx={{ display: "flex", gap: "16px" }}>
                         <Image
