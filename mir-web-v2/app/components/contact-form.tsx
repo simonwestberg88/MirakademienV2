@@ -1,5 +1,5 @@
-import React from "react";
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField, Box, Typography } from "@mui/material";
+import React, { useState } from "react";
+import { Dialog, DialogActions, DialogContent, TextField, Box, Typography } from "@mui/material";
 import MirButton from "./mir-button";
 
 interface ContactFormProps {
@@ -8,11 +8,14 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({ open, handleClose }: ContactFormProps) {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-        // Handle form submission logic here
-        console.log("Form submitted");
-        handleClose(); // Close the dialog after submitting
+        console.log({ name, email, message });
+        handleClose();
     };
 
     return (
@@ -23,8 +26,8 @@ export default function ContactForm({ open, handleClose }: ContactFormProps) {
             fullWidth
             PaperProps={{
                 sx: {
-                    backgroundColor: "#F6F3EA", // Background color for the entire dialog
-                    borderRadius: "40px", // Rounded corners for the entire dialog
+                    backgroundColor: "#F6F3EA",
+                    borderRadius: "40px",
                     padding: "64px",
                 },
             }}
@@ -33,8 +36,8 @@ export default function ContactForm({ open, handleClose }: ContactFormProps) {
             <form onSubmit={handleSubmit}>
                 <DialogContent
                     sx={{
-                        backgroundColor: "#F6F3EA", // Keep consistent background inside the content
-                        borderRadius: "40px", // Ensure the content also has rounded corners
+                        backgroundColor: "#F6F3EA",
+                        borderRadius: "40px",
                     }}
                 >
                     <Box display="flex" flexDirection="column" gap={2}>
@@ -52,11 +55,12 @@ export default function ContactForm({ open, handleClose }: ContactFormProps) {
                                 variant="outlined"
                                 required
                                 fullWidth
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
                             />
                         </Box>
                         <Box>
                             <Typography>Email</Typography>
-
                             <TextField
                                 placeholder="Email"
                                 sx={{
@@ -70,11 +74,17 @@ export default function ContactForm({ open, handleClose }: ContactFormProps) {
                                 required
                                 type="email"
                                 fullWidth
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </Box>
                         <Box>
                             <Typography>Message</Typography>
-                            <TextField multiline rows={4} fullWidth required
+                            <TextField
+                                multiline
+                                rows={4}
+                                fullWidth
+                                required
                                 sx={{
                                     backgroundColor: "#EDE6D4",
                                     borderRadius: "10px",
@@ -83,6 +93,8 @@ export default function ContactForm({ open, handleClose }: ContactFormProps) {
                                     },
                                 }}
                                 placeholder="Type your message..."
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
                             />
                         </Box>
                     </Box>
