@@ -5,6 +5,7 @@ import { Box, Button, Typography } from '@mui/material';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import MirButton from '../mir-button';
 
 export default function HomeConnect() {
     const theme = useTheme();
@@ -24,18 +25,11 @@ export default function HomeConnect() {
                         <Typography variant='h2'>Get in Touch</Typography>
                         <Typography>We would love to hear from you. Contact us for any inquiries or assistance.</Typography>
                     </Box>
-                    <Button variant='contained' color="info"
-                        sx={{
-                            fontFamily: theme.typography.body1.fontFamily,
-                            textTransform: "none",
-                            width: "auto",
-                            alignSelf: "flex-start",
-                            borderRadius: 40,
-                            color: theme.palette.background.default,
-                            minWidth: "120px",
-                        }}>More</Button>
+                    <MirButton variant='contained'
+                    sx={{width: "160px"}}
+                        >Contact us</MirButton>
                 </Box>
-                <Box>
+                <Box display="flex" flexDirection="column" gap="24px">
                     <Box key="email" sx={{ display: "flex", gap: 2 }}>
                         <MailOutlineIcon />
                         <Box>
