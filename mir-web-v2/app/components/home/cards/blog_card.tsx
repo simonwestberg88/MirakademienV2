@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Link, Typography } from '@mui/material';
 import Image from 'next/image'
 import { Blog } from '@/app/types/Blog';
 
@@ -17,7 +17,9 @@ export default function BlogCard({ post }: BlogCardProps) {
                 ></Image>
             </Box>
             <Box>
+                <Link underline='none' href={`/blog/${post.slug}`}>
                 <Typography variant='h4' sx={{ fontWeight: 300 }}>{post.title}</Typography>
+                </Link>
                 <Typography>{post.description}</Typography>
             </Box>
         </Box>
