@@ -19,7 +19,7 @@ export default function HomeNews({ news }: HomeNewsProps) {
             </Box>
             <Box display="flex" flexDirection="row" gap="48px" flexWrap="wrap">
                 {news.map(item => (
-                    <HomeNewsCard news={item} />
+                    <HomeNewsCard key={item.title} news={item} />
                 ))}
             </Box>
             <MirButton

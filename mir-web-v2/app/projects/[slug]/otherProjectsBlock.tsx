@@ -35,11 +35,9 @@ export default async function OtherProjectsBlock(props: OtherProjectsBlockProps)
         tags: item.fields.tags,
         coverHeight: item.fields.coverHeight,
         title: item.fields.title,
-        title: item.fields.isOngoing,
+        isOngoing: item.fields.isOngoing,
         date: item.fields.date,
     } as unknown as Project));
-
-    console.log(props.currentProjectTitle);
 
     projects = projects.filter(project => project.title !== props.currentProjectTitle);
     return (
@@ -49,7 +47,7 @@ export default async function OtherProjectsBlock(props: OtherProjectsBlockProps)
             </Typography>
             <Box display="flex" flexDirection="row" flexWrap="wrap" gap="48px">
                 {projects.map(project => (
-                    <OtherProjectsCard project={project} />
+                    <OtherProjectsCard key={project.title} project={project} />
                 ))}
             </Box>
         </Box>
