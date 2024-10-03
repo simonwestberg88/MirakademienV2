@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
-import { Box, Button, Divider, TextField, Typography } from '@mui/material';
+import { Box, Button, Divider, Link, TextField, Typography } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Image from 'next/image';
@@ -16,7 +16,7 @@ export default function Footer() {
                     <Image src="/mir_logo.png" width={121.85} height={61.25} alt="MIR Logo" />
                     <Box key="l4_1">
                         <Typography sx={{ fontWeight: "bold" }}>About Us</Typography>
-                        <Box sx={{ pt: "20px", display: "flex", flexDirection: "column", gap: "16px"  }}>
+                        <Box sx={{ pt: "20px", display: "flex", flexDirection: "column", gap: "16px" }}>
                             <Typography>Our Story</Typography>
                             <Typography>Services</Typography>
                             <Typography>Projects</Typography>
@@ -33,7 +33,7 @@ export default function Footer() {
                     </Box>
                 </Box>
                 <Box key="l3_2" sx={{ width: 500, marginBottom: 2 }}>
-                    <Box sx={{display:"flex", flexDirection: "column", gap: "16px"}}>
+                    <Box sx={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                         <Typography sx={{ fontWeight: "bold" }}>Subscribe</Typography>
                         <Typography>Join our newsletter to stay up to date on features and releases.</Typography>
                         <Box sx={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
@@ -65,11 +65,15 @@ export default function Footer() {
             </Box>
             <Box key="l2_2" sx={{ pl: "64px", pr: "64px", pt: 15 }}>
                 <Divider sx={{ width: "100%", mb: 5, background: "black" }} />
-                <Box sx={{display:"flex"}}>
+                <Box sx={{ display: "flex" }}>
                     <Box sx={{ display: "flex", gap: 4 }}>
                         <Typography variant='caption'>© 2023 Mir Akademien. All rights reserved.</Typography>
-                        <Typography variant='caption' sx={{ textDecoration: "underline" }}>Privacy Policy</Typography>
-                        <Typography variant="caption" sx={{ textDecoration: "underline" }}>Terms of Service</Typography>
+                        <Link href="/privacy-policy">
+                            <Typography variant='caption' sx={{ textDecoration: "underline" }}>Privacy Policy</Typography>
+                        </Link>
+                        <Link href="/terms-of-service">
+                            <Typography variant="caption" sx={{ textDecoration: "underline" }}>Terms of Service</Typography>
+                        </Link>
                     </Box>
                     <Box sx={{ ml: "auto", display: "flex", gap: 2 }}>
                         <InstagramIcon />
