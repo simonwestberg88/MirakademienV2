@@ -12,6 +12,7 @@ import { Blog } from "./types/Blog";
 import HomeBlog from "./components/home/blog";
 import HomeConnect from "./components/home/connect";
 import { AssetFileWithDetails } from "./types/AssetFileWithDetails";
+import { News } from "./types/news";
 
 export default async function Home() {
 
@@ -55,13 +56,32 @@ export default async function Home() {
     title: item.fields.title,
   } as Blog))
 
+  const newsResponse = await contentfulClient.getEntries<News>({
+    content_type: "news",
+    limit: 3,
+    order: ['-fields.date']
+  });
+
+  const news = newsResponse.items.map(item => ({
+    title: item.fields.title,
+    cover: item.fields.cover,
+    description: item.fields.description,
+    tags: item.fields.tags,
+    slug: item.fields.slug,
+    author: item.fields.author,
+    date: item.fields.date,
+    post: item.fields.post,
+    authorImage: item.fields.authorImage,
+    timeToRead: item.fields.timeToRead,
+} as News));
+
   return (
     <Box sx={{ backgroundColor: "rgba(237, 230, 212, 0.5)" }}>
       <HomeDei />
       <HomeWelcome />
       <HomeTeam teamMembers={teamMembers} />
       <ClientStories stories={stories}/>
-      <HomeNews />
+      <HomeNews news={news}/>
       <HomeBlog posts={blogPosts} />
       <HomeConnect />
       <Box>
