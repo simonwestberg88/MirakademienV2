@@ -15,14 +15,14 @@ export default function TermsOfService() {
                             <ListItem>
                                 <Typography>
                                     <strong>1. Introduction: </strong>
-                                    These general terms and conditions ("Terms") govern your use of the website https://mirakademien.com ("Website"). By visiting or using the Website, you agree to these Terms. If you do not accept the Terms, please do not use the Website.
+                                    These general terms and conditions (&quot;Terms&quot;) govern your use of the website https://mirakademien.com (&quot;Website&quot;). By visiting or using the Website, you agree to these Terms. If you do not accept the Terms, please do not use the Website.
                                 </Typography>
                             </ListItem>
 
                             <ListItem>
                                 <Typography>
                                     <strong>2. Use of the Website: </strong>
-                                    The Website is available to all users and does not require you to create an account. You agree to use the Website only for lawful purposes and in a manner that does not infringe on anyone else's rights or restrict or inhibit anyone else's use and enjoyment of the Website.
+                                    The Website is available to all users and does not require you to create an account. You agree to use the Website only for lawful purposes and in a manner that does not infringe on anyone else&apos;s rights or restrict or inhibit anyone else&apos;s use and enjoyment of the Website.
                                 </Typography>
                             </ListItem>
 
