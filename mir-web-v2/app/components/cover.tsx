@@ -12,7 +12,7 @@ export default function CoverComponent({ top, heading, buttonText, imgSrc: image
         <Box>
             <Box sx={{ ml: "64px", display: "flex", gap: "32px", mt: "24px", mb: "24px" }}>
                 <Link href="/" underline="none" sx={{ fontWeight: 500 }}>Home</Link>
-                <Typography>Our services</Typography>
+                <Typography>Our story</Typography>
             </Box>
             <Box
                 sx={{

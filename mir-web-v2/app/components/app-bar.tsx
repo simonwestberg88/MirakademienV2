@@ -79,12 +79,12 @@ export default function ButtonAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Image src="/mir_logo.png" width={121.85} height={61.25} alt="MIR Logo" />
+          <Link href="/"> <Image src="/mir_logo.png" width={121.85} height={61.25} alt="MIR Logo" /></Link>
         </Box>
-        <MirButton sx={{height: "32px"}} variant="contained">Learn More</MirButton>
+        <MirButton sx={{ height: "32px" }} variant="contained">Learn More</MirButton>
       </Box>
       {open ? (
-        <Box display="flex" flexDirection="column" gap="24px" pl= "20px" pr="20px" height="100vh" pt="32px" width="100%">
+        <Box display="flex" flexDirection="column" gap="24px" pl="20px" pr="20px" height="100vh" pt="32px" width="100%">
           <Link href="/our-story" underline='none'><Typography>Our Story</Typography></Link>
           <Link href="/services" underline='none'><Typography>Services</Typography></Link>
           <Link href="/projects" underline='none'><Typography>Projects</Typography></Link>

@@ -11,7 +11,6 @@ import { ClientStory } from "@/app/types/ClientStory";
 import { Blog } from "./types/Blog";
 import HomeBlog from "./components/home/blog";
 import HomeConnect from "./components/home/connect";
-import { AssetFileWithDetails } from "./types/AssetFileWithDetails";
 import { News } from "./types/news";
 
 export default async function Home() {
