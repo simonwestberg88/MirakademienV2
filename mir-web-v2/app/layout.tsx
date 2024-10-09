@@ -6,6 +6,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import theme from '../theme';
 import ButtonAppBar from "@/app/components/app-bar";
 import { Box } from "@mui/material";
+import Footer from "./components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
             <ThemeProvider theme={theme}>
               <ButtonAppBar></ButtonAppBar>
               {children}
+              <Footer />
             </ThemeProvider>
           </Box>
         </AppRouterCacheProvider>
