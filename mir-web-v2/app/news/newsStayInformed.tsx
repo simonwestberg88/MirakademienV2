@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import BlueButton from "../components/blue_button";
+import MirButton from "../components/mir-button";
 
 export default function NewsStayInformed() {
     return (
@@ -8,7 +8,7 @@ export default function NewsStayInformed() {
                 <Typography variant="h2">Stay Informed with MIR Akademien</Typography>
                 <Typography>Get the latest updates on diversity, inclusion, and equity.</Typography>
                 <Box sx={{ width: "81px" }}>
-                    <BlueButton text="Subscribe"></BlueButton>
+                    <MirButton >Subscribe</MirButton>
                 </Box>
             </Box>
         </Box>

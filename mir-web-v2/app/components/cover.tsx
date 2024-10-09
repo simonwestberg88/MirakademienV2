@@ -1,5 +1,5 @@
 import { Box, Typography, Link } from "@mui/material";
-import BlueButton from "./blue_button";
+import MirButton from "./mir-button";
 
 interface CoverProps{
     top:string;
@@ -35,7 +35,7 @@ export default function CoverComponent({ top, heading, buttonText, imgSrc: image
                     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", pt: "39px", gap: "24px" }}>
                         <Typography color="white" sx={{ fontWeight: 600 }}>{top}</Typography>
                         <Typography variant="h2" color="white">{heading}</Typography>
-                        <BlueButton text={buttonText}></BlueButton>
+                        <MirButton variant="contained" >{buttonText}</MirButton>
                     </Box>
                 </Box>
             </Box>

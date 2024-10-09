@@ -4,7 +4,7 @@ import Services123 from "./one-two-three";
 import ServiceOnsite from "./on-site";
 import ServiceOnlineCourses from "./online-courses";
 import ServiceCoaching from "./coaching";
-import ClientStories from "../components/client_stories";
+import ClientStories from "../components/home/client-stories";
 import { ClientStory } from "../types/ClientStory";
 import { ContentfulClient } from "../lib/client";
 import ServicesDiscover from "./discover";

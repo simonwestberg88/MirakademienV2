@@ -3,7 +3,6 @@ import Footer from "@/app/components/footer";
 import HomeDei from "@/app/components/home/dei";
 import HomeWelcome from "@/app/components/home/welcome";
 import HomeNews from "@/app/components/home/news";
-import ClientStories from "@/app/components/client_stories";
 import HomeTeam from "./components/home/team";
 import { ContentfulClient } from "@/app/lib/client";
 import { TeamMember } from "@/app/types/TeamMember";
@@ -12,6 +11,7 @@ import { Blog } from "./types/Blog";
 import HomeBlog from "./components/home/blog";
 import HomeConnect from "./components/home/connect";
 import { News } from "./types/news";
+import ClientStories from "./components/home/client-stories";
 
 export default async function Home() {
 

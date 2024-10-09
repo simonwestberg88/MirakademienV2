@@ -3,13 +3,13 @@ import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 import { Box, Typography } from '@mui/material';
 import { ClientStory } from '@/app/types/ClientStory';
-import ClientStoryCard from './client_story_card';
+import ClientStoryCard from '../cards/client_story_card';
 
 interface ClientStoriesProps {
     stories: ClientStory[];
 }
 
-export default function ClientStories({ stories }: ClientStoriesProps) {
+export default function ClientStoriesDesktop({ stories }: ClientStoriesProps) {
     const theme = useTheme();
     return (
         <Box sx={{ pt: "112px" }}>
