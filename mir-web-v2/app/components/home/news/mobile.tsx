@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { Box, Typography } from '@mui/material';
 import { News } from '@/app/types/news';
-import HomeNewsCard from './cards/news_card';
-import MirButton from '../mir-button';
 import ChevronRight from '@mui/icons-material/ChevronRight';
+import HomeNewsCard from '../cards/news_card';
+import MirButton from '../../mir-button';
 
 interface HomeNewsProps {
     news: News[];
 }
 
-export default function HomeNews({ news }: HomeNewsProps) {
+export default function NewsMobile({ news }: HomeNewsProps) {
     return (
         <Box pt="112px" display="flex" flexDirection="column" gap="80px" pl="64px" pr="64px">
             <Box display= "flex"  flexDirection= "column"  width = "768px" gap="16px">

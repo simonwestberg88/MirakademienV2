@@ -3,8 +3,8 @@ import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 import { Box, Typography, useMediaQuery } from '@mui/material';
 import { ClientStory } from '@/app/types/ClientStory';
-import ClientStoriesDesktop from './client-stories/desktop';
-import ClientStoriesMobile from './client-stories/mobile';
+import ClientStoriesDesktop from './desktop';
+import ClientStoriesMobile from './mobile';
 
 interface ClientStoriesProps {
     stories: ClientStory[];

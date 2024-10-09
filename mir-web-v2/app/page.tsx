@@ -2,7 +2,6 @@ import { Box } from "@mui/material";
 import Footer from "@/app/components/footer";
 import HomeDei from "@/app/components/home/dei";
 import HomeWelcome from "@/app/components/home/welcome";
-import HomeNews from "@/app/components/home/news";
 import HomeTeam from "./components/home/team";
 import { ContentfulClient } from "@/app/lib/client";
 import { TeamMember } from "@/app/types/TeamMember";
@@ -11,7 +10,8 @@ import { Blog } from "./types/Blog";
 import HomeBlog from "./components/home/blog";
 import HomeConnect from "./components/home/connect";
 import { News } from "./types/news";
-import ClientStories from "./components/home/client-stories";
+import ClientStories from "./components/home/client-stories/client-stories";
+import HomeNews from "./components/home/news/news";
 
 export default async function Home() {
 
