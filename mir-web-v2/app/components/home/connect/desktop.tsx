@@ -5,9 +5,9 @@ import { Box, Button, Typography } from '@mui/material';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import MirButton from '../mir-button';
+import MirButton from '../../mir-button';
 
-export default function HomeConnect() {
+export default function ConnectDesktop() {
     const theme = useTheme();
     return (
         <Box sx={{ pt: "112px" }}>
