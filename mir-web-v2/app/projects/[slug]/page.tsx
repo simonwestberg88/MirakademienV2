@@ -1,4 +1,3 @@
-import Footer from "@/app/components/footer";
 import NavMenu from "@/app/components/nav-menu";
 import { ContentfulClient } from "@/app/lib/client";
 import { Project } from "@/app/types/project";
@@ -90,7 +89,6 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                     <SupportBlock />
                 </Box>
             </Box>
-            <Footer />
         </Box>
     );
 }

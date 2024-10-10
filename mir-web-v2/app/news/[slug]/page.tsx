@@ -1,4 +1,3 @@
-import Footer from "@/app/components/footer";
 import NavMenu from "@/app/components/nav-menu";
 import { ContentfulClient } from "@/app/lib/client";
 import { News } from "@/app/types/news";
@@ -151,7 +150,6 @@ export default async function NewsSlugPage({ params }: { params: { slug: string 
                 </Box>
 
             </Box>
-            <Footer />
         </Box>
 
     );

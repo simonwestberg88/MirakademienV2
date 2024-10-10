@@ -1,5 +1,5 @@
 import { Box, Checkbox, FormControlLabel, TextField, Typography } from "@mui/material";
-import BlueButton from "../components/blue_button";
+import MirButton from "../components/mir-button";
 
 export default function ContactForm(){
     return(
@@ -70,7 +70,7 @@ export default function ContactForm(){
                         label="I accept the Terms"
                     />
                 </Box>
-                <BlueButton text="Send" />
+                <MirButton variant="contained">Send</MirButton>
             </Box>
     )
 }

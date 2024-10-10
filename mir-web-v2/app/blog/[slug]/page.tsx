@@ -9,7 +9,6 @@ import XIcon from '@mui/icons-material/X';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
-import Footer from '@/app/components/footer';
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
     const contentfulClient = ContentfulClient.getClient();
@@ -157,10 +156,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                         </Box>
                     </Box>
                 </Box>
-
             </Box>
-            <Footer />
         </Box>
-
     );
 }
