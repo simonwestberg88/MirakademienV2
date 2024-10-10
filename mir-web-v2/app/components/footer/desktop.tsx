@@ -6,22 +6,20 @@ import { Box, Button, Divider, Link, TextField, Typography } from '@mui/material
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Image from 'next/image';
-import MirButton from './mir-button';
+import MirButton from '../mir-button';
 import { useState } from 'react';
 
-export default function Footer() {
+export default function FooterDesktop() {
     const theme = useTheme();
     const [email, setEmail] = useState("");
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
 
-        // HTML5 validation automatically handles email format validation
         if (!email) {
             console.log("Email is required");
         } else {
             console.log("Subscribed with email:", email);
-            // Add any additional submission logic here
         }
     };
     return (

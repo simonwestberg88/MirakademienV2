@@ -5,7 +5,7 @@ import { Box } from "@mui/material";
 import OurStoryStart from "./componenets/first";
 import OurStoryTimeline from "./componenets/timeline";
 import OurStoryEthos from "./componenets/ethos";
-import Footer from "../components/footer";
+import Footer from "../components/footer/footer";
 import CoverComponent from "../components/cover";
 
 export default function OurStoryPage() {

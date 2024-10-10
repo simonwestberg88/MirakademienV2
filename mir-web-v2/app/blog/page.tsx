@@ -4,7 +4,7 @@ import BlogFeatured from "./featured";
 import { ContentfulClient } from "../lib/client";
 import { Blog } from "../types/Blog";
 import BlogPosts from "./blogPosts";
-import Footer from "../components/footer";
+import Footer from "../components/footer/footer";
 import BlogStayInformed from "./stayInformed";
 
 export default async function BlogPage() {

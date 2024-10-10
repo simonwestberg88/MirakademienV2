@@ -1,5 +1,5 @@
 import { Box, Typography, List, ListItem } from "@mui/material";
-import Footer from "../components/footer";
+import Footer from "../components/footer/footer";
 import NavMenu from "../components/nav-menu";
 
 export default function TermsOfService() {

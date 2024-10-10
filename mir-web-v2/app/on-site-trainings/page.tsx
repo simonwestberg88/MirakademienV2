@@ -1,7 +1,7 @@
 import { Box, Link, Typography } from "@mui/material";
 import CrimePreventing from "./crime-preventing";
 import WritingProjectApplication from "./writing-project-application";
-import Footer from "../components/footer";
+import Footer from "../components/footer/footer";
 
 export default function OnSiteTrainings() {
 

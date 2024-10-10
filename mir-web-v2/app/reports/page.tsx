@@ -3,7 +3,7 @@ import ReportCard from "../components/cards/reportCard";
 import { ContentfulClient } from "../lib/client";
 import { Report } from "../types/report";
 import Grid from '@mui/material/Grid2';
-import Footer from "../components/footer";
+import Footer from "../components/footer/footer";
 import ReportsSend from "./SendReports";
 
 export default async function Reports() {

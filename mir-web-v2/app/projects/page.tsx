@@ -3,7 +3,7 @@ import { ContentfulClient } from "../lib/client";
 import { Project } from "../types/project";
 import ProjectsComponent from "./projectsComponent";
 import ProjectsSupport from "./support";
-import Footer from "../components/footer";
+import Footer from "../components/footer/footer";
 
 export default async function Projects() {
   const contentfulClient = ContentfulClient.getClient();

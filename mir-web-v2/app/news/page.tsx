@@ -1,4 +1,4 @@
-import { Box } from "@mui/material"; import Footer from "../components/footer";
+import { Box } from "@mui/material"; import Footer from "../components/footer/footer";
 import { ContentfulClient } from "../lib/client";
 import { News } from "../types/news";
 import NewsCover from "./cover";

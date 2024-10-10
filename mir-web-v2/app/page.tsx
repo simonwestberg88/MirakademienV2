@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import Footer from "@/app/components/footer";
 import HomeDei from "@/app/components/home/dei";
 import HomeWelcome from "@/app/components/home/welcome";
 import HomeTeam from "./components/home/team";
@@ -75,7 +74,7 @@ export default async function Home() {
 } as News));
 
   return (
-    <Box sx={{ backgroundColor: "rgba(237, 230, 212, 0.5)" }}>
+    <Box bgcolor={"rgba(237, 230, 212, 0.5)"} pb="112px">
       <HomeDei />
       <HomeWelcome />
       <HomeTeam teamMembers={teamMembers} />
@@ -83,9 +82,6 @@ export default async function Home() {
       <HomeNews news={news}/>
       <HomeBlog posts={blogPosts} />
       <HomeConnect />
-      <Box>
-        <Footer></Footer>
-      </Box>
     </Box>
   );
 }

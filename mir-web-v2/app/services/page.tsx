@@ -1,4 +1,4 @@
-import { Box } from "@mui/material"; import Footer from "../components/footer";
+import { Box } from "@mui/material"; import Footer from "../components/footer/footer";
 import CoverComponent from "../components/cover";
 import Services123 from "./one-two-three";
 import ServiceOnsite from "./on-site";
