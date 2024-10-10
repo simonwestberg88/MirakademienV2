@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 
-export default function OurStoryStart() {
+export default function OurStoryStartDesktop() {
     return (
         <Box sx={{ pt: "112px" }}>
             <Box key="main1" sx={{ pl: "64px", pr: "64px", display: "flex", columnGap: "80px" }}>
