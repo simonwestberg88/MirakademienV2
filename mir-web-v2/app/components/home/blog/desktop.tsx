@@ -3,15 +3,15 @@ import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 import { Box, Button, Typography } from '@mui/material';
 import { Blog } from '@/app/types/Blog';
-import BlogCard from './cards/blog_card';
-import MirButton from '../mir-button';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import MirButton from '../../mir-button';
+import BlogCard from '../cards/blog_card';
 
 interface BlogProps {
     posts: Blog[];
 }
 
-export default function HomeBlog({ posts }: BlogProps) {
+export default function BlogDesktop({ posts }: BlogProps) {
     const theme = useTheme();
     return (
         <Box sx={{ pt: "112px" }}>

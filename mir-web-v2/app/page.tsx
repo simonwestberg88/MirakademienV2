@@ -7,11 +7,11 @@ import { ContentfulClient } from "@/app/lib/client";
 import { TeamMember } from "@/app/types/TeamMember";
 import { ClientStory } from "@/app/types/ClientStory";
 import { Blog } from "./types/Blog";
-import HomeBlog from "./components/home/blog";
 import HomeConnect from "./components/home/connect";
 import { News } from "./types/news";
 import ClientStories from "./components/home/client-stories/client-stories";
 import HomeNews from "./components/home/news/news";
+import HomeBlog from "./components/home/blog/blog";
 
 export default async function Home() {
 

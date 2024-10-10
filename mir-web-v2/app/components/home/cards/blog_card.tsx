@@ -9,12 +9,12 @@ interface BlogCardProps {
 export default function BlogCard({ post }: BlogCardProps) {
     const imageUrl = post.coverImage.fields.file?.url as string;
     return (
-        <Box display="flex" flexDirection="column" width="405px" gap="24px">
-            <Box width= "405px" height="205px" borderRadius="40px" overflow="hidden" position="relative">
+        <Box display="flex" flexDirection="column" maxWidth="405px" gap="24px">
+            <Box maxWidth= "405px" height="205px" borderRadius="40px" overflow="hidden" position="relative">
                 <Image
                     src={`https:${imageUrl}`} 
                     alt="blog-card"
-                    layout='fill'
+                    fill
                 ></Image>
             </Box>
             <Box>
