@@ -1,5 +1,5 @@
 import { Box, Typography, Link } from "@mui/material";
-import MirButton from "./mir-button";
+import MirButton from "../mir-button";
 
 interface CoverProps{
     top:string;
@@ -7,7 +7,7 @@ interface CoverProps{
     buttonText:string;
     imgSrc: string;
 }
-export default function CoverComponent({ top, heading, buttonText, imgSrc: imageSrc }: CoverProps) {
+export default function CoverComponentDesktop({ top, heading, buttonText, imgSrc: imageSrc }: CoverProps) {
     return (
         <Box>
             <Box sx={{ ml: "64px", display: "flex", gap: "32px", mt: "24px", mb: "24px" }}>
