@@ -16,7 +16,7 @@ export default function NewsCard(props: NewsCardProps) {
             <Box sx={{ borderRadius: "40px", overflow: "hidden" }}>
                 <Image
                     src={`https:${coverimageUrl}`}
-                    alt={props.news.contentTypeId}
+                    alt="newsimage"
                     width={632}
                     height={300}
                 />

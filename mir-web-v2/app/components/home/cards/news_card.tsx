@@ -19,7 +19,7 @@ export default function HomeNewsCard({ news }: NewsCardProps) {
                 position="relative">
                 <Image
                     src={`https:${coverimageUrl}`}
-                    alt={news.contentTypeId}
+                    alt="newscard"
                     fill
                 />
             </Box>

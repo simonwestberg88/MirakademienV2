@@ -12,7 +12,8 @@ export default function TeamCard({ member }: TeamCardProps) {
     return (
         <Box sx={{ width: "405px", display: "flex", flexDirection: "column", gap: "24px", alignItems: "center", justifyContent: "center" }}>
             <Image
-                src={`https:${imageUrl}`} alt={member.contentTypeId}
+                src={`https:${imageUrl}`} 
+                alt="teamcard"
                 width={204}
                 height={220}
             ></Image>

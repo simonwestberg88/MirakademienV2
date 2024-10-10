@@ -24,7 +24,7 @@ export default function BlogCard(props: BlogCardProps) {
                 <Image
                     src={`https:${coverimageUrl}`}
                     alt="cover image"
-                    layout="fill"
+                    fill
                     objectFit="cover"
                 />
             </Box>
