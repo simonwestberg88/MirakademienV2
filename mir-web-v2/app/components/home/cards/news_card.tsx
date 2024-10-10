@@ -9,10 +9,10 @@ interface NewsCardProps {
 export default function HomeNewsCard({ news }: NewsCardProps) {
     const coverimageUrl = news.cover.fields.file?.url as string;
     return (
-        <Box width="405px" display="flex" flexDirection="column" gap="24px" >
+        <Box maxWidth="405px" display="flex" flexDirection="column" gap="24px" >
 
             <Box
-                width="405px"
+                maxWidth="405px"
                 borderRadius="40px"
                 overflow="hidden"
                 height="240px"

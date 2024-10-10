@@ -11,8 +11,8 @@ interface HomeNewsProps {
 
 export default function NewsMobile({ news }: HomeNewsProps) {
     return (
-        <Box pt="112px" display="flex" flexDirection="column" gap="80px" pl="64px" pr="64px">
-            <Box display= "flex"  flexDirection= "column"  width = "768px" gap="16px">
+        <Box pt="112px" display="flex" flexDirection="column" gap="80px" padding="20px">
+            <Box display= "flex"  flexDirection= "column" gap="16px">
                 <Typography variant='body1' sx={{ fontWeight: 600 }}>News</Typography>
                 <Typography variant='h2'>Unlock Your Potential with MIR Akademien</Typography>
                 <Typography variant='body1'>Discover our range of services designed to foster diversity and inclusion. We provide comprehensive solutions to help organizations create an inclusive environment where everyone can thrive.</Typography>
