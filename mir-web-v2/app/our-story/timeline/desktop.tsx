@@ -6,7 +6,7 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 
-export default function OurStoryTimeline() {
+export default function TimelineDesktop() {
     return (
         <Box sx={{
             pt: "112px",
