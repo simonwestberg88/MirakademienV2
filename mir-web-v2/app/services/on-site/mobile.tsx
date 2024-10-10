@@ -3,7 +3,7 @@ import { Box, Button, Typography } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 import Image from "next/image";
 
-export default function ServiceOnsite() {
+export default function OnsiteMobile() {
     const theme = useTheme();
     return (
         <Box sx={{ ml: "64px", mr: "64px", pt: "128px", display: "flex", gap: "80px", alignItems: "center" }}>

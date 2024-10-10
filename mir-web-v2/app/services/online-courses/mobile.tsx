@@ -3,7 +3,7 @@ import { Box, Button, Typography } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 import Image from "next/image";
 
-export default function ServiceOnlineCourses() {
+export default function OnlineCoursesMobile() {
     const theme = useTheme();
     return (
         <Box sx={{ ml: "64px", mr: "64px", pt: "128px", display: "flex", gap: "80px", alignItems: "center" }}>

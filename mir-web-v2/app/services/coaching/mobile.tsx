@@ -3,7 +3,7 @@ import { Box, Button, Typography } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 import Image from "next/image";
 
-export default function ServiceCoaching
+export default function CoachingMobile
     () {
     const theme = useTheme();
     return (

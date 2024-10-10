@@ -2,7 +2,7 @@
 
 import { Box, Typography } from "@mui/material";
 
-export default function Services123() {
+export default function Services123Desktop() {
     return (
         <Box sx={{ display: "flex", flexDirection: "column", gap: "80px", ml: "64px", mr: "64px", pt: "128px" }}>
             <Typography sx={{ width: "768px" }} variant="h3">We can help your team to become diverse and inclusive</Typography>
