@@ -20,7 +20,7 @@ export default function HomeNewsCard({ news }: NewsCardProps) {
                 <Image
                     src={`https:${coverimageUrl}`}
                     alt={news.contentTypeId}
-                    layout="fill"
+                    fill
                 />
             </Box>
             <Typography variant="h5">{news.title}</Typography>
