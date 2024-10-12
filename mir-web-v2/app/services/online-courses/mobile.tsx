@@ -1,4 +1,5 @@
 "use client"
+import MirButton from "@/app/components/mir-button";
 import { Box, Button, Typography } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 import Image from "next/image";
@@ -6,10 +7,7 @@ import Image from "next/image";
 export default function OnlineCoursesMobile() {
     const theme = useTheme();
     return (
-        <Box sx={{ ml: "64px", mr: "64px", pt: "128px", display: "flex", gap: "80px", alignItems: "center" }}>
-            <Image width={345} height={372} src="/yellow_cloud.png" alt="service_yellow">
-
-            </Image>
+        <Box display="flex" flexDirection="column" padding="20px" pt="112px">
             <Box sx={{
                 gap: "32px", display: "flex", flexDirection: "column"
             }}>
@@ -22,13 +20,9 @@ export default function OnlineCoursesMobile() {
                 <Typography sx={{ fontWeight: 700 }}>
                     Coming  soon!  Stay  tuned!
                 </Typography>
-                <Button color="info" variant="outlined"
-                    sx={{
-                        borderRadius: 40, textTransform: "none", ...theme.typography.body1,
-                        width: 'auto',
-                        alignSelf: 'flex-start'
-                    }}
-                >Lean more</Button>
+                <MirButton color="info" variant="outlined"
+                >Lean more</MirButton>
+                <Image width={345} height={372} src="/yellow_cloud.png" alt="service_yellow" />
             </Box>
         </Box>
     )
