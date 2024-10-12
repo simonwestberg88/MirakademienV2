@@ -1,4 +1,5 @@
 "use client"
+import MirButton from "@/app/components/mir-button";
 import { Box, Button, Typography } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 import Image from "next/image";
@@ -16,13 +17,11 @@ export default function OnsiteDesktop() {
                 <Typography>
                     We utilize cutting-edge support and advisory to assist companies and municipalities in transforming their concepts of social inclusion and innovation into profitable ventures.
                 </Typography>
-                <Button color="info" variant="outlined"
-                    sx={{
-                        borderRadius: 40, textTransform: "none", ...theme.typography.body1,
-                        width: 'auto',
-                        alignSelf: 'flex-start'
-                    }}
-                >Lean more</Button>
+                <MirButton 
+                color="info" 
+                variant="outlined"
+                sx={{width: "160px"}}
+                >Lean more</MirButton>
             </Box>
             <Image width={345} height={372} src="/orange_cloud.png" alt="service_orange">
 
