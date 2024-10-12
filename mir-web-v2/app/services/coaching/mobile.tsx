@@ -1,4 +1,5 @@
 "use client"
+import MirButton from "@/app/components/mir-button";
 import { Box, Button, Typography } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 import Image from "next/image";
@@ -7,7 +8,7 @@ export default function CoachingMobile
     () {
     const theme = useTheme();
     return (
-        <Box sx={{ ml: "64px", mr: "64px", pt: "128px", display: "flex", gap: "80px", alignItems: "center" }}>
+        <Box display="flex" flexDirection="column" padding="20px" pt="112px">
             <Box sx={{
                 gap: "32px", display: "flex", flexDirection: "column"
             }}>
@@ -23,28 +24,14 @@ export default function CoachingMobile
                 <Typography variant="caption">
                     *meanwhile leave your inquiry for participating in the program
                 </Typography>
-                <Box sx={{display: "flex", gap: "24px"}}>
-
-                    <Button color="info" variant="outlined"
-                        sx={{
-                            borderRadius: 40, textTransform: "none", ...theme.typography.body1,
-                            width: 'auto',
-                            alignSelf: 'flex-start'
-                        }}
-                    >
-                        SIGN IN Mentors
-                    </Button>
-                    <Button color="info" variant="outlined"
-                        sx={{
-                            borderRadius: 40, textTransform: "none", ...theme.typography.body1,
-                            width: 'auto',
-                            alignSelf: 'flex-start'
-                        }}
-                    >
-                        SIGN IN Mentees
-                    </Button>
-
-                </Box>
+                <MirButton color="info" variant="outlined"
+                >
+                    SIGN IN Mentors
+                </MirButton>
+                <MirButton color="info" variant="outlined"
+                >
+                    SIGN IN Mentees
+                </MirButton>
             </Box>
             <Image width={345} height={372} src="/green_cloud.png" alt="service_green">
 

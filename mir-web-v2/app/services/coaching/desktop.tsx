@@ -1,5 +1,6 @@
 "use client"
-import { Box, Button, Typography } from "@mui/material";
+import MirButton from "@/app/components/mir-button";
+import { Box, Typography } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 import Image from "next/image";
 
@@ -25,24 +26,22 @@ export default function CoachingDesktop
                 </Typography>
                 <Box sx={{display: "flex", gap: "24px"}}>
 
-                    <Button color="info" variant="outlined"
+                    <MirButton color="info" variant="outlined"
                         sx={{
-                            borderRadius: 40, textTransform: "none", ...theme.typography.body1,
                             width: 'auto',
                             alignSelf: 'flex-start'
                         }}
                     >
                         SIGN IN Mentors
-                    </Button>
-                    <Button color="info" variant="outlined"
+                    </MirButton>
+                    <MirButton color="info" variant="outlined"
                         sx={{
-                            borderRadius: 40, textTransform: "none", ...theme.typography.body1,
                             width: 'auto',
                             alignSelf: 'flex-start'
                         }}
                     >
                         SIGN IN Mentees
-                    </Button>
+                    </MirButton>
 
                 </Box>
             </Box>
