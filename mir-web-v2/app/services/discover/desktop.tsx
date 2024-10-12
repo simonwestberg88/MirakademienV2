@@ -1,7 +1,8 @@
 "use client"
+import MirButton from "@/app/components/mir-button";
 import { Box, Typography, Button, useTheme } from "@mui/material";
 
-export default function ServicesDiscover() {
+export default function DiscoverDesktop() {
     const theme = useTheme();
     return (
         <Box key="b1"
@@ -30,15 +31,11 @@ export default function ServicesDiscover() {
                 }}>
                     <Typography variant="h2" color="white">Discover Our Services Today</Typography>
                     <Typography color="white">Contact us to learn more about our services or to schedule a consultation.</Typography>
-                    <Button color="info" variant="contained"
+                    <MirButton color="info" variant="contained"
                         sx={{
-                            borderRadius: 40, textTransform: "none",
-                            color: "white",
                             width: 'auto',
-                            alignSelf: 'flex-start',
-                            ...theme.typography.body1,
                         }}
-                    >Lean more</Button>
+                    >Lean more</MirButton>
                 </Box>
             </Box>
         </Box>

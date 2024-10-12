@@ -31,7 +31,6 @@ export default async function Services() {
             <ServiceCoaching />
             <ClientStories stories={stories}/>
             <ServicesDiscover />
-            <Footer />
         </Box>
     );
 }

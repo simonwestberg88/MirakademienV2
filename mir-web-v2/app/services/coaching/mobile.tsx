@@ -8,7 +8,7 @@ export default function CoachingMobile
     () {
     const theme = useTheme();
     return (
-        <Box display="flex" flexDirection="column" padding="20px" pt="112px">
+        <Box display="flex" flexDirection="column" padding="20px" pt="112px" gap="48px">
             <Box sx={{
                 gap: "32px", display: "flex", flexDirection: "column"
             }}>
