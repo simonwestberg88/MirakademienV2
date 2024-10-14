@@ -1,14 +1,15 @@
 "use client"
+import { AssetFileWithDetails } from "@/app/types/AssetFileWithDetails";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, Document } from "@contentful/rich-text-types";
 import { Box, Typography, useTheme } from "@mui/material";
 import Image from "next/image";
 
 interface DescriptionBlockProps {
-    imageUrl: string;
+    image: AssetFileWithDetails;
     description: Document;
 }
-export default function DescriptionBlock(props: DescriptionBlockProps) {
+export default function DescriptionBlockDesktop(props: DescriptionBlockProps) {
     const theme = useTheme();
     const renderOptions = {
         renderNode: {
@@ -56,7 +57,7 @@ export default function DescriptionBlock(props: DescriptionBlockProps) {
                 height="640px"
             >
                 <Image
-                    src={`https:${props.imageUrl}`}
+                    src={`https:${props.image.fields.file.url}`}
                     alt={"project picture"}
                     layout="fill"
                     objectFit="cover"

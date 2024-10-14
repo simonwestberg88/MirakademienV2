@@ -1,14 +1,12 @@
-import NavMenu from "@/app/components/nav-menu";
 import { ContentfulClient } from "@/app/lib/client";
 import { Project } from "@/app/types/project";
-import { Box, Typography } from "@mui/material";
-import HeaderBox from "./header/headerBox/headerBoxDesktop";
-import DescriptionBlock from "./descriptionBlock";
-import ResultsBlock from "./resultsBlock";
-import DisseminationBlock from "./disseminationBlock";
-import OtherProjectsBlock from "./otherProjectsBlock";
-import SupportBlock from "./supportBlock";
+import { Box } from "@mui/material";
+import DescriptionBlock from "./description/descriptionBlock";
+import ResultsBlock from "./results/resultsBlock";
+import DisseminationBlock from "./dessemination/disseminationBlock";
+import SupportBlock from "./support/supportBlock";
 import Header from "./header/header";
+import OtherProjectsBlock from "./otherProjects/otherProjectsBlock";
 
 export default async function ProjectPage({ params }: { params: { slug: string } }) {
     const contentfulClient = ContentfulClient.getClient();
@@ -50,7 +48,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
     return (
         <Box>
             <Header project={project} />
-            <DescriptionBlock imageUrl={project.descriptionPicture.fields.file.url} description={project.projectDescription} />
+            <DescriptionBlock image={project.descriptionPicture} description={project.projectDescription} />
             <ResultsBlock reserachResults={project.researchResults} description={project.researchDescription} />
             <DisseminationBlock website={project.website} facebook={project.facebook} linkedIn={project.linkedIn} />
             <OtherProjectsBlock isOngoing={project.isOngoing} currentProjectTitle={project.title} />

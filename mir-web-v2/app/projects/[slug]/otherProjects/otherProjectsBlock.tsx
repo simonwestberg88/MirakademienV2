@@ -1,8 +1,7 @@
-import ProjectCard from "@/app/components/cards/projectCard";
 import { ContentfulClient } from "@/app/lib/client";
 import { Project } from "@/app/types/project";
 import { Box, Typography } from "@mui/material";
-import OtherProjectsCard from "./otherProjectsCard";
+import OtherProjectsCard from "./card/otherProjectsCard";
 
 interface OtherProjectsBlockProps {
     isOngoing: boolean;
