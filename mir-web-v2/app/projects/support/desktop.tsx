@@ -1,5 +1,6 @@
 "use client"
-import { Box, Button, Typography, useTheme } from "@mui/material";
+import MirButton from "@/app/components/mir-button";
+import { Box, Typography, useTheme } from "@mui/material";
 
 export default function ProjectsSupportDesktop() {
     const theme = useTheme();
@@ -9,26 +10,16 @@ export default function ProjectsSupportDesktop() {
                 <Typography variant="h2">Support Our Exciting New Projects</Typography>
                 <Typography>Discover how you can make a difference and contribute to our impactful projects.</Typography>
                 <Box sx={{ display: "flex", gap: 4 }}>
-                    <Button sx={{
-                        borderRadius: '30px',
-                        color: theme.palette.background.default,
-                        background: "#199DEA",
-                        fontSize: theme.typography.body1.fontSize,
-                        lineHeight: theme.typography.body1.lineHeight,
-                        fontFamily: theme.typography.body1.fontFamily,
-                        textTransform: "none"
-                    }}
-                    >Get Involved</Button>
-                    <Button
+                    <MirButton
+                        variant="contained"
+                        sx={{ width: "174px" }}
+                    >Get Involved</MirButton>
+                    <MirButton
                         variant='outlined'
                         color="info"
-                        sx={{
-                            borderRadius: 40,
-                            fontSize: theme.typography.body1.fontSize,
-                            lineHeight: theme.typography.body1.lineHeight,
-                            fontFamily: theme.typography.body1.fontFamily,
-                            textTransform: "none"
-                        }}>Learn more</Button> {/* Fix spelling of "Learn more" */}
+                        sx={{ width: "174px" }}
+
+                    >Learn more</MirButton>
                 </Box>
             </Box>
         </Box>
