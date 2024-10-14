@@ -1,8 +1,6 @@
 "use client"
-import { useState } from "react";
-import { Box, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { Project } from "@/app/types/project";
-import ProjectCard from "@/app/components/cards/projectCard";
 import ProjectsComponentDesktop from "./desktop";
 import ProjectsComponentMobile from "./mobile";
 

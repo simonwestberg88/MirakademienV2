@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import { Project } from "@/app/types/project";
-import ProjectCard from "@/app/components/cards/projectCard";
+import ProjectCard from "@/app/components/cards/projectCard/projectCard";
 
 interface ProjectsProps {
     projects: Project[];
@@ -21,44 +21,23 @@ export default function ProjectsComponentMobile(props: ProjectsProps) {
         setShowAllProjects(!showAllProjects); // toggle between showing all and showing 4
     };
 
-    const midpoint = Math.ceil(visibleProjects.length / 2);
-    const firstHalf = visibleProjects.slice(0, midpoint);
-    const secondHalf = visibleProjects.slice(midpoint);
-
     return (
         <Box>
-            <Box sx={{ pt: "112px", display: "flex", flexDirection: "column", gap: "24px", alignItems: "center" }}>
+            <Box padding="20px">
                 <Typography variant="h2">{props.title}</Typography>
                 <Typography>{props.description}</Typography>
             </Box>
-            <Box
-                sx={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    alignItems: "flex-start",
-                    gap: "32px",
-                    width: "100%",
-                }}
-            >
-                <Box>
-                    {firstHalf.map((project) => (
-                        <Box sx={{ display: "flex", pt: "64px", maxWidth: "632px" }} key={project.slug}>
-                            <ProjectCard project={project} />
-                        </Box>
-                    ))}
-                </Box>
-                <Box>
-                    {secondHalf.map((project) => (
-                        <Box sx={{ display: "flex", pt: "64px", maxWidth: "632px" }} key={project.slug}>
-                            <ProjectCard project={project} />
-                        </Box>
-                    ))}
-                </Box>
+            <Box>
+                {visibleProjects.map((project) => (
+                    <Box sx={{ display: "flex", pt: "64px", maxWidth: "632px" }} key={project.slug}>
+                        <ProjectCard project={project} />
+                    </Box>
+                ))}
             </Box>
-            {props.projects.length > 4 && ( 
+            {props.projects.length > 4 && (
                 <Box sx={{ display: "flex", justifyContent: "center", pt: "32px" }}>
                     <Button
-                        onClick={toggleProjectsView} 
+                        onClick={toggleProjectsView}
                         variant='outlined'
                         color="info"
                         sx={{
@@ -69,7 +48,7 @@ export default function ProjectsComponentMobile(props: ProjectsProps) {
                             textTransform: "none"
                         }}
                     >
-                        {showAllProjects ? "Show fewer" : props.buttonText} {}
+                        {showAllProjects ? "Show fewer" : props.buttonText} { }
                     </Button>
                 </Box>
             )}

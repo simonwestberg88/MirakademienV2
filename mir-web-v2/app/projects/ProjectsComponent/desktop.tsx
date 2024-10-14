@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import { Project } from "@/app/types/project";
-import ProjectCard from "@/app/components/cards/projectCard";
+import ProjectCard from "@/app/components/cards/projectCard/projectCard";
 
 interface ProjectsProps {
     projects: Project[];

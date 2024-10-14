@@ -9,19 +9,16 @@ interface ProjectCardProps {
     showTags?: boolean;
 };
 
-export default function ProjectCard({ project, showTags = true }: ProjectCardProps) {
+export default function ProjectCardMobile({ project, showTags = true }: ProjectCardProps) {
     const theme = useTheme();
     const imageUrl = project.cover.fields.file?.url as string;
     if (showTags === undefined) {
         showTags = true;
     }
 
-    const imageRatio = project.cover.fields.file.details.image.width / 623;
-    const boxHeight = project.cover.fields.file.details.image.height / imageRatio;
-
     return (
-        <Box sx={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-            <Box borderRadius= "30px" overflow= "hidden" width= "623px" height= {`${boxHeight}px`} position="relative">
+        <Box display="flex" flexDirection="column" padding="20px" gap="24px">
+            <Box borderRadius= "30px" overflow="hidden" width= "100%" position="relative">
                 <Image
                     src={`https:${imageUrl}`}
                     alt={project.contentTypeId}
