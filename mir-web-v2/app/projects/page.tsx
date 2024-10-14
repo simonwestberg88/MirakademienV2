@@ -1,9 +1,10 @@
 import { Box, Link, Typography } from "@mui/material";
 import { ContentfulClient } from "../lib/client";
 import { Project } from "../types/project";
-import ProjectsComponent from "./projectsComponent";
 import ProjectsSupport from "./support";
 import Footer from "../components/footer/footer";
+import ProjectsHeader from "./header/header";
+import ProjectsComponent from "./ProjectsComponent/projectsComponent";
 
 export default async function Projects() {
   const contentfulClient = ContentfulClient.getClient();
@@ -37,15 +38,8 @@ export default async function Projects() {
   const closedProjects = projects.filter(project => project.isOngoing === false);
 
   return (
-    <Box sx={{ ml: "64px", mr: "64px" }}>
-      <Box sx={{ display: "flex", gap: "32px", mt: "24px", mb: "24px" }}>
-        <Link href="/" underline="none" sx={{ fontWeight: 500 }}>Home</Link>
-        <Typography>Projects</Typography>
-      </Box>
-      <Box sx={{ tp: "112px", maxWidth: "768px" }}>
-        <Typography variant="h1">Projects</Typography>
-        <Typography>As dedicated contributors to Diversity and Inclusion practices and social innovation at EU scale, we actively develop and participate in projects aimed at promoting diversity, inclusion and belonging in education and labor market sectors.</Typography>
-      </Box>
+    <Box>
+      <ProjectsHeader />
       <ProjectsComponent
         description="Explore our ongoing projects and their objectives."
         title="Ongoing Projects"

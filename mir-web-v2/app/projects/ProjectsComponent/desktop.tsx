@@ -1,8 +1,8 @@
 "use client"
 import { useState } from "react";
 import { Box, Button, Typography, useTheme } from "@mui/material";
-import ProjectCard from "../components/cards/projectCard";
-import { Project } from "../types/project";
+import { Project } from "@/app/types/project";
+import ProjectCard from "@/app/components/cards/projectCard";
 
 interface ProjectsProps {
     projects: Project[];
@@ -11,7 +11,7 @@ interface ProjectsProps {
     buttonText: string;
 }
 
-export default function ProjectsComponent(props: ProjectsProps) {
+export default function ProjectsComponentDesktop(props: ProjectsProps) {
     const theme = useTheme();
     const [showAllProjects, setShowAllProjects] = useState(false); // state to control visibility
 
@@ -26,7 +26,7 @@ export default function ProjectsComponent(props: ProjectsProps) {
     const secondHalf = visibleProjects.slice(midpoint);
 
     return (
-        <Box>
+        <Box pl="64px" pr="64px">
             <Box sx={{ pt: "112px", display: "flex", flexDirection: "column", gap: "24px", alignItems: "center" }}>
                 <Typography variant="h2">{props.title}</Typography>
                 <Typography>{props.description}</Typography>
@@ -35,9 +35,9 @@ export default function ProjectsComponent(props: ProjectsProps) {
                 sx={{
                     display: "flex",
                     flexWrap: "wrap",
-                    alignItems: "flex-start",
                     gap: "32px",
                     width: "100%",
+                    justifyContent: "center"
                 }}
             >
                 <Box>
@@ -55,10 +55,11 @@ export default function ProjectsComponent(props: ProjectsProps) {
                     ))}
                 </Box>
             </Box>
-            {props.projects.length > 4 && ( 
+
+            {props.projects.length > 4 && (
                 <Box sx={{ display: "flex", justifyContent: "center", pt: "32px" }}>
                     <Button
-                        onClick={toggleProjectsView} 
+                        onClick={toggleProjectsView}
                         variant='outlined'
                         color="info"
                         sx={{
@@ -69,7 +70,7 @@ export default function ProjectsComponent(props: ProjectsProps) {
                             textTransform: "none"
                         }}
                     >
-                        {showAllProjects ? "Show fewer" : props.buttonText} {}
+                        {showAllProjects ? "Show fewer" : props.buttonText} { }
                     </Button>
                 </Box>
             )}
