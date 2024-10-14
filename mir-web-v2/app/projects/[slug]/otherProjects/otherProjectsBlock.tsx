@@ -8,7 +8,7 @@ interface OtherProjectsBlockProps {
     currentProjectTitle: string;
 }
 
-export default async function OtherProjectsBlock(props: OtherProjectsBlockProps) {
+export default function OtherProjectsBlock(props: OtherProjectsBlockProps) {
     const theme = useTheme();
     const isDesktop = useMediaQuery(theme.breakpoints.up('sm'));
 
