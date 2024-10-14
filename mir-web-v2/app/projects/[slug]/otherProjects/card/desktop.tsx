@@ -8,7 +8,7 @@ interface ProjectCardProps {
     project: Project;
 };
 
-export default function OtherProjectsCard({ project }: ProjectCardProps) {
+export default function OtherProjectsCardDesktop({ project }: ProjectCardProps) {
 
     const imageUrl = project.cover.fields.file?.url as string;
     return (

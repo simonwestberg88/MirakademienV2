@@ -1,4 +1,4 @@
-import { Box, Link, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { ContentfulClient } from "../lib/client";
 import { Project } from "../types/project";
 import ProjectsSupport from "./support/support";
