@@ -2,12 +2,13 @@ import NavMenu from "@/app/components/nav-menu";
 import { ContentfulClient } from "@/app/lib/client";
 import { Project } from "@/app/types/project";
 import { Box, Typography } from "@mui/material";
-import HeaderBox from "./headerBox";
+import HeaderBox from "./header/headerBox/headerBoxDesktop";
 import DescriptionBlock from "./descriptionBlock";
 import ResultsBlock from "./resultsBlock";
 import DisseminationBlock from "./disseminationBlock";
 import OtherProjectsBlock from "./otherProjectsBlock";
 import SupportBlock from "./supportBlock";
+import Header from "./header/header";
 
 export default async function ProjectPage({ params }: { params: { slug: string } }) {
     const contentfulClient = ContentfulClient.getClient();
@@ -18,7 +19,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         limit: 1,
     });
 
-    
+
 
     const projects = projectResponse.items.map(item => ({
         title: item.fields.title,
@@ -48,47 +49,12 @@ export default async function ProjectPage({ params }: { params: { slug: string }
 
     return (
         <Box>
-            <Box
-                ml={"64px"}
-                mr={"64px"}
-                display={"flex"}
-                flexDirection={"column"}
-            >
-                <NavMenu
-                    link1="Projects"
-                    href1="/projects"
-                    link2={project.title}
-                />
-                <Box display={"flex"} flexDirection={"column"} gap={"80px"}>
-                    <Box display={"flex"} flexDirection={"column"} gap={"80px"} alignItems="center">
-                        <Box display={"flex"} flexDirection={"column"} gap={"24px"} maxWidth={"1000px"} alignItems={"center"} pt={"24px"} >
-                            <Typography variant="h1">{project.title}</Typography>
-                            <Typography>{project.description}</Typography>
-                        </Box>
-                    </Box>
-                    <Box key={"picureBox"} display="flex" flexDirection="column" gap="16px" overflow="hidden" ml="-64px" mr="-164px">
-                        <Box display="flex" flexDirection={"row"} gap={"16px"} ml={"-400px"}  width={2732}>
-                            <HeaderBox color="gray" alt="pic1" picture={project.headerPicsRow1?.[0]} />
-                            <HeaderBox color='#e9f6f7' title={project.headerTitle1} text={project.headerText1} />
-                            <HeaderBox color="gray" alt="pic2" picture={project.headerPicsRow1?.[1]} />
-                            <HeaderBox color="gray" alt="pic3" picture={project.headerPicsRow1?.[2]} />
-                            <HeaderBox color="red" />
-                        </Box>
-                        <Box display="flex" flexDirection={"row"} gap={"16px"} ml={"-100px"}  width={2732}>
-                            <HeaderBox color="gray" alt="pic1" picture={project.headerPicsRow2?.[0]} />
-                            <HeaderBox color="gray" alt="pic2" picture={project.headerPicsRow2?.[1]} />
-                            <HeaderBox color='#f3b27c' title={project.headerTitle2} text={project.headerText2} />
-                            <HeaderBox color="gray" alt="pic3" picture={project.headerPicsRow2?.[2]} />
-                            <HeaderBox color="red" />
-                        </Box>
-                    </Box>
-                    <DescriptionBlock imageUrl={project.descriptionPicture.fields.file.url} description={project.projectDescription} />
-                    <ResultsBlock reserachResults={project.researchResults} description={project.researchDescription} />
-                    <DisseminationBlock website={project.website} facebook={project.facebook} linkedIn={project.linkedIn}/>
-                    <OtherProjectsBlock  isOngoing={project.isOngoing} currentProjectTitle={project.title}/>
-                    <SupportBlock />
-                </Box>
-            </Box>
+            <Header project={project} />
+            <DescriptionBlock imageUrl={project.descriptionPicture.fields.file.url} description={project.projectDescription} />
+            <ResultsBlock reserachResults={project.researchResults} description={project.researchDescription} />
+            <DisseminationBlock website={project.website} facebook={project.facebook} linkedIn={project.linkedIn} />
+            <OtherProjectsBlock isOngoing={project.isOngoing} currentProjectTitle={project.title} />
+            <SupportBlock />
         </Box>
     );
 }

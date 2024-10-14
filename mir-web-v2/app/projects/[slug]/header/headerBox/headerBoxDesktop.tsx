@@ -10,7 +10,7 @@ interface HeaderBoxProps {
     alt?: string;
 }
 
-export default function HeaderBox(props: HeaderBoxProps) {
+export default function HeaderBoxDesktop(props: HeaderBoxProps) {
 
     const imageBox =
         (
