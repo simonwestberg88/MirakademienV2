@@ -68,7 +68,7 @@ export default function ButtonAppBar() {
   }
   return (
     <Box width="100%" display="flex" flexDirection="column" bgcolor={theme.palette.background.default} pt="4px" pb="4px">
-      <Box width="100%" display="flex" justifyContent="space-between" alignItems="center">
+      <Box width="100%" display="flex" justifyContent="space-between" alignItems="center" >
         <Box display="flex" alignItems="center">
           <IconButton
             size="large"
@@ -81,7 +81,9 @@ export default function ButtonAppBar() {
           </IconButton>
           <Link href="/"> <Image src="/mir_logo.png" width={121.85} height={61.25} alt="MIR Logo" /></Link>
         </Box>
-        <MirButton sx={{ height: "32px" }} variant="contained">Learn More</MirButton>
+        <Box pr="8px">
+          <MirButton sx={{ height: "32px" }} variant="contained">Learn More</MirButton>
+        </Box>
       </Box>
       {open ? (
         <Box display="flex" flexDirection="column" gap="24px" pl="20px" pr="20px" height="100vh" pt="32px" width="100%">
