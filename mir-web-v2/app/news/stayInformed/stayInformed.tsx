@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
-import MirButton from "../components/mir-button";
+import MirButton from "../../components/mir-button";
 
-export default function NewsStayInformed() {
+export default function StayInformed() {
     return (
         <Box sx={{ ml: "64px", mr: "64px", pt: "112px", gap: "24px", display: "flex", flexDirection: "column" }}>
             <Box sx={{ width: 768 }}>

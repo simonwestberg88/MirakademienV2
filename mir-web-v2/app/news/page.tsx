@@ -1,9 +1,9 @@
 import { Box } from "@mui/material"; import Footer from "../components/footer/footer";
 import { ContentfulClient } from "../lib/client";
 import { News } from "../types/news";
-import NewsCover from "./cover";
-import NewsStories from "./newsStories";
-import NewsStayInformed from "./newsStayInformed";
+import NewsCover from "./cover/cover";
+import NewsStories from "./stories/stories";
+import NewsStayInformed from "./stayInformed/stayInformed";
 
 export default async function NewsPage() {
     const contentfulClient = ContentfulClient.getClient();

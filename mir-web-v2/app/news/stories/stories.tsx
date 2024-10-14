@@ -1,8 +1,8 @@
 "use client"
 import { Box, Typography } from "@mui/material";
-import { News } from "../types/news";
-import NewsCard from "../components/cards/newsCard";
-import MirButton from "../components/mir-button";
+import { News } from "../../types/news";
+import NewsCard from "../../components/cards/newsCard";
+import MirButton from "../../components/mir-button";
 import { useState } from "react";
 
 interface NewsStoriesProps {
