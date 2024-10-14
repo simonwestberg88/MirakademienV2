@@ -1,7 +1,7 @@
 "use client"
 import { Box, Button, Typography, useTheme } from "@mui/material";
 
-export default function ProjectsSupport() {
+export default function ProjectsSupportDesktop() {
     const theme = useTheme();
     return (
         <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}> {/* Set full width */}

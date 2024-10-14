@@ -1,7 +1,7 @@
 import { Box, Link, Typography } from "@mui/material";
 import { ContentfulClient } from "../lib/client";
 import { Project } from "../types/project";
-import ProjectsSupport from "./support";
+import ProjectsSupport from "./support/support";
 import Footer from "../components/footer/footer";
 import ProjectsHeader from "./header/header";
 import ProjectsComponent from "./ProjectsComponent/projectsComponent";
