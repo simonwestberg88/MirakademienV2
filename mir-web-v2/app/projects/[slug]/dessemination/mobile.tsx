@@ -12,21 +12,21 @@ export default function DisseminationBlockMobile(props: DisseminationBlockProps)
             <Typography variant="h3">Dissemination</Typography>
 
             {props.website && (
-                <Box display="flex" gap="8px">
+                <Box display="flex" gap="8px" flexWrap="wrap">
                     <Typography fontWeight={600}>Website</Typography>
                     <Typography>{props.website}</Typography>
                 </Box>
             )}
 
             {props.linkedIn && (
-                <Box display="flex" gap="8px">
+                <Box display="flex" gap="8px" flexWrap="wrap">
                     <Typography fontWeight={600}>LinkedIn</Typography>
-                    <Typography>{props.linkedIn}</Typography>
+                    <Typography >{props.linkedIn}</Typography>
                 </Box>
             )}
 
             {props.facebook && (
-                <Box display="flex" gap="8px">
+                <Box display="flex" gap="8px" flexWrap="wrap">
                     <Typography fontWeight={600}>Facebook</Typography>
                     <Typography>{props.facebook}</Typography>
                 </Box>

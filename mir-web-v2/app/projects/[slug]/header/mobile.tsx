@@ -18,7 +18,7 @@ export default function HeaderMobile({ project }: HeaderProps) {
                 <Typography textAlign="center" variant="h1">{project.title}</Typography>
                 <Typography textAlign="center">{project.description}</Typography>
             </Box>
-            <Box pt="64px" key={"picureBox"} display="flex" flexDirection="column" gap="16px" overflow="hidden" ml="-20px" mr="-164px">
+            <Box pt="64px" key={"picureBox"} display="flex" flexDirection="column" gap="16px" overflow="hidden" ml="-20px" mr="-20px">
                 <Box display="flex" flexDirection={"row"} gap={"16px"} ml={"-90px"} width={2732}>
                     <HeaderBoxMobile color="gray" alt="pic1" picture={project.headerPicsRow1?.[0]} />
                     <HeaderBoxMobile color='#e9f6f7' title={project.headerTitle1} text={project.headerText1} />
