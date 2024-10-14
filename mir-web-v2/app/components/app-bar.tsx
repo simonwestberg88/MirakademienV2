@@ -99,40 +99,5 @@ export default function ButtonAppBar() {
         <></>
       )}
     </Box>
-
   );
-  // <Menu
-  //   anchorEl={anchorEl}
-  //   open={Boolean(anchorEl)}
-  //   onClose={handleMenuClose}
-  //   anchorOrigin={{
-  //     vertical: 'top',
-  //     horizontal: 'left',
-  //   }}
-  //   transformOrigin={{
-  //     vertical: 'top',
-  //     horizontal: 'left',
-  //   }}
-  // >
-  //   <Box sx={{ display: 'flex', alignItems: 'center', width: '100%', padding: theme.spacing(2) }}>
-  //     <IconButton
-  //       size="large"
-  //       edge="start"
-  //       color="inherit"
-  //       aria-label="menu"
-  //       sx={{ color: "black", marginRight: theme.spacing(2) }}
-  //       onClick={handleMenuClose} // Optionally, close the menu when clicking the icon again
-  //     >
-  //       <MenuIcon />
-  //     </IconButton>
-  //     <Image src="/mir_logo.png" width={121.85} height={61.25} alt="MIR Logo" />
-  //   </Box>
-  //   <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px', width: '100%' }}>Our Story</MenuItem>
-  //   <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px', width: '100%' }}>Services</MenuItem>
-  //   <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px', width: '100%' }}>Projects</MenuItem>
-  //   <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px', width: '100%' }}>News</MenuItem>
-  //   <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px', width: '100%' }}>Blog</MenuItem>
-  //   <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px', width: '100%' }}>Reports</MenuItem>
-  //   <MenuItem onClick={handleMenuClose} sx={{ fontSize: '24px', width: '100%' }}>Contacts</MenuItem>
-  // </Menu>
 }
