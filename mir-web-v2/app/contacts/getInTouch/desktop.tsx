@@ -1,10 +1,10 @@
 "use client"
 import { Box, Checkbox, FormControlLabel, TextField, Typography } from "@mui/material";
-import ContactInfo from "./contactInfo";
-import ContactForm from "./contactForm";
+import ContactInfo from "../contactInfo";
+import ContactForm from "../contactForm";
 
 
-export default function ContactsGetInTouch() {
+export default function ContactsGetInTouchDesktop() {
     return (
         <Box sx={{ mr: "64px", ml: "64px", pt: "122px", display: "flex", flexDirection: "row", gap: "80px" }}>
             <Box sx={{flex: 1}}>

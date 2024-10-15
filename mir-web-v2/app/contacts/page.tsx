@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
 import ContactsCover from "./cover/cover";
 import ContactsContact from "./contact/contact";
-import ContactsGetInTouch from "./getInTouch";
 import Footer from "../components/footer/footer";
 import ContactsNewsletter from "./newsletter";
+import ContactsGetInTouch from "./getInTouch/getInTouch";
 
 export default function Contacts(){
     return(
@@ -12,7 +12,6 @@ export default function Contacts(){
             <ContactsContact />
             <ContactsGetInTouch />
             <ContactsNewsletter />
-            <Footer />
         </Box>
     )
 }
