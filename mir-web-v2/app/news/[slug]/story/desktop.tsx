@@ -53,7 +53,7 @@ export default function NewsSlugPageDesktop({ news }: NewsSlugPageProps) {
         <Box>
 
             <Box sx={{ ml: "64px", mr: "64px" }}>
-                <NavMenu link1='Blog' link2={news.title} href1='/blog'></NavMenu>
+                <NavMenu link1='News' link2={news.title} href1='/news'></NavMenu>
                 <Box display={"flex"} flexDirection={"column"} gap={"80px"}>
                     <Box display={"flex"} flexDirection={"column"} gap={"16px"}>
                         <Box display={"fleX"} flexDirection={"row"} gap={"16px"} alignItems="center">

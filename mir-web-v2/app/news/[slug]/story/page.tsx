@@ -8,7 +8,7 @@ interface NewsSlugPageProps{
     news: News;
 }
 
-export default async function NewsPageSlugClient({ news }: NewsSlugPageProps) {
+export default function NewsPageSlugClient({ news }: NewsSlugPageProps) {
     const theme = useTheme();
     const isDesktop = useMediaQuery(theme.breakpoints.up('sm'));
 
