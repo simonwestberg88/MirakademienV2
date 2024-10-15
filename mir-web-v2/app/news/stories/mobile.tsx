@@ -15,7 +15,6 @@ export default function NewsStoriesMobile(props: NewsStoriesProps) {
     let visibleNews = showAllNews ? props.newsStories : props.newsStories.slice(0, 6);
 
     const toggleNews = () => {
-        console.log(showAllNews)
         setShowAllNews(!showAllNews);
     };
     return (

@@ -26,6 +26,8 @@ export default async function NewsPage() {
         timeToRead: item.fields.timeToRead,
     } as News));
 
+    console.log(news);
+
     return (
         <Box>
             <NewsCover />
