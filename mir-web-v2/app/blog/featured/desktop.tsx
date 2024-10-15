@@ -12,7 +12,7 @@ export default function FeaturedDesktop(props: BlogCardProps) {
     const authorImageUrl = props.post.authorImage.fields.file?.url;
 
     return (
-        <Box key="main" sx={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+        <Box key="main" sx={{ display: "flex", flexDirection: "column", gap: "24px", pl: "64px", pr: "64px" }}>
             <Box display={"flex"} flexDirection={"row"} alignItems={"center"} gap={"80px"}  >
                 <Box
                     sx={{

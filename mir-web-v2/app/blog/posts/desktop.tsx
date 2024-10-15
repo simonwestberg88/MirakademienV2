@@ -34,7 +34,7 @@ export default function PostsDesktop(props: BlogPostsProps) {
     const sxNotSelected = { color: "black", borderColor: "orange.main" };
 
     return (
-        <Box display={"flex"} flexDirection={"column"} gap={"64px"}>
+        <Box display={"flex"} flexDirection={"column"} gap={"64px"} pl="64px" pr="64px">
             <Box display={"flex"} flexDirection={"row"}>
                 <MirButton
                     onClick={() => filterCategories("all")}
