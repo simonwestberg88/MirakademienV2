@@ -1,11 +1,12 @@
 import { Box, Typography } from "@mui/material";
 import NavMenu from "../components/nav-menu";
-import BlogFeatured from "./featured";
+import Featured from "./featured/featured";
 import { ContentfulClient } from "../lib/client";
 import { Blog } from "../types/Blog";
-import BlogPosts from "./blogPosts";
+import Posts from "./posts/posts";
 import Footer from "../components/footer/footer";
-import BlogStayInformed from "./stayInformed";
+import StayInformed from "./stayInformed/stayInformed";
+import Cover from "./cover/cover";
 
 export default async function BlogPage() {
     const contentfulClient = ContentfulClient.getClient();
@@ -37,21 +38,12 @@ export default async function BlogPage() {
 
     return (
         <Box>
-            <Box sx={{ ml: "64px", mr: "64px" }}>
-                <NavMenu link1="Blog" />
-                <Box sx={{ display: "flex", flexDirection: "column", gap: "80px" }}>
-                    <Box sx={{ display: "flex", flexDirection: "column", gap: "24px", maxWidth: "768", pt: "24px" }}>
-                        <Typography variant="h1">Blog</Typography>
-                        <Typography>Discover insights and stories on diversity, equity, and inclusion.</Typography>
-                    </Box>
-                    <Box display={"flex"} flexDirection={"column"} gap={"80px"}>
-                        <BlogFeatured post={featuredBlog} />
-                        <BlogPosts categories={categories} posts={blogPosts} />
-                    </Box>
-                </Box>
-                <BlogStayInformed />
+            <Cover />
+            <Box display={"flex"} flexDirection={"column"} gap={"80px"}>
+                <Featured post={featuredBlog} />
+                <Posts categories={categories} posts={blogPosts} />
             </Box>
-            <Footer />
+            <StayInformed />
         </Box>
     )
 }

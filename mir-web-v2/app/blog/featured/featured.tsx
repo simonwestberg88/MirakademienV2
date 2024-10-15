@@ -1,13 +1,13 @@
 "use client"
 import { Box, Link, Typography, useTheme } from "@mui/material";
 import Image from "next/image";
-import { Blog } from "../types/Blog";
+import { Blog } from "../../types/Blog";
 
 interface BlogCardProps {
     post: Blog
 };
 
-export default function BlogFeatured(props: BlogCardProps) {
+export default function Featured(props: BlogCardProps) {
     const coverimageUrl = props.post.coverImage.fields.file?.url;
     const authorImageUrl = props.post.authorImage.fields.file?.url;
 

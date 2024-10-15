@@ -1,17 +1,17 @@
 'use client'
 import Grid from '@mui/material/Grid2';
-import { Blog } from '../types/Blog';
+import { Blog } from '../../types/Blog';
 import { useState } from 'react';
 import { Box } from '@mui/material';
-import MirButton from '../components/mir-button';
-import BlogCard from '../components/cards/blogCard';
+import MirButton from '../../components/mir-button';
+import BlogCard from '../../components/cards/blogCard';
 
 
 interface BlogPostsProps {
     posts: Blog[];
     categories: string[];
 }
-export default function BlogPosts(props: BlogPostsProps) {
+export default function Posts(props: BlogPostsProps) {
     const [showAllBlogPosts, setShowAllBlogPosts] = useState(false);
     const [filterCategory, setFilterCategory] = useState<string>("all");
 
