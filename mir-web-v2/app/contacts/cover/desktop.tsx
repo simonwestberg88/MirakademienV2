@@ -1,6 +1,6 @@
 import { Box, Link, Typography } from "@mui/material";
 
-export default function ContactsCover() {
+export default function ContactsCoverDesktop() {
     return (
         <Box sx={{ ml: "64px", mr: "64px", mt: "-24px", pt: "24px" }}>
             <Box sx={{ display: "flex", gap: "32px", mt: "24px", mb: "24px" }}>
