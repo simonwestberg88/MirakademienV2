@@ -7,6 +7,7 @@ import Posts from "./posts/posts";
 import Footer from "../components/footer/footer";
 import StayInformed from "./stayInformed/stayInformed";
 import Cover from "./cover/cover";
+import Categories from "./categories/categories";
 
 export default async function BlogPage() {
     const contentfulClient = ContentfulClient.getClient();
@@ -39,10 +40,8 @@ export default async function BlogPage() {
     return (
         <Box>
             <Cover />
-            <Box display={"flex"} flexDirection={"column"} gap={"80px"}>
-                <Featured post={featuredBlog} />
-                <Posts categories={categories} posts={blogPosts} />
-            </Box>
+            <Featured post={featuredBlog} />
+            <Categories categories={categories} posts={blogPosts} />
             <StayInformed />
         </Box>
     )
