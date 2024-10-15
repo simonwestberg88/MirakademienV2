@@ -16,6 +16,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         'fields.slug': params.slug,
         limit: 1,
     });
+    console.log("hello")
 
     const projects = projectResponse.items.map(item => ({
         title: item.fields.title,
@@ -71,7 +72,9 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         date: item.fields.date,
     } as unknown as Project));
 
-    otherProjects = projects.filter(proj => proj.title !== project.title);
+    otherProjects = otherProjects.filter(proj =>
+        proj.title !== project.title
+    );
 
     return (
         <Box>
