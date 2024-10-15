@@ -16,7 +16,6 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         'fields.slug': params.slug,
         limit: 1,
     });
-    console.log("hello")
 
     const projects = projectResponse.items.map(item => ({
         title: item.fields.title,
@@ -74,7 +73,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
 
     otherProjects = otherProjects.filter(proj =>
         proj.title !== project.title
-    );
+    ).slice(0,3);
 
     return (
         <Box>
