@@ -9,7 +9,7 @@ interface ResultsBlockProps {
 export default function ResultsBlockDesktop(props: ResultsBlockProps) {
     const results = props.reserachResults.split(",");
     return (
-        <Box display="flex" flexDirection="column" >
+        <Box display="flex" flexDirection="column" pl="64px" pr="64px" pt="112px">
             <Typography variant="h3">Research results</Typography>
             <Box display="flex" flexDirection="row" flexWrap="wrap">
                 {results.map((item, index) => (

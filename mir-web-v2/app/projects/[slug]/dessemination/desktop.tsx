@@ -8,7 +8,7 @@ interface DisseminationBlockProps {
 
 export default function DisseminationBlockDesktop(props: DisseminationBlockProps) {
     return (
-        <Box display="flex" flexDirection="column" gap="24px">
+        <Box display="flex" flexDirection="column" gap="24px" pl="64px" pr="64px" pt="112px">
             <Typography variant="h3">Dissemination</Typography>
 
             {props.website && (

@@ -45,7 +45,7 @@ export default function DescriptionBlockDesktop(props: DescriptionBlockProps) {
         },
     };
     return (
-        <Box key="descriptionBox" display="flex" flexDirection="row" gap="64px" alignItems="center">
+        <Box key="descriptionBox" display="flex" flexDirection="row" gap="64px" alignItems="center" pl="64px" pr="64px" pt="112px">
             <Box width="50%">
                 {documentToReactComponents(props.description, renderOptions)}
             </Box>

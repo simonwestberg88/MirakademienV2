@@ -10,7 +10,7 @@ interface OtherProjectsBlockProps {
 
 export default function OtherProjectsBlockDesktop({projects, isOngoing}: OtherProjectsBlockProps) {
     return (
-        <Box display="flex" flexDirection="column" alignItems="center" gap="80px" pl="64px" pr="64px">
+        <Box display="flex" flexDirection="column" alignItems="center" gap="80px" pl="64px" pr="64px" pt="112px">
             <Typography variant="h3">
                 {isOngoing ? "Other ongoing projects" : "Other closed projects"}
             </Typography>
