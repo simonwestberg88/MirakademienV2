@@ -1,5 +1,5 @@
 import { Box, Checkbox, FormControlLabel, TextField, Typography } from "@mui/material";
-import MirButton from "../components/mir-button";
+import MirButton from "../../components/mir-button";
 
 export default function ContactForm(){
     return(

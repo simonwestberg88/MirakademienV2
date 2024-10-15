@@ -1,7 +1,7 @@
 "use client"
-import { Box, Checkbox, FormControlLabel, TextField, Typography } from "@mui/material";
-import ContactInfo from "../contactInfo";
-import ContactForm from "../contactForm";
+import { Box } from "@mui/material";
+import ContactInfo from "../contactInfo/contactInfo";
+import ContactForm from "../contactForm/contactForm";
 
 
 export default function ContactsGetInTouchDesktop() {

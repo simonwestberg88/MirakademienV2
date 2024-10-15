@@ -1,8 +1,7 @@
 import { Box } from "@mui/material";
 import ContactsCover from "./cover/cover";
 import ContactsContact from "./contact/contact";
-import Footer from "../components/footer/footer";
-import ContactsNewsletter from "./newsletter";
+import ContactsNewsletter from "./newsletter/newsletter";
 import ContactsGetInTouch from "./getInTouch/getInTouch";
 
 export default function Contacts(){
