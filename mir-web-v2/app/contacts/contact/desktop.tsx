@@ -3,11 +3,11 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import PlaceIcon from '@mui/icons-material/Place';
 
-export default function ContactsContact() {
+export default function ContactsContactDesktop() {
     return (
         <Box sx={{ mr: "64px", ml: "64px", pt: "112px", display: "flex", flexDirection: "column", gap: "80px" }}>
             <Box sx={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                <Typography sx={{ fontWeight: "600" }}>Connect</Typography>
+                <Typography sx={{ fontWeight: "600" }}>Connect Us</Typography>
                 <Typography variant="h2">Contact</Typography>
                 <Typography>If you have any inquiries or need support, please reach out to us. We are here to help!</Typography>
             </Box>
