@@ -7,7 +7,7 @@ interface NewsCardProps {
     news: News
 };
 
-export default function NewsCard(props: NewsCardProps) {
+export default function NewsCardDesktop(props: NewsCardProps) {
     const coverimageUrl = props.news.cover.fields.file?.url as string;
     const authorImageUrl = props.news.authorImage.fields.file?.url as string;
     return (
