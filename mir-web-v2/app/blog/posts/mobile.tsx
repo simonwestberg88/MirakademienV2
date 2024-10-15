@@ -1,10 +1,9 @@
 'use client'
-import Grid from '@mui/material/Grid2';
 import { Blog } from '../../types/Blog';
 import { useState } from 'react';
 import { Box } from '@mui/material';
 import MirButton from '../../components/mir-button';
-import BlogCard from '../../components/cards/blogCard';
+import BlogCard from '../../components/cards/blogCard/blogCard';
 
 
 interface BlogPostsProps {
@@ -34,7 +33,7 @@ export default function PostsMobile(props: BlogPostsProps) {
     const sxNotSelected = { color: "black", borderColor: "orange.main" };
 
     return (
-        <Box display={"flex"} flexDirection={"column"} gap={"64px"}>
+        <Box display={"flex"} flexDirection={"column"}>
             <Box display={"flex"} flexDirection={"row"} flexWrap="wrap">
                 <MirButton
                     onClick={() => filterCategories("all")}

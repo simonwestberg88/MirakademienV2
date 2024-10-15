@@ -4,7 +4,7 @@ import { Blog } from '../../types/Blog';
 import { useState } from 'react';
 import { Box } from '@mui/material';
 import MirButton from '../../components/mir-button';
-import BlogCard from '../../components/cards/blogCard';
+import BlogCard from '../../components/cards/blogCard/blogCard';
 
 
 interface BlogPostsProps {

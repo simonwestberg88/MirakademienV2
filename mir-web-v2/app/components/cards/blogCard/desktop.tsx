@@ -7,7 +7,7 @@ interface BlogCardProps {
     post: Blog
 };
 
-export default function BlogCard(props: BlogCardProps) {
+export default function BlogCardDesktop(props: BlogCardProps) {
     const coverimageUrl = props.post.coverImage.fields.file?.url as string;
     const authorImageUrl = props.post.authorImage.fields.file?.url as string;
     return (
