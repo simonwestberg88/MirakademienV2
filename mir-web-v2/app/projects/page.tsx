@@ -53,7 +53,6 @@ export default async function Projects() {
         buttonText="View all closed Projects"
       />
       <ProjectsSupport />
-      <Footer />
     </Box>
   );
 }
