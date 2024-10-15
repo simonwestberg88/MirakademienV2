@@ -2,10 +2,10 @@
 import theme from "@/theme";
 import { Box, Typography, TextField, Button } from "@mui/material";
 
-export default function ReportsSend() {
+export default function ReportsSendDesktop() {
 
     return (
-        <Box sx={{ pt: "112px", maxWidth: "768px", display: "flex", flexDirection: "column", gap: "16px" }}>
+        <Box sx={{ pt: "112px", maxWidth: "768px", display: "flex", flexDirection: "column", gap: "16px", pl: "64px", pr: "64px" }}>
             <Typography variant="h5">Select the reports you are interested in, enter your email, and we will send them to your email address.</Typography>
             <Box sx={{ display: "flex", flexDirection: "row", gap: "16px" }}>
                 <TextField

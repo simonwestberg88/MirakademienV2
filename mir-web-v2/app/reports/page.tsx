@@ -2,9 +2,9 @@ import { Box } from "@mui/material";
 import { ContentfulClient } from "../lib/client";
 import { Report } from "../types/report";
 import Footer from "../components/footer/footer";
-import ReportsSend from "./SendReports";
 import Cover from "./cover/cover";
 import ReportsBlock from "./reports/reports";
+import ReportsSend from "./sendReports/SendReports";
 
 export default async function Reports() {
     const contentfulClient = ContentfulClient.getClient();
