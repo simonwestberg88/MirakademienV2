@@ -17,8 +17,6 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         limit: 1,
     });
 
-
-
     const projects = projectResponse.items.map(item => ({
         title: item.fields.title,
         cover: item.fields.cover,
@@ -45,13 +43,43 @@ export default async function ProjectPage({ params }: { params: { slug: string }
     } as unknown as Project));
     const project = projects[0];
 
+    const otherProjectsResponse = await contentfulClient.getEntries<Project>({
+        content_type: 'project',
+        limit: 4,
+        order: ['fields.date'],
+        select: [
+            'fields.title',
+            'fields.description',
+            'fields.slug',
+            'fields.cover',
+            'fields.date',
+            'fields.isOngoing',
+            'fields.tags',
+            'fields.coverHeight'
+        ],
+        'fields.isOngoing': project.isOngoing
+    });
+
+    let otherProjects = otherProjectsResponse.items.map(item => ({
+        cover: item.fields.cover,
+        description: item.fields.description,
+        slug: item.fields.slug,
+        tags: item.fields.tags,
+        coverHeight: item.fields.coverHeight,
+        title: item.fields.title,
+        isOngoing: item.fields.isOngoing,
+        date: item.fields.date,
+    } as unknown as Project));
+
+    otherProjects = projects.filter(proj => proj.title !== project.title);
+
     return (
         <Box>
             <Header project={project} />
             <DescriptionBlock image={project.descriptionPicture} description={project.projectDescription} />
             <ResultsBlock reserachResults={project.researchResults} description={project.researchDescription} />
             <DisseminationBlock website={project.website} facebook={project.facebook} linkedIn={project.linkedIn} />
-            <OtherProjectsBlock isOngoing={project.isOngoing} currentProjectTitle={project.title} />
+            <OtherProjectsBlock isOngoing projects={otherProjects} />
             <SupportBlock />
         </Box>
     );
