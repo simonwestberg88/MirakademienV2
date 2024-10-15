@@ -4,7 +4,9 @@ import { Box, Typography } from "@mui/material";
 export default function CoverDesktop() {
     return (
         <Box>
+            <Box pl="64px" pr="64px">
             <NavMenu link1="Reports" />
+            </Box>
             <Box
                 sx={{
                     width: '100%',
@@ -16,8 +18,6 @@ export default function CoverDesktop() {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
-                    ml: "-64px",
-                    pr: "128px"
                 }}
             >
                 <Box key="b2" sx={{
