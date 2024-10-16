@@ -1,5 +1,5 @@
 import { Box, List, ListItem, Typography } from "@mui/material";
-import MirButton from "../components/mir-button";
+import MirButton from "../../components/mir-button";
 
 export default function CrimePreventing() {
 
