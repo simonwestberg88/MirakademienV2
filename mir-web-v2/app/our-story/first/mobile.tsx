@@ -8,6 +8,7 @@ export default function OurStoryStartMobile() {
             </Box>
             <Box
                 key="second"
+                pt="24px"
                 sx={{
                     display: "flex",
                     flexDirection: "column",  // Stack items vertically

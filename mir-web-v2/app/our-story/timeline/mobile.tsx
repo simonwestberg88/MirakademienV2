@@ -8,7 +8,7 @@ import TimelineDot from '@mui/lab/TimelineDot';
 
 export default function TimelineMobile() {
     return (
-        <Box pt="112px" >
+        <Box pt="64px" >
             <Typography textAlign="center">Inclusion</Typography>
             <Typography textAlign="center" variant="h2">MIR&apos;s Timeline</Typography>
             <Timeline position="right"
