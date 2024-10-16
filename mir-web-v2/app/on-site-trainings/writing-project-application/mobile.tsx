@@ -4,12 +4,10 @@ import MirButton from "../../components/mir-button";
 export default function WritingProjectApplicationMobile() {
 
     return (
-        <Box sx={{ pt: "112px" }}>
-            <Box display="flex">
-                <Typography flex={1.5} variant="h3">Writing a Successful Transnational Project Application</Typography>
-                <Typography flex={2}>Welcome to the course &quot;Writing a Successful Application,&quot; designed for those who want to craft effective proposals for international projects such as Erasmus, JUST, CERV, and other programs. Our course leaders have written over 300 applications with a success rate of 70%. This course is tailored to equip you with the skills needed to formulate a concrete idea, set goals and priorities that support the idea, and describe methodology and plans with quantitative and qualitative indicators. Additionally, you will learn the best ways to outline project management methods and quality assurance.</Typography>
-            </Box>
-            <Box sx={{ pt: "112px", display: "flex", flexDirection: "column", gap: "24px" }}>
+        <Box display="flex" flexDirection="column" padding="20px" pt="112px" gap="48px" pb="64px">
+            <Typography flex={1.5} variant="h3">Writing a Successful Transnational Project Application</Typography>
+            <Typography flex={2}>Welcome to the course &quot;Writing a Successful Application,&quot; designed for those who want to craft effective proposals for international projects such as Erasmus, JUST, CERV, and other programs. Our course leaders have written over 300 applications with a success rate of 70%. This course is tailored to equip you with the skills needed to formulate a concrete idea, set goals and priorities that support the idea, and describe methodology and plans with quantitative and qualitative indicators. Additionally, you will learn the best ways to outline project management methods and quality assurance.</Typography>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                 <Typography variant="h5">
                     Course Objectives
                 </Typography>
@@ -33,7 +31,7 @@ export default function WritingProjectApplicationMobile() {
                     </List>
                 </Box>
             </Box>
-            <Box sx={{ pt: "112px", display: "flex", flexDirection: "column", gap: "24px" }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                 <Typography variant="h5">
                     Course Content
                 </Typography>
@@ -61,7 +59,7 @@ export default function WritingProjectApplicationMobile() {
                     </List>
                 </Box>
             </Box>
-            <Box sx={{ pt: "112px", display: "flex", flexDirection: "column", gap: "24px" }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                 <Typography variant="h5">
                     What you get
                 </Typography>
@@ -72,11 +70,11 @@ export default function WritingProjectApplicationMobile() {
                     <Typography> Swedish</Typography>
                 </Box>
             </Box>
-            <Box sx={{ pt: "112px", display: "flex", flexDirection: "column", gap: "24px" }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                 <Typography variant="h5">
                     Price
                 </Typography>
-                <List sx={{ listStyleType: "disc", pl: 4}}>
+                <List sx={{ listStyleType: "disc", pl: 4 }}>
                     <ListItem sx={{ display: "list-item", padding: "4px 0" }}>
                         For groups between 4 and 7 individuals: 73,500 SEK excluding VAT per day
                     </ListItem>
@@ -88,7 +86,7 @@ export default function WritingProjectApplicationMobile() {
                     <Typography fontWeight="600">Email:</Typography>
                     <Typography>info@mirakademien.com</Typography>
                 </Box>
-                <MirButton sx={{ width: "128px" }}>Sign in</MirButton>
+                <MirButton variant="contained" sx={{ width: "128px" }}>Sign in</MirButton>
             </Box>
         </Box>
     );
