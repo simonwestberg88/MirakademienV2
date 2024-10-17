@@ -14,7 +14,7 @@ import Image from 'next/image';
 import { Link, Typography } from '@mui/material';
 import { useState } from 'react';
 import MirButton from './mir-button';
-import ContactForm from './contact-form';
+import ContactForm from './dialogs/contact-form';
 
 export default function ButtonAppBar() {
   const theme = useTheme();

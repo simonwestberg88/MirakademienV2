@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Dialog, DialogActions, DialogContent, TextField, Box, Typography } from "@mui/material";
-import MirButton from "./mir-button";
+import MirButton from "../mir-button";
 
 interface ContactFormProps {
     open: boolean;

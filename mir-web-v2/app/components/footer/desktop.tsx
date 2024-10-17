@@ -6,6 +6,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Image from 'next/image';
 import MirButton from '../mir-button';
 import { useState } from 'react';
+import SubscribeDialog from '../dialogs/suscribe';
 
 export default function FooterDesktop() {
     const [email, setEmail] = useState("");
@@ -33,7 +34,7 @@ export default function FooterDesktop() {
             const result = await response.json();
 
             if (response.ok) {
-                setMessage('Subscribed successfully');
+                setMessage('Subscribed!');
             } else {
                 setMessage(result.error || 'Failed to subscribe');
             }
@@ -46,7 +47,6 @@ export default function FooterDesktop() {
 
     const handleClose = () => {
         setOpen(false);
-        setEmail(''); // Optionally reset the email field after closing
     };
 
     return (
@@ -122,17 +122,7 @@ export default function FooterDesktop() {
                             </Box>
                         </form>
 
-                        <Dialog open={open} onClose={handleClose}>
-                            <DialogTitle>Subscription Status</DialogTitle>
-                            <DialogContent>
-                                <p>{message}</p>
-                            </DialogContent>
-                            <DialogActions>
-                                <MirButton onClick={handleClose} color="primary">
-                                    OK
-                                </MirButton>
-                            </DialogActions>
-                        </Dialog>
+                        <SubscribeDialog open={open} message={message} onClose={handleClose} />
                         <Typography variant="caption">By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</Typography>
                     </Box>
                 </Box>
