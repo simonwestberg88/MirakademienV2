@@ -1,8 +1,6 @@
-'use client';
-
+"use client"
 import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
-import { Box, Button, Divider, Link, TextField, Typography } from '@mui/material';
+import { Box, Divider, Link, TextField, Typography } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Image from 'next/image';
@@ -10,20 +8,37 @@ import MirButton from '../mir-button';
 import { useState } from 'react';
 
 export default function FooterDesktop() {
-    const theme = useTheme();
     const [email, setEmail] = useState("");
 
-    const handleSubmit = (event: React.FormEvent) => {
+    const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
 
         if (!email) {
-            console.log("Email is required");
-        } else {
-            console.log("Subscribed with email:", email);
+            console.log('Email is required');
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email }),
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                console.log('Subscribed successfully');
+            } else {
+                console.log(result.error || 'Failed to subscribe');
+            }
+        } catch (error) {
+            console.log('An error occurred while subscribing');
         }
     };
     return (
-        <Box key="l1" sx={{ height: 545, width: "100%", backgroundColor: theme.palette.background.default, mt: "112px" }}>
+        <Box key="l1" sx={{ height: 545, width: "100%", backgroundColor: "#EDE6D4", mt: "112px" }}>
             <Box key="l2_1" sx={{ paddingTop: "80px", pl: "64px", pr: "64px", display: "flex", justifyContent: "space-between", alignItems: "top" }}>
                 <Box key="l3_1" sx={{ width: "684px", display: "flex", justifyContent: 'space-between' }}>
                     <Image src="/mir_logo.png" width={121.85} height={61.25} alt="MIR Logo" />

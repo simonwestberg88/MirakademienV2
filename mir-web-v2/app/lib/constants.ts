@@ -1,0 +1,1 @@
+export const newsletterId = 21921514;
