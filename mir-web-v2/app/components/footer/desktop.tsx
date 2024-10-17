@@ -1,6 +1,6 @@
 "use client"
 import * as React from 'react';
-import { Box, Divider, Link, TextField, Typography } from '@mui/material';
+import { Box, Dialog, DialogActions, DialogContent, DialogTitle, Divider, Link, TextField, Typography } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Image from 'next/image';
@@ -9,12 +9,15 @@ import { useState } from 'react';
 
 export default function FooterDesktop() {
     const [email, setEmail] = useState("");
+    const [message, setMessage] = useState<string>('');
+    const [open, setOpen] = useState<boolean>(false);
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
 
         if (!email) {
-            console.log('Email is required');
+            setMessage('Email is required');
+            setOpen(true);
             return;
         }
 
@@ -28,17 +31,26 @@ export default function FooterDesktop() {
             });
 
             const result = await response.json();
+
             if (response.ok) {
-                console.log('Subscribed successfully');
+                setMessage('Subscribed successfully');
             } else {
-                console.log(result.error || 'Failed to subscribe');
+                setMessage(result.error || 'Failed to subscribe');
             }
         } catch (error) {
-            console.log('An error occurred while subscribing');
+            setMessage('An error occurred while subscribing');
         }
+
+        setOpen(true);
     };
+
+    const handleClose = () => {
+        setOpen(false);
+        setEmail(''); // Optionally reset the email field after closing
+    };
+
     return (
-        <Box key="l1" sx={{ height: 545, width: "100%", backgroundColor: "#EDE6D4", mt: "112px" }}>
+        <Box key="l1" sx={{ height: 545, width: "100%", backgroundColor: "#EDE6D4"}}>
             <Box key="l2_1" sx={{ paddingTop: "80px", pl: "64px", pr: "64px", display: "flex", justifyContent: "space-between", alignItems: "top" }}>
                 <Box key="l3_1" sx={{ width: "684px", display: "flex", justifyContent: 'space-between' }}>
                     <Image src="/mir_logo.png" width={121.85} height={61.25} alt="MIR Logo" />
@@ -84,8 +96,8 @@ export default function FooterDesktop() {
                                     placeholder="Enter your email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    type="email" // Built-in HTML5 validation for email format
-                                    required // Ensures that the field is mandatory
+                                    type="email"
+                                    required
                                     sx={{
                                         backgroundColor: "white",
                                         borderRadius: "40px",
@@ -109,6 +121,18 @@ export default function FooterDesktop() {
                                 </MirButton>
                             </Box>
                         </form>
+
+                        <Dialog open={open} onClose={handleClose}>
+                            <DialogTitle>Subscription Status</DialogTitle>
+                            <DialogContent>
+                                <p>{message}</p>
+                            </DialogContent>
+                            <DialogActions>
+                                <MirButton onClick={handleClose} color="primary">
+                                    OK
+                                </MirButton>
+                            </DialogActions>
+                        </Dialog>
                         <Typography variant="caption">By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</Typography>
                     </Box>
                 </Box>

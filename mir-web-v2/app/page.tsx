@@ -10,7 +10,7 @@ import { News } from "./types/news";
 import ClientStories from "./components/home/client-stories/client-stories";
 import HomeNews from "./components/home/news/news";
 import HomeBlog from "./components/home/blog/blog";
-import HomeConnect from "./components/home/connect/mobile";
+import HomeConnect from "./components/home/connect/connect";
 
 export default async function Home() {
 

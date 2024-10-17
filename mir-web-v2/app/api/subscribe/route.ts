@@ -1,17 +1,17 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { saveEmail } from './axiosClient';
+import { newsletterId } from '@/app/lib/constants';
 
-export async function POST(req: NextRequest) {
-  try {
-    const { email } = await req.json();
+export async function POST(request: Request) {
+  const body = await request.json()
+  const res = await fetch(`https://clientapi.benchmarkemail.com/Contact/${newsletterId}/ContactDetails/CSV`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'API-Key': process.env.BENCHMARKEMAIL_ACCESS_TOKEN!,
+    },
+    body: body
+  });
 
-    if (!email) {
-      return NextResponse.json({ error: 'Email is required' }, { status: 400 });
-    }
+  const response = await res.json()
 
-    const result = await saveEmail(email);
-    return NextResponse.json({ message: 'Subscribed successfully', result }, { status: 200 });
-  } catch (error) {
-    return NextResponse.json({ error: 'Failed to subscribe' }, { status: 500 });
-  }
+  return Response.json(response)
 }
