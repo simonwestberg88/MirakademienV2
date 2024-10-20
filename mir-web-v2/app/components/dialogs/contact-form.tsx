@@ -27,7 +27,7 @@ export default function ContactForm({ open, handleClose }: ContactFormProps) {
             const result = await response.json();
 
             if (response.ok) {
-                setStatusMessage('Message sent successfully!'); // Display success message
+                setStatusMessage('Message sent!');
             } else {
                 setStatusMessage(result.error || 'Failed to send message');
             }
@@ -118,8 +118,8 @@ export default function ContactForm({ open, handleClose }: ContactFormProps) {
                     </Box>
                     {/* Display the success or failure message */}
                     {statusMessage && (
-                        <Typography 
-                            variant="body1" 
+                        <Typography
+                            variant="body1"
                             color={statusMessage.includes("success") ? "green" : "red"}
                             textAlign="center"
                             marginTop="16px"
@@ -129,13 +129,16 @@ export default function ContactForm({ open, handleClose }: ContactFormProps) {
                     )}
                 </DialogContent>
                 <DialogActions>
-                    <Box width="100%" display="flex" justifyContent="center">
+                    <Box width="100%" display="flex" justifyContent="center" gap="8px">
                         <MirButton type="submit" variant="contained" color="primary">
                             Submit
+                        </MirButton>
+                        <MirButton onClick={handleClose} variant="outlined" color="info">
+                            Close
                         </MirButton>
                     </Box>
                 </DialogActions>
             </form>
         </Dialog>
     );
-}
+} 
