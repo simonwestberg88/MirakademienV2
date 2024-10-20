@@ -11,10 +11,10 @@ export default function ContactForm({ open, handleClose }: ContactFormProps) {
     const [contactName, setName] = useState("");
     const [contactEmail, setEmail] = useState("");
     const [contactFormMessage, setMessage] = useState("");
+    const [statusMessage, setStatusMessage] = useState<string | null>(null); // Status message for success/failure
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
-        console.log({ name: contactName, email: contactEmail, message: contactFormMessage });
         try {
             const response = await fetch('/api/contact', {
                 method: 'POST',
@@ -27,15 +27,13 @@ export default function ContactForm({ open, handleClose }: ContactFormProps) {
             const result = await response.json();
 
             if (response.ok) {
-                setMessage('Subscribed!');
+                setStatusMessage('Message sent successfully!'); // Display success message
             } else {
-                setMessage(result.error || 'Failed to subscribe');
+                setStatusMessage(result.error || 'Failed to send message');
             }
         } catch (error) {
-            setMessage('An error occurred while subscribing');
+            setStatusMessage('An error occurred while sending the message');
         }
-
-        handleClose();
     };
 
     return (
@@ -118,6 +116,17 @@ export default function ContactForm({ open, handleClose }: ContactFormProps) {
                             />
                         </Box>
                     </Box>
+                    {/* Display the success or failure message */}
+                    {statusMessage && (
+                        <Typography 
+                            variant="body1" 
+                            color={statusMessage.includes("success") ? "green" : "red"}
+                            textAlign="center"
+                            marginTop="16px"
+                        >
+                            {statusMessage}
+                        </Typography>
+                    )}
                 </DialogContent>
                 <DialogActions>
                     <Box width="100%" display="flex" justifyContent="center">

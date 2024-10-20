@@ -18,7 +18,7 @@ export async function POST(request: Request) {
   });
 
   const response = await res.json();
-  if (response.Response.Status === '1') {
+  if (response.Response.Status !== '-1') {
     return new Response(JSON.stringify({ message: 'Subscribed successfully', data: response }), { status: 200 });
   } else if (response.Response.Status === '-1') {
     return new Response(JSON.stringify({
