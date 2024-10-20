@@ -4,7 +4,7 @@ export async function POST(request: Request) {
   const body = await request.json()
 
   const formattedBody = JSON.stringify({
-    "Emails": "simon.westberg@mirakademien.com",
+    "Emails": process.env.CONTACT_EMAIL,
     "Message": `${body.name}, ${body.email} \n ${body.message}`
   });
 
