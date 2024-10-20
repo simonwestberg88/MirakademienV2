@@ -1,4 +1,4 @@
-import { Dialog, DialogTitle, DialogContent, DialogActions, Button, Box } from '@mui/material';
+import { Dialog, DialogContent, Box } from '@mui/material';
 
 interface SubscribeDialogProps {
     open: boolean;

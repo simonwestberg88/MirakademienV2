@@ -8,13 +8,33 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({ open, handleClose }: ContactFormProps) {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+    const [contactName, setName] = useState("");
+    const [contactEmail, setEmail] = useState("");
+    const [contactFormMessage, setMessage] = useState("");
 
-    const handleSubmit = (event: React.FormEvent) => {
+    const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
-        console.log({ name, email, message });
+        console.log({ name: contactName, email: contactEmail, message: contactFormMessage });
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: contactEmail, name: contactName, message: contactFormMessage }),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                setMessage('Subscribed!');
+            } else {
+                setMessage(result.error || 'Failed to subscribe');
+            }
+        } catch (error) {
+            setMessage('An error occurred while subscribing');
+        }
+
         handleClose();
     };
 
@@ -55,7 +75,7 @@ export default function ContactForm({ open, handleClose }: ContactFormProps) {
                                 variant="outlined"
                                 required
                                 fullWidth
-                                value={name}
+                                value={contactName}
                                 onChange={(e) => setName(e.target.value)}
                             />
                         </Box>
@@ -74,7 +94,7 @@ export default function ContactForm({ open, handleClose }: ContactFormProps) {
                                 required
                                 type="email"
                                 fullWidth
-                                value={email}
+                                value={contactEmail}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                         </Box>
@@ -93,7 +113,7 @@ export default function ContactForm({ open, handleClose }: ContactFormProps) {
                                     },
                                 }}
                                 placeholder="Type your message..."
-                                value={message}
+                                value={contactFormMessage}
                                 onChange={(e) => setMessage(e.target.value)}
                             />
                         </Box>
