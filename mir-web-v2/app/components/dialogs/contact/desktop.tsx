@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import { Dialog, DialogActions, DialogContent, TextField, Box, Typography } from "@mui/material";
 import MirButton from "../../mir-button";
+import { ContactFormSharedProps } from "./contact-form";
 
-interface ContactFormProps {
-    open: boolean;
-    handleClose: () => void;
-    handleSubmit: (event: React.FormEvent) => Promise<void>;
-}
-
-export default function ContactFormDesktop({ open, handleClose, handleSubmit }: ContactFormProps) {
-    const [contactName, setName] = useState("");
-    const [contactEmail, setEmail] = useState("");
-    const [contactFormMessage, setMessage] = useState("");
-    const [statusMessage, setStatusMessage] = useState<string | null>(null);
+export default function ContactFormDesktop({ 
+    open,
+    handleClose,
+    handleSubmit,
+    contactName,
+    setName,
+    contactEmail,
+    setEmail,
+    contactFormMessage,
+    setMessage,
+    statusMessage
+ }: ContactFormSharedProps) {
 
     return (
         <Dialog
@@ -97,7 +99,7 @@ export default function ContactFormDesktop({ open, handleClose, handleSubmit }: 
                     {statusMessage && (
                         <Typography
                             variant="body1"
-                            color={statusMessage.includes("success") ? "green" : "red"}
+                            color={statusMessage.includes("Message sent!") ? "green" : "red"}
                             textAlign="center"
                             marginTop="16px"
                         >

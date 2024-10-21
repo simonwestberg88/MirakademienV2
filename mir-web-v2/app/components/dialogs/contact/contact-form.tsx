@@ -9,11 +9,24 @@ interface ContactFormProps {
     handleClose: () => void;
 }
 
+export interface ContactFormSharedProps {
+    open: boolean;
+    handleClose: () => void;
+    handleSubmit: (event: React.FormEvent) => Promise<void>;
+    contactName: string;
+    setName: (value: string) => void;
+    contactEmail: string;
+    setEmail: (value: string) => void;
+    contactFormMessage: string;
+    setMessage: (value: string) => void;
+    statusMessage: string | null;
+}
+
 export default function ContactForm({ open, handleClose }: ContactFormProps) {
     const [contactName, setName] = useState("");
     const [contactEmail, setEmail] = useState("");
     const [contactFormMessage, setMessage] = useState("");
-    const [statusMessage, setStatusMessage] = useState<string | null>(null); // Status message for success/failure
+    const [statusMessage, setStatusMessage] = useState<string | null>(null);
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
@@ -42,8 +55,29 @@ export default function ContactForm({ open, handleClose }: ContactFormProps) {
 
     return (
         <Box>
-            {isDesktop ? (<ContactFormDesktop open handleClose={handleClose} handleSubmit={handleSubmit} />) : (
-                <ContactFormMobile  open handleClose={handleClose} handleSubmit={handleSubmit}/>
+            {isDesktop ? (<ContactFormDesktop open={open}
+                    handleClose={handleClose}
+                    handleSubmit={handleSubmit}
+                    contactName={contactName}
+                    setName={setName}
+                    contactEmail={contactEmail}
+                    setEmail={setEmail}
+                    contactFormMessage={contactFormMessage}
+                    setMessage={setMessage}
+                    statusMessage={statusMessage}
+            />) : (
+                <ContactFormMobile 
+                open={open}
+                    handleClose={handleClose}
+                    handleSubmit={handleSubmit}
+                    contactName={contactName}
+                    setName={setName}
+                    contactEmail={contactEmail}
+                    setEmail={setEmail}
+                    contactFormMessage={contactFormMessage}
+                    setMessage={setMessage}
+                    statusMessage={statusMessage}
+                />
             )}
         </Box>
 
